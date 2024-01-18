@@ -1,3 +1,0 @@
-# Ed's doc portfolio
-
-A work in progress...
