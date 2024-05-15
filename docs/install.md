@@ -1,19 +1,19 @@
----
 layout: page
 title: "Install OMT"
 permalink: /install
 ---
-<p>This section describes how to install OMT. The following is&nbsp;a high level view of the process.</p>
 
-<h2>Step 1: Plan your deployment</h2>
+This section describes how to install OMT. The following is&nbsp;a high level view of the process.
 
-<p>Refer to the <a href="/doc/OMT/Main/DirectoryStructureEmbedded" title="Sizing and directory structure (embedded K8s)">Sizing and directory structure (embedded K8s)</a>, and <a href="/doc/OMT/Main/SystemReqsEmbed" title="System requirements (embedded K8s)">System requirements (embedded K8s)</a> topics.</p>
+# Step 1: Plan your deployment
 
-<h3>Decide which capabilities to enable</h3>
+Refer to the [Sizing and directory structure](https://docs.microfocus.com/doc/OMT/24.2/DirectoryStructureEmbedded), and [System requirements](https://docs.microfocus.com/doc/OMT/24.2/SystemReqsEmbed) topics.
 
-<p>OMT includes a number of capabilities that you can enable or disable during installation. Some capabilities help with the installation process itself, and others add functionality when you use OMT.</p>
+## Decide which capabilities to enable
 
-<p>The following table describes the capabilities.&nbsp;When installing OMT with its embedded Kubernetes, all capabilities are enabled by default.</p>
+OMT includes a number of capabilities that you can enable or disable during installation. Some capabilities help with the installation process itself, and others add functionality when you use OMT.
+
+The following table describes the capabilities.&nbsp;When installing OMT with its embedded Kubernetes, all capabilities are enabled by default.
 
 
 |Capability|Description|Default setting|
