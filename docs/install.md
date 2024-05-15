@@ -1,6 +1,7 @@
 layout: page
 title: "Install OMT"
-permalink: https://edcork.github.io/docs/install.md
+permalink: /install
+
 <p>This section describes how to install OMT. The following is&nbsp;a high level view of the process.</p>
 
 <h2>Step 1: Plan your deployment</h2>
