@@ -13,65 +13,18 @@
 
 <p>The following table describes the capabilities.&nbsp;When installing OMT with its embedded Kubernetes, all capabilities are enabled by default.</p>
 
-<div data-error="Table tag should have descriptive Caption text." style="padding: 1px; margin: 1px; display: inline-block;">
-<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
-	<thead>
-		<tr>
-			<th scope="col">Capability</th>
-			<th scope="col">Description</th>
-			<th scope="col">Default setting</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Cluster management</td>
-			<td>The cluster management capability provides the necessary components for managing the Kubernetes cluster.</td>
-			<td>Enabled</td>
-		</tr>
-		<tr>
-			<td>Deployment management</td>
-			<td>The deployment management capability provides the necessary components for deploying a product.</td>
-			<td>Enabled</td>
-		</tr>
-		<tr>
-			<td>Log collection</td>
-			<td>The logging capability collects logs from OMT infrastructure and applications on an NFS volume (by default). However, you can also forward the logs to an external receiver, such as Elasticsearch Server or Splunk.<br />
-			<br />
-			If you install OMT with the log collection capability disabled, logs remain wherever they're generated.</td>
-			<td>Enabled</td>
-		</tr>
-		<tr>
-			<td>Monitoring</td>
-			<td>
-			<p>The monitoring capability uses the Prometheus and Grafana open source projects. Prometheus&nbsp;collects container based metrics associated with the OMT cluster, and streams them to applications&nbsp;(including Operations Bridge)&nbsp;and many third-party software solutions&nbsp;(known as exporters). Grafana&nbsp;is the default visualization tool for Prometheus.&nbsp;</p>
 
-			<p>If you install OMT with the monitoring and NFS provisioner capabilities enabled, the NFS provisioner capability automatically configures an additional NFS persistent volume for the monitoring capability. If you install OMT with the NFS provisioner capability disabled, you must manually configure an additional persistent volume for the monitoring capability.</p>
-			</td>
-			<td>Enabled</td>
-		</tr>
-		<tr>
-			<td>Monitoring content</td>
-			<td>The monitoring content capability provides a set of out of the box Grafana dashboards to use with the monitoring capability.</td>
-			<td>Enabled</td>
-		</tr>
-		<tr>
-			<td>NFS provisioner</td>
-			<td>The NFS provisioner is an infrastructure capability that creates all the required NFS PVs automatically when you install OMT. You need only&nbsp;to set up an NFS server and create a volume on it.</td>
-			<td>Enabled</td>
-		</tr>
-		<tr>
-			<td>Tools</td>
-			<td>The tools capability provides a set of CLI tools (scripts) to help you administer the Kubernetes cluster and deploy applications.</td>
-			<td>Enabled</td>
-		</tr>
-		<tr>
-			<td>Kubernetes backup</td>
-			<td>The Kubernetes backup capability uses Velero to back up and restore Kubernetes&nbsp;application deployments.&nbsp;</td>
-			<td>Enabled</td>
-		</tr>
-	</tbody>
-</table>
-</div>
+|Capability|Description|Default setting|
+|---|---|---|
+|Cluster management|The cluster management capability provides the necessary components for managing the Kubernetes cluster.|Enabled|
+|Deployment management|The deployment management capability provides the necessary components for deploying a product.|Enabled|
+|Log collection|The logging capability collects logs from OMT infrastructure and applications on an NFS volume (by default). However, you can also forward the logs to an external receiver, such as Elasticsearch Server or Splunk.<br /><br />If you install OMT with the log collection capability disabled, logs remain wherever they're generated.|Enabled|
+|Monitoring|The monitoring capability uses the Prometheus and Grafana open source projects. Prometheus&nbsp;collects container based metrics associated with the OMT cluster, and streams them to applications&nbsp;(including Operations Bridge)&nbsp;and many third-party software solutions&nbsp;(known as exporters). Grafana&nbsp;is the default visualization tool for Prometheus.<br /><br />If you install OMT with the monitoring and NFS provisioner capabilities enabled, the NFS provisioner capability automatically configures an additional NFS persistent volume for the monitoring capability.<br /><br />If you install OMT with the NFS provisioner capability disabled, you must manually configure an additional persistent volume for the monitoring capability.|Enabled|
+|Monitoring content|The monitoring content capability provides a set of out of the box Grafana dashboards to use with the monitoring capability.|Enabled|
+|NFS provisioner|The NFS provisioner is an infrastructure capability that creates all the required NFS PVs automatically when you install OMT. You need only to set up an NFS server and create a volume on it.|Enabled|
+|Tools|The tools capability provides a set of CLI tools (scripts) to help you administer the Kubernetes cluster and deploy applications.|Enabled|
+|Kubernetes backup|The Kubernetes backup capability uses Velero to back up and restore Kubernetes&nbsp;application deployments.|Enabled|
+		
 
 <h2>Step 2: Prepare&nbsp;a Docker Hub account&nbsp;</h2>
 
@@ -87,9 +40,9 @@
 
 <h2>Step 5: Set up&nbsp;prerequisites</h2>
 
-<p id="Step_3:_Set_up_prerequisites">Perform the prerequisite&nbsp;tasks to configure your environment for the installation.&nbsp;For more information, see&nbsp;<a href="/doc/OMT/Main/InstallPrereqsEmbed" title="Set up prerequisites for OMT (embedded K8s)">Set up prerequisites for OMT (embedded K8s)</a>.</p>
+<p>Perform the prerequisite&nbsp;tasks to configure your environment for the installation.&nbsp;For more information, see&nbsp;<a href="/doc/OMT/Main/InstallPrereqsEmbed" title="Set up prerequisites for OMT (embedded K8s)">Set up prerequisites for OMT (embedded K8s)</a>.</p>
 
-<h2 id="Step_4:_Deploy">Step 6: Deploy</h2>
+<h2>Step 6: Deploy</h2>
 
 <p>Deploy OMT and its embedded Kubernetes.&nbsp;For more information, see&nbsp;<a href="/doc/OMT/Main/DeployEmbed" title="Deploy OMT (embedded K8s)">Deploy OMT (embedded K8s)</a>.</p>
 
