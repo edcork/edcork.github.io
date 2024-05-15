@@ -28,7 +28,7 @@
 
 <h2>Step 2: Prepare&nbsp;a Docker Hub account&nbsp;</h2>
 
-<p>You need a valid Docker Hub account that we've authorized to download application images from Docker Hub. If you don't already have one, you must set up the Docker account and then contact us with your account details. For more information about how to do this, see <a href="/doc/OMT/Main/ActivateDockerAccountEmbed" title="Activate your Docker Hub account">Activate your Docker Hub account</a>.</p>
+<p>You need a valid Docker Hub account that we've authorized to download application images from our Docker Hub image registry. If you don't already have one, you must set up the Docker account and then contact us with your account details. For more information about how to do this, see <a href="/doc/OMT/Main/ActivateDockerAccountEmbed" title="Activate your Docker Hub account">Activate your Docker Hub account</a>.</p>
 
 <h2>Step 3: Prepare infrastructure</h2>
 
