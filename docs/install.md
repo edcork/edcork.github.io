@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html>
-<body>
+layout: page
+title: "Install OMT"
+permalink: https://edcork.github.io/docs/install.md
 <p>This section describes how to install OMT. The following is&nbsp;a high level view of the process.</p>
 
 <h2>Step 1: Plan your deployment</h2>
@@ -49,5 +49,4 @@
 <h2>Step 7: Complete the post installation tasks</h2>
 
 <p>Some deployment scenarios require further configuration after you install OMT and its embedded Kubernetes. For more information, see&nbsp;<a href="/doc/OMT/Main/PostInstallEmbed" title="Post installation tasks for OMT (embedded K8s)">Post installation tasks for OMT (embedded K8s)</a>.</p>
-</body>
-</html>
+
