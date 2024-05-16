@@ -1,4 +1,4 @@
-layout: page
+---layout: page
 title: "Install OMT"
 permalink: /install
 ---
