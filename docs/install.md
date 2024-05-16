@@ -1,9 +1,3 @@
----
-layout: page
-title: "Install OMT"
-permalink: /install
----
-
 This section describes how to install OMT. The following is a high level view of the process.
 
 # Step 1: Plan your deployment
