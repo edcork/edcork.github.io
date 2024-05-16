@@ -28,27 +28,27 @@ The following table describes the capabilities.&nbsp;When installing OMT with it
 |Kubernetes backup|The Kubernetes backup capability uses Velero to back up and restore Kubernetes&nbsp;application deployments.|Enabled|
 		
 
-<h2>Step 2: Prepare&nbsp;a Docker Hub account&nbsp;</h2>
+# Step 2: Prepare&nbsp;a Docker Hub account
 
-<p>You need a valid Docker Hub account that we've authorized to download application images from our Docker Hub image registry. If you don't already have one, you must set up the Docker account and then contact us with your account details. For more information about how to do this, see <a href="/doc/OMT/Main/ActivateDockerAccountEmbed" title="Activate your Docker Hub account">Activate your Docker Hub account</a>.</p>
+You need a valid Docker Hub account that we've authorized to download application images from our Docker Hub image registry. If you don't already have one, you must set up the Docker account and then contact us with your account details. For more information about how to do this, see [Activate your Docker Hub account](https://docs.microfocus.com/doc/OMT/24.2/ActivateDockerAccountEmbed).
 
-<h2>Step 3: Prepare infrastructure</h2>
+# Step 3: Prepare infrastructure
 
-<p>To deploy OMT with its embedded Kubernetes you must prepare the required infrastructure for OMT and its Kubernetes cluster. For more information, see <a href="/doc/OMT/Main/InfraEmbedded" title="Prepare the infrastructure for OMT (embedded K8s)">Prepare the infrastructure for OMT (embedded K8s)</a>.</p>
+To deploy OMT with its embedded Kubernetes you must prepare the required infrastructure for OMT and its Kubernetes cluster. For more information, see [Prepare the infrastructure for OMT](https://docs.microfocus.com/doc/OMT/24.2/InfraEmbedded).
 
-<h2>Step 4: Download the OMT installation package</h2>
+# Step 4: Download the OMT installation package
 
-<p>Download the installation package from&nbsp;the&nbsp;<a href="https://sld.microfocus.com/mysoftware/index" title="Software Licenses and Downloads">Software&nbsp;Licenses and Downloads</a>&nbsp;portal. For more information, see&nbsp;<a href="/doc/OMT/Main/DownloadInstallPackageEmbed" title="Download the installation package (embedded K8s)">Download the installation package (embedded K8s)</a>.</p>
+Download the installation package from the [Software Licenses and Downloads](https://sld.microfocus.com/mysoftware/index) portal.
 
-<h2>Step 5: Set up&nbsp;prerequisites</h2>
+# Step 5: Set up&nbsp;prerequisites
 
-<p>Perform the prerequisite&nbsp;tasks to configure your environment for the installation.&nbsp;For more information, see&nbsp;<a href="/doc/OMT/Main/InstallPrereqsEmbed" title="Set up prerequisites for OMT (embedded K8s)">Set up prerequisites for OMT (embedded K8s)</a>.</p>
+Perform the prerequisite tasks to configure your environment for the installation.&nbsp;For more information, see [Set up prerequisites for OMT]([/doc/OMT/Main](https://docs.microfocus.com/doc/OMT/24.2/InstallPrereqsEmbed).
 
-<h2>Step 6: Deploy</h2>
+# Step 6: Deploy
 
-<p>Deploy OMT and its embedded Kubernetes.&nbsp;For more information, see&nbsp;<a href="/doc/OMT/Main/DeployEmbed" title="Deploy OMT (embedded K8s)">Deploy OMT (embedded K8s)</a>.</p>
+Deploy OMT and its embedded Kubernetes. For more information, see [Deploy OMT]([/doc/OMT/Main](https://docs.microfocus.com/doc/OMT/24.2/DeployEmbed).
 
-<h2>Step 7: Complete the post installation tasks</h2>
+# Step 7: Complete the post installation tasks
 
-<p>Some deployment scenarios require further configuration after you install OMT and its embedded Kubernetes. For more information, see&nbsp;<a href="/doc/OMT/Main/PostInstallEmbed" title="Post installation tasks for OMT (embedded K8s)">Post installation tasks for OMT (embedded K8s)</a>.</p>
+Some deployment scenarios require further configuration after you install OMT and its embedded Kubernetes. For more information, see [Post installation tasks for OMT]([/doc/OMT/Main](https://docs.microfocus.com/doc/OMT/24.2/PostInstallEmbed).
 
