@@ -1,0 +1,21 @@
+---
+title: About me
+keywords: 
+last_updated: May 19, 2024
+sidebar: writing
+permalink: banner_about.html
+folder: mydoc
+---
+
+I'm a tech writer and editor with 14+ years of experience in technical documentation. Currently at OpenText, I mainly work on IT Service Management products and a Kubernetes-based container orchestration platform.
+
+Also an occassional cycling coach and one-time archaeologist.
+
+You can contact me at [edcork@gmail.com](edcork@gmail.com) and find me on [LinkedIn]().
+
+{% include links.html %}
+
+
+This portfolio uses Tom Johnson's Documentation theme for Jeckyll. I strongly recommend interested tech writers to check out [Tom's technical writing blog](http://idratherbewriting.com) and also the [Documentation theme itself](https://github.com/tomjoht/documentation-theme-jekyll).
+
+
