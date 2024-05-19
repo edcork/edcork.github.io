@@ -1,18 +1,18 @@
-repository: edcork.github.io/docs
+repository: tomjoht/documentation-theme-jekyll
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Ed's portfolio
+topnav_title: Jekyll Documentation Theme
 # this appears on the top navigation bar next to the home button
 
-site_title: Ed's portfolio
+site_title: Jekyll theme for documentation
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-#company_name: Copyright 2021 Google LLC
+company_name: Copyright 2021 Google LLC
 # this appears in the footer
 
-github_editme_path: 
+github_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 # gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
@@ -115,8 +115,6 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 
 github: [metadata]
-url: edcork.github.io
-baseurl: /docs
-remote_theme: documentation-theme-jekyll
+
 
 # Copyright 2021 Google LLC
