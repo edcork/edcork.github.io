@@ -115,6 +115,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 
 github: [metadata]
-
+url: https://edcork.github.io/
+baseurl: /edcork.github.io
 
 # Copyright 2021 Google LLC
