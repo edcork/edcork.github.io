@@ -6,7 +6,7 @@ topnav:
     - title: GitHub
       external_url: https://github.com/edcork
     - title: About
-      url: /banner_about.html
+      url: /banner_about
       
 
 #Topnav dropdowns
