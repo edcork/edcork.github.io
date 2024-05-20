@@ -14,7 +14,7 @@ topnav_title: Ed Cork's portfolio
 site_title: Ed's portfolio
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
-company_name: Copyright 2024 Edward Cork
+company_name: Edward Cork
 # this appears in the footer
 
 github_editme_path: 
@@ -99,7 +99,7 @@ defaults:
       comments: false
       # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
-      sidebar: home_sidebar
+      sidebar: 
       topnav: topnav
 
 # these are defaults used for the frontmatter for these file types
