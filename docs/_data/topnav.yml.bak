@@ -9,11 +9,13 @@ topnav_dropdowns:
     - title: Portfolio
       folderitems:
         - title: Writing
-          url: /mydoc_introduction.html
+          url: /write_landing_page.html
         - title: Editing
           url: /edit_landing_page.html
         - title: Design
-          url: /p2_landing_page.html
+          url: /design_landing_page.html
+        - title: Glossary
+          url: /glossary.html
 
 topnav:
 - title: Topnav

@@ -19,7 +19,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: "Example 1: troubleshooting"
+  - title: "Sample 1: troubleshooting"
     output: web, pdf
     folderitems:
 
@@ -35,7 +35,7 @@ entries:
       url: /edit1_edited.html
       output: web, pdf
 
-  - title: "Example 2: XXX"
+  - title: "Sample 2: XXX"
     output: web, pdf
     folderitems:
 
@@ -51,7 +51,7 @@ entries:
       url: /edit2_edited.html
       output: web, pdf
       
-  - title: "Example 3: YYY"
+  - title: "Sample 3: YYY"
     output: web, pdf
     folderitems:
 

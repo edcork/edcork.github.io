@@ -1,0 +1,369 @@
+---
+title: Integrate with Azure for CMP FinOps
+sidebar: writing_sidebar
+toc: false
+permalink: finops_azure.html
+folder: write
+---
+
+<p>Before you can use the Cloud Management Platform (CMP) FinOps solution, you must set up integrations with the cloud platforms from which you want to pull cloud data. We support integrations with Amazon Web Services (AWS), Azure, and Google Cloud Platform (GCP).</p>
+
+<p>The CMP FinOps solution uses three types of cloud data. You will need to set up a separate integration to retrieve Cloud Account Data, but for Cloud Billing and Cloud Recommendations, this data is retrieved within the same integration.</p>
+
+<ul>
+	<li>Cloud account data &ndash; The CMP FinOps account management functionality enables you to centrally manage cloud accounts of supported cloud platforms. You must set up an Integration Studio-based integration to import cloud account data.</li>
+	<li>Cloud billing data &ndash; The CMP FinOps cloud cost visualization and optimization functionalities, including cost governance reports, cloud insights, and cloud cost limits, are all based on cloud billing data. You must set up a Cloud Cost Data Provider-based integration to retrieve cloud billing data.</li>
+	<li>Cloud recommendations data - The CMP FinOps Optimization functionalities, including cloud insights, are based on cloud recommendations that are collected from the different cloud providers.&nbsp; You must set up a Cloud Cost Data Provider-based integration to retrieve these cloud recommendations.
+	<div class="admonition">
+	<div class="admonition-icon admonition-note-icon"></div>
+
+	<div class="admonition-content admonition-note-content">Setting up a Cloud Cost Data Provider-based integration with the appropriate permissions (as described below) will give you both cloud billing data and cloud recommendations data within the same integration.</div>
+	</div>
+	</li>
+</ul>
+
+<p>This topic describes how to set up the two Azure integrations that support the CMP FinOps capability: the cloud accounts import integration and the billing data retrieval integration. CMP FinOps supports integration with Enterprise Agreement (EA), Microsoft Customer Agreement (MCA), and Microsoft Partner Agreement (MPA) billing accounts (the latter for billing data collection only).</p>
+
+<div class="admonition">
+<div class="admonition-icon admonition-caution-icon"></div>
+
+<div class="admonition-content admonition-caution-content">&nbsp;Support for Azure MCA and MPA billing accounts is a beta feature and therefore may contain defects. The primary objective of this feature&nbsp;is to obtain feedback on its&nbsp;functionality and quality, and to&nbsp;identify functional enhancement.&nbsp;Customer is advised to safeguard its data, use caution and not rely in any way on the correct functioning or performance of this feature and its artifacts. Customer assumes all risks and all costs associated with its use of this feature, including, without limitation, any damage to any equipment, software, information, or data. OpenText disclaims any liability for any loss, damage, or inconvenience caused by using or relying on this feature.</div>
+</div>
+
+<h2>Complete prerequisite tasks in the Azure portal</h2>
+
+<p>To integrate with Azure, you must first complete the following tasks in the Azure portal.</p>
+
+<h3>Register an app to create a service principal</h3>
+
+<ol>
+	<li>Sign in to the Azure portal with a role with the <code>Application.ReadWrite.All</code> and <code>EnrollmentReader</code> permission.</li>
+	<li>Select <strong>Azure Active Directory</strong>.</li>
+	<li>Register an application by selecting <strong>App registrations</strong>. This creates the service principal.</li>
+	<li>After you click <strong>Register</strong> to register the app, make a note of the Application (client) ID and Directory (tenant) ID. You will need these when configuring the integrations.</li>
+	<li>Generate a client secret and make a note of it. You will need this when configuring the integrations.</li>
+</ol>
+
+<h3>Assign permissions</h3>
+
+<p>Azure uses role-based access control (RBAC) to&nbsp;manage access to Azure resources. You must assign the required roles to the service principal that you created earlier, so that it can access various Azure resources (scopes).</p>
+
+<p>The roles required to integrate with Azure depend on billing account type of your Azure account.</p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<thead>
+		<tr>
+			<th scope="col">Billing account type</th>
+			<th scope="col">Roles required</th>
+			<th scope="col">Notes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Azure EA</td>
+			<td>
+			<ul>
+				<li><code>Storage blob data reader&nbsp;</code>(Scope: storage account)</li>
+				<li><code>Enrollment reader </code>(Your Azure portal Enterprise Administrator will need to execute an API to do this. For more information, follow this <a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/assign-roles-azure-service-principals" title="Assign enrollment account role permission to the SPN">Microsoft documentation</a>.)</li>
+				<li><code>Reader&nbsp;</code>(Scope: management group)</li>
+			</ul>
+			</td>
+			<td>
+			<p>For more information about Azure EA roles, see&nbsp;this <a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-ea-roles" title="Assign enrollment account role permission to the SPN">Microsoft documentation</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>Azure MCA</td>
+			<td>
+			<ul>
+				<li><code>Storage blob data reader</code>&nbsp;(Scope: storage account)</li>
+				<li><code>Billing account reader</code> (Scope: billing account)&nbsp;</li>
+			</ul>
+			</td>
+			<td>For more information about Azure MCA roles, see&nbsp;this <a href="https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/understand-mca-roles" title="Assign enrollment account role permission to the SPN">Microsoft documentation</a>.</td>
+		</tr>
+		<tr>
+			<td>Azure MPA</td>
+			<td>
+			<ul>
+				<li><code>Storage blob data reader</code>&nbsp;(Scope: storage account)</li>
+			</ul>
+			</td>
+			<td>For more information about Azure MPA roles, see&nbsp;this <a href="https://learn.microsoft.com/en-us/partner-center/permissions-overview" title="Assign roles, permissions, and workspace access to users">Microsoft documentation</a>.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3>Set up storage for the billing data</h3>
+
+<p>You must create a directory in an Azure storage account and export your billing data to it.</p>
+
+<ol>
+	<li>Log in to the Azure portal as an enterprise administrator.</li>
+	<li>Select&nbsp;<b>Cost Management + Billing</b>, and then select&nbsp;<b>Cost Management</b>&nbsp;from the navigation menu.</li>
+	<li>Select&nbsp;<b>Exports</b>&nbsp;from the navigation menu, and then click <strong>Create</strong>.</li>
+	<li>Enter a name for the export. For example, &quot;test_actual_bill&quot;.</li>
+	<li>Select <b>Actual cost (Usage and Purchases)</b> as the metric. Currently, we don't support amortized cost reports.</li>
+	<li>Select <strong>Daily export of month-to-date-costs</strong> in the <strong>Export type</strong> list.
+	<div class="admonition">
+	<div class="admonition-icon admonition-important-icon"></div>
+
+	<div class="admonition-content admonition-important-content">You must select <strong>Daily export of month-to-date-costs</strong>. This is the only export type that we support.</div>
+	</div>
+	</li>
+	<li>Select the <strong>File Partitioning</strong> option. If you don't do this, Azure won't export billing data in the format required by CMP FinOps.</li>
+	<li>In the <strong>Storage</strong> section, select the <strong>Create new</strong> option if you don&rsquo;t have an existing storage account. If you do have one, select <strong>Use existing</strong>.
+	<ul>
+		<li>If you selected to use an existing storage account, use the <strong>Subscription</strong>&nbsp;and <strong>Storage account</strong> lists to select that account. Then, enter names for the container (for example, &quot;actualbillcontainer&quot;) and directory (for example, &quot;actual_bill&quot;) of the new export.</li>
+		<li>If you selected to create a new storage account, select an existing subscription from the <strong>Subscription</strong> list, select an existing resource group (or create a new one) from the <strong>Resource group</strong> list, and then enter a name for the new storage account (for example, &quot;actualtestaccount&quot;) in the <strong>Account name</strong> field. Then, select a location from the <strong>Location</strong> list, and enter names for the container (for example, &quot;actualbillcontainer&quot;) and directory (for example, &quot;actual_bill&quot;) of the new export.</li>
+	</ul>
+	</li>
+	<li>Click <strong>Create</strong>.</li>
+	<li>Select the export you just created (in the example, this was &quot;test_actual_bill&quot;), and then click <strong>Run now</strong>.</li>
+	<li>Select the new storage account that you just created (in the example, this was &quot;actualtestaccount&quot;) or the existing storage account that you used.</li>
+	<li>In the left-hand menu, click <strong>Containers</strong> in the <strong>Data storage&nbsp;</strong>section, and then select the container that you created (in the example, this was &quot;actualbillcontainer&quot;).</li>
+	<li>Select the directory that you created (in the examples, this was &quot;actual_bill&quot;), and then select the subdirectory named after the export&nbsp;(in the example, this was &quot;test_actual_bill&quot;).</li>
+	<li>Make a note of the location. You will need to enter this in the <strong>Actual Cost Export Path&nbsp;</strong>field later when you configure the billing data retrieval&nbsp;integration. The location is composed of the storage account, container, directory, and subdirectory names (For example, &quot;actualtestaccount/actualbillcontainer/actual_bill/test_actual_bill&quot;).</li>
+</ol>
+
+<h2 id="CloudAccount">Set up an Integration Studio-based integration to import cloud accounts</h2>
+
+<p>To set up the Integration Studio-based integration for Microsoft Azure&nbsp;cloud account data import, follow these steps.</p>
+
+<h3>Prepare an integration user</h3>
+
+<div class="readyonly-lst" deletable="false">{{#lst:SMAX:Main/SyncAWSProvider|CreateIntUser}}</div>
+
+<h3>Create an endpoint</h3>
+
+<p>Create an endpoint using the Rest Executor 2.0 endpoint type:</p>
+
+<ol>
+	<li>Log in to the Agent Interface as the cloud integration administrator.</li>
+	<li>Navigate to <strong>Administration </strong>&gt; <strong>Utilities </strong>&gt; <strong>Integration</strong> &gt;<strong> Endpoints</strong>.</li>
+	<li>Click <strong>Add</strong>.</li>
+	<li>Select<strong> Rest Executor 2.0</strong> as the endpoint type, enter a name for the endpoint (for example, Azure), and then click <strong>Add</strong>. The system creates the endpoint.&nbsp;</li>
+	<li>Click <strong>Configure</strong>, and then enter the following information.
+	<table border="1" cellpadding="1" cellspacing="1">
+		<thead>
+			<tr>
+				<th scope="col">Field</th>
+				<th colspan="2" scope="col">Description</th>
+			</tr>
+			<tr>
+				<td>Agent</td>
+				<td colspan="2">Select <strong>Agentless</strong>.</td>
+			</tr>
+			<tr>
+				<td>Authentication type</td>
+				<td colspan="2">
+				<p>Select <strong>OAuth 2.0</strong>.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>Protocol</td>
+				<td colspan="2">Select&nbsp;<strong>https</strong>.</td>
+			</tr>
+			<tr>
+				<td>Base URL</td>
+				<td colspan="2">Enter <code>https://management.azure.com</code></td>
+			</tr>
+			<tr>
+				<td>Certificate type</td>
+				<td colspan="2">Leave empty.</td>
+			</tr>
+			<tr>
+				<td>Certificate format</td>
+				<td colspan="2">Leave empty.</td>
+			</tr>
+			<tr>
+				<td>Server certificate</td>
+				<td colspan="2">Leave empty.</td>
+			</tr>
+			<tr>
+				<td>Enable email notification for token expiration</td>
+				<td colspan="2">Select this option and configure the<strong> Recipients </strong>field based on your needs.</td>
+			</tr>
+			<tr>
+				<td>Recipients</td>
+				<td colspan="2">Configure the email notification&nbsp;recipients&nbsp;based on your needs.</td>
+			</tr>
+			<tr>
+				<td>Grant Type</td>
+				<td colspan="2" rowspan="1">Select&nbsp;<strong>Client Credentials</strong>.</td>
+			</tr>
+			<tr>
+				<td>Client ID</td>
+				<td colspan="2">
+				<p>Enter the Azure&nbsp;Application (client) ID&nbsp;obtained during the Azure app registration process.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>Client Secret</td>
+				<td colspan="2">
+				<p>Enter the client secret<strong> </strong>obtained during the Azure app registration process.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>Token URL</td>
+				<td colspan="2">
+				<p><code>https://login.microsoftonline.com/&lt;Azure&nbsp;Directory ID&gt;/oauth2/token</code></p>
+				</td>
+			</tr>
+			<tr>
+				<td>Scope</td>
+				<td colspan="2">Leave empty.</td>
+			</tr>
+			<tr>
+				<td>Send client Id and secret</td>
+				<td colspan="2">Select <strong>In body</strong>.</td>
+			</tr>
+		</thead>
+	</table>
+	</li>
+	<li>Click <strong>Add</strong>, and then&nbsp;add the following advanced options:
+	<table border="1" cellpadding="1" cellspacing="1">
+		<thead>
+			<tr>
+				<th scope="col">Field</th>
+				<th colspan="2" scope="col">Value</th>
+			</tr>
+			<tr>
+				<td>Key</td>
+				<td colspan="2">Select <strong>Resource</strong></td>
+			</tr>
+			<tr>
+				<td>Value</td>
+				<td colspan="2"><code>https://management.azure.com</code></td>
+			</tr>
+		</thead>
+	</table>
+	</li>
+	<li>Click <strong>Test connection</strong> to validate your configurations.</li>
+	<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<h3>Create an integration</h3>
+
+<p>In the following steps, you'll create an integration with the predefined template.</p>
+
+<ol>
+	<li>Navigate to <strong>Administration </strong>&gt; <strong>Integration</strong> &gt;<strong> Integration studio</strong>.</li>
+	<li>Click <strong>New</strong>, enter the name of your integration, and then click <strong>Save</strong>.&nbsp;The system displays the Integration page.</li>
+	<li>In the <strong>Details</strong> section, configure the integration user you created for the current SMAX system.</li>
+	<li>Select the <strong>Active</strong> option to&nbsp;activate the integration.</li>
+	<li>In the Connector-Endpoint mappings section, click <strong>Add</strong> to add a mapping.</li>
+	<li>Select <b>Azure Billing</b>&nbsp;(under <strong>Microsoft</strong>) as the connector,&nbsp;select the Azure billing endpoint that you created earlier, and then enter an alias for the mapping.</li>
+	<li>Click <strong>Save</strong>.</li>
+</ol>
+
+<h3>Configure a scenario</h3>
+
+<p>Perform the following steps to add a scenario to the integration:</p>
+
+<ol>
+	<li>Click <strong>Add scenario</strong>.&nbsp;</li>
+	<li>Enter a name for the scenario. For example, Azure account sync.</li>
+	<li>In the <strong>Template</strong> field, select <strong>Azure EA Accounts Sync Process</strong>,&nbsp;<strong>Azure MCA Accounts Sync Process</strong>, or&nbsp;<strong>Azure MPA Accounts Sync Process&nbsp;</strong>(under <strong>Microsoft&nbsp;</strong><b>Azure Billing</b>), depending on the type of billing account.</li>
+	<li>Click <strong>Save</strong> to add the scenario.&nbsp;</li>
+	<li>Manually run the scenario. If you don't do this, CMP FinOps functionality that depends on cloud account data will not work as expected until the first scheduled cloud account sync occurs.</li>
+</ol>
+
+<div class="admonition">
+<div class="admonition-icon admonition-note-icon"></div>
+
+<div class="admonition-content admonition-note-content">Using the out-of-the-box template will make the integration configuration easier than starting from scratch. If you don't select this option, you'll have to manually add your own logic, starting from a blank page.</div>
+</div>
+
+<div class="readyonly-lst" deletable="false">{{#lst:SMAX:Main/SyncAWSProvider|scheduling}}</div>
+
+<h3>Check scenario execution status</h3>
+
+<p>To check the scenario execution status, navigate to <b>Administration</b>&nbsp;&gt;&nbsp;<b>Utilities</b>&nbsp;&gt;&nbsp;<b>Integration</b> &gt; <b>Endpoints</b>, and then select the Azure Billing endpoint in the left pane. The system displays the execution history for the Azure Billing integration. Each record displayed in this grid corresponds to one scenario rule. Make sure all rules in the cloud accounts import scenario have the green&nbsp;<strong>Success</strong> status.</p>
+
+<ul>
+	<li>You can check the start and end time (and duration) for two main activities of the scenario: cloud accounts syncing and stale accounts status setting. To do this, click the hyperlinked ID for these rules (<em>Set sync end time</em> and <em>Set cleanup end time</em>), and check the value in the <strong>Output details</strong> field. The field displays both the start time and end time for the corresponding activity.</li>
+	<li>The <strong>Connector</strong> column indicates the system against which the rule's action is taken: Azure Billing (Azure), SMAX, or Common. Unlike other values, Common means that this rule doesn't call any APIs, instead, it just sets some values or performs some calculations.</li>
+	<li>Records whose <b>Connector</b>&nbsp;value is not Common contain detailed response data in the <b>Response details</b> field. Check this field for error code or error message for records with a warning or error status.</li>
+	<li>If you find an error code or message in error or warning records for Azure Billing rules (with the <b>Connector</b> value <strong>Azure Billing</strong>), check&nbsp;the Microsoft documentation to see if you can find more information about the error. In particular, if you see the error code <code>429</code>, the error might be caused by Azure throttling limit being reached. Read this <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/request-limits-and-throttling" title="Throttling Resource Manager requests">Microsoft documentation</a>&nbsp;for details.</li>
+</ul>
+
+<h2>Configure a cloud cost data provider to retrieve billing data</h2>
+
+<p>With this integration, you can configure retrieval of historical and current billing information for expenditures associated with your cloud provider. This information will be available within the reporting interface.</p>
+
+<ol>
+	<li>Log in to Agent Interface as the cloud integration administrator.</li>
+	<li>Go to <b>Administration </b>&gt;&nbsp;<b>Providers </b>&gt;&nbsp;<b>Cloud Cost Data Providers.</b></li>
+	<li>On the <strong>Integrations</strong> page, click either the <strong>Add Integration</strong> button (if no integrations exist) or the <img alt="hcm 2018 11 integrations add.png" data-file-height="20" data-file-width="22" height="20" src="/mediawiki/images/7/7a/hcm_2018_11_integrations_add.png" width="22" /> icon on the right pane to add an additional integration.</li>
+	<li>Select <b>Microsoft Azure</b>, click <b>Next</b>, and then enter the following information.
+	<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+		<thead>
+			<tr>
+				<th scope="col">Field</th>
+				<th scope="col">Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><b>Connection Name</b></td>
+				<td>The identifier for the Azure integration, for example, &quot;<code>My Microsoft EA</code>&quot;.</td>
+			</tr>
+			<tr>
+				<td><strong>Azure Agreement Type</strong></td>
+				<td>The type of Azure&nbsp;billing account: EA, MCA, or MPA.</td>
+			</tr>
+			<tr>
+				<td><b>Azure Billing Account ID</b></td>
+				<td>The Azure ID for your billing account or subscription.</td>
+			</tr>
+			<tr>
+				<td><strong>Application (client) ID</strong></td>
+				<td>The application client ID you obtained during the Azure app registration process.</td>
+			</tr>
+			<tr>
+				<td><strong>Client Secret</strong></td>
+				<td>The client secret<strong>&nbsp;</strong>you<strong>&nbsp;</strong>obtained during the Azure app registration process.</td>
+			</tr>
+			<tr>
+				<td><strong>Directory (tenant) ID</strong></td>
+				<td>The directory tenant ID you obtained during the Azure app registration process.</td>
+			</tr>
+			<tr>
+				<td><strong>Actual Cost Export Path</strong></td>
+				<td>The path to the subdirectory that stores the billing data. This path is the location that you copied after you set up storage for the billing data.&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+	</li>
+	<li>Select the <b>I require a proxy server to connect to this provider</b> option to use a proxy server to connect to the cloud provider. You can either use the system default proxy server (configured by a suite admin) or use a custom proxy server here.</li>
+	<li>Click <strong>Next</strong>, and then enter the following information:
+	<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+		<thead>
+			<tr>
+				<th scope="col">Field</th>
+				<th scope="col">Description</th>
+			</tr>
+			<tr>
+				<td><strong>Collection History Cutoff</strong></td>
+				<td>By default, all available billing data is fetched from the cloud provider. For Azure, Microsoft preserves three years of history (dated from present day). If you wish to limit the amount of data, select a&nbsp;collection start date so that your collection only gathers data from the specified date. For example, selecting January 2020 will fetch data from that point to the present day and into the future. There is no end date.</td>
+			</tr>
+			<tr>
+				<td><strong>Cloud Tags</strong></td>
+				<td>To enable cloud tags for the selected provider, specify the name and key. Cloud tags help you to filter, search, and manage the Azure resources.&nbsp;For more information, see <a href="/doc/SMAX/Main/CloudTags" title="Configure cloud tags">Configure Cloud Tags</a>.</td>
+			</tr>
+		</thead>
+	</table>
+	</li>
+	<li>Click <b>Finish</b>.</li>
+</ol>
+<h2 id="Related_topics">Related topics</h2>
+
+<ul>
+	<li>For more information about service principals in Azure, see&nbsp;<a href="https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/service-accounts-principal" rel="nofollow noopener noreferrer" target="_blank" title="Securing service principals in Microsoft Entra ID">Securing service principals in Microsoft Entra ID</a>.</li>
+	<li>For information on cloud cost data providers, see&nbsp;<a href="/doc/SMAX/Main/CGROIntegrations" title="Cloud cost data providers">cloud cost data providers</a>.</li>
+	<li>For general information about the Integration Studio, see <a href="/doc/SMAX/Main/IntegrationHub" title="Integration Studio">Integration Studio</a>.</li>
+	<li>For information on triggering integration scenarios based on scheduler, see&nbsp;<a href="/doc/SMAX/Main/XIEScheduler" title="Scheduler">Scheduler</a>.</li>
+	<li>For information on how to export and import integrations and scenarios, see&nbsp;<a href="/doc/SMAX/Main/XieImportExportIntegrations" title="Export and import integrations">Export and import integrations</a><strong>.</strong></li>
+	<li>For information on cloud tags, see&nbsp;<a href="/doc/SMAX/Main/CloudTags" title="Configure cloud tags">Configure Cloud Tags</a>.</li>
+</ul>

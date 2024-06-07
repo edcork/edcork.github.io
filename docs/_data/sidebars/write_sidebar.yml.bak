@@ -43,10 +43,6 @@ entries:
         - title: Integrate with Azure for CMP FinOps
           url: /finops_azure.html
           output: web
-          
-        - title: Integrate with OCI for CMP FinOps
-          url: /finops_oci.html
-          output: web
 
     - title: Example troubleshooting(original)
       url: /edit_ts_ea_original.html

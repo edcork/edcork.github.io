@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  product: Editing samples
+  product: Editing portfolio
   version: 
   folders:
 
@@ -19,6 +19,14 @@ entries:
       output: pdf
       type: frontmatter
 
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: About these examples
+      url: /editing_overview.html
+      output: web, pdf
+      
   - title: "Sample 1: troubleshooting"
     output: web, pdf
     folderitems:
