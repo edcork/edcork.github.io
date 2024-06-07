@@ -14,11 +14,11 @@ The kubelet loops when it tries to inspect the Docker container for a pod whose 
 
 ## Cause
 
-This issue occurs because of a known issue in Kubernetes. For more information, see https://github.com/kubernetes/kubernetes/issues/84214.
+This is a known issue in Kubernetes. For more information, see https://github.com/kubernetes/kubernetes/issues/84214.
 
 ## Solution
 
-1.  Log on to the node where you receive these error messages.
+1.  Log on to the node where you receive the error messages.
 2.  Run the following command to check the pod status:  
 `kubectl get pods -n core -o wide `
 4.  Identify the pods that are stuck in the "Terminating" state on this node. Then run below command to delete the pods. You need to replace the <pod name> placeholder with the name of the pod that is in the "Terminating" state. Run the following command for all the "terminating" pods.  

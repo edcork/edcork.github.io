@@ -6,15 +6,15 @@ permalink: edit1_edited.html
 
 # "runtime service failed: rpc error: code = Unknown" error messages and Kubelet gets stuck 
 
-You receive massive error messages on a node with CDF installed that resemble the following:
+The kubelet loops when it tries to inspect the Docker container for a pod whose image is deleted or cleaned up. When this issue occurs, the pod becomes stuck in the "Terminating" state, and you receive error messages that resemble the following:
 
 `b83ace3b5e0870284e554502e8922563a4d9587b800b6b699dc2c2acfcc9b7cc" from runtime service failed: rpc error: code = Unknown desc = unable to inspect docker image "sha256:a950dd441cee8f60ce4ee325799c62e5fe444fa8e851b5c96b9172da0ced8d28" while inspecting docker container "b83ace3b5e0870284e554502e8922563a4d9587b800b6b699dc2c2acfcc9b7cc": no such image: "sha256:a950dd441cee8f60ce4ee325799c62e5fe444fa8e851b5c96b9172da0ced8d28"`  
 
-When this issue occurs, some pods become stuck in the "Terminating" state.
+
 
 ## Cause
 
-This issue occurs because `Kubelet` loops when trying to inspect a Docker container for a pod whose image has been deleted or cleaned up. This is a known issue of Kubernetes. See details from https://github.com/kubernetes/kubernetes/issues/84214.
+This issue occurs because of a known issue in Kubernetes. For more information, see https://github.com/kubernetes/kubernetes/issues/84214.
 
 ## Solution
 
