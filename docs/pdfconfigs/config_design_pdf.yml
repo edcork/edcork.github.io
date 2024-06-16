@@ -1,10 +1,10 @@
 destination: _site/
 url: "http://127.0.0.1:4012"
-baseurl: "/product2-pdf"
+baseurl: "/design-pdf"
 port: 4012
 product: product2
-print_title: Product 2 documentation
-print_subtitle: version 1.0
+print_title: Design portfolio
+print_subtitle: 
 output: pdf
 defaults:
   -
@@ -16,4 +16,4 @@ defaults:
       comments: true
       search: true
 
-pdf_sidebar: product2_sidebar
+pdf_sidebar: design_sidebar

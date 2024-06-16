@@ -1,10 +1,10 @@
 destination: _site/
 url: "http://127.0.0.1:4010"
-baseurl: "/mydoc-pdf"
+baseurl: "/writing-pdf"
 port: 4010
-product: mydoc
-print_title: Jekyll theme for documentation — mydoc product
-print_subtitle: version 6.0
+product: Writing portfolio
+print_title: Writing portfolio
+print_subtitle: 
 output: pdf
 defaults:
   -
@@ -16,4 +16,4 @@ defaults:
       comments: true
       search: true
 
-pdf_sidebar: mydoc_sidebar
+pdf_sidebar: writing_sidebar

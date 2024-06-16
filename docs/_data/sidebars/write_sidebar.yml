@@ -1,8 +1,8 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: sidebar
-  product: Writing portfolio
+- title: sidebar 
+  product: 
   version: 
   folders:
 
@@ -27,7 +27,7 @@ entries:
       url: /writing_overview.html
       output: web, pdf
 
-  - title: Example 1: Integration docs
+  - title: 'Example 1: Integration docs'
     output: web, pdf
     folderitems:
 
@@ -56,7 +56,7 @@ entries:
       url: /edit_ts_ea_edited.html
       output: web, pdf
 
-  - title: Example 2: Installation docs
+  - title: 'Example 2: Installation docs'
     output: web, pdf
     folderitems:
 
