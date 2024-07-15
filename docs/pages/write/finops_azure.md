@@ -1,10 +1,9 @@
 ---
-title: Sample 1 Topic (Product 1)
-keywords: sample
-summary: "This is just a sample topic..."
-sidebar: product1_sidebar
-permalink: p1_sample1.html
-folder: product1
+title: Integrate with Azure for CMP FinOps
+sidebar: writing_sidebar
+toc: false
+permalink: finops_azure.html
+folder: write
 ---
 
 ## Sample Content

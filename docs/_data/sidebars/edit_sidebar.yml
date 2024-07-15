@@ -10,6 +10,7 @@ entries:
     output: pdf
     type: frontmatter
     folderitems:
+    
     - title:
       url: /titlepage.html
       output: pdf
@@ -26,6 +27,7 @@ entries:
     - title: About these examples
       url: /editing_overview.html
       output: web, pdf
+      type: homepage
       
   - title: "Sample 1: troubleshooting"
     output: web, pdf

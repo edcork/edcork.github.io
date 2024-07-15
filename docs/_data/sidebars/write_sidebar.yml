@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar 
-  product: 
+  product: Writing
   version: 
   folders:
 
@@ -26,6 +26,7 @@ entries:
     - title: About these examples
       url: /writing_overview.html
       output: web, pdf
+      type: homepage
 
   - title: 'Example 1: Integration docs'
     output: web, pdf
@@ -33,9 +34,9 @@ entries:
 
     - title: Integrate with cloud platforms for CMP FinOps
       url: /finops_landing.html
-      output: web, pdf
-      
+      output: web, pdf      
       subfolders:
+      
       - title: Integrations
         output: web
         subfolderitems:
