@@ -8,7 +8,7 @@ repository: edcork.github.io/docs
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Ed Cork's portfolio
+topnav_title: Home
 # this appears on the top navigation bar next to the home button
 
 site_title: Ed's portfolio
@@ -99,7 +99,7 @@ defaults:
       comments: false
       # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
-      sidebar: home_sidebar
+      sidebar: 
       topnav: topnav
 
 # these are defaults used for the frontmatter for these file types

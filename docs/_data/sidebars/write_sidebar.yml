@@ -41,6 +41,10 @@ entries:
         output: web
         subfolderitems:
 
+        - title: Integrate with AWS for CMP FinOps
+          url: /finops_aws.html
+          output: web, pdf
+          
         - title: Integrate with Azure for CMP FinOps
           url: /finops_azure.html
           output: web, pdf
@@ -53,21 +57,21 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Integrate with cloud platforms for CMP FinOps
-      url: /finops_landing.html
+    - title: Prepare to install the embedded Kubernetes
+      url: /install_landing.html
       output: web, pdf      
       subfolders:
       
-      - title: Integrations
+      - title: Detailed steps
         output: web
         subfolderitems:
 
-        - title: Integrate with Azure for CMP FinOps
-          url: /finops_azure.html
+        - title: Enable a regular user to install OMT
+          url: /create_sudouser.html
           output: web, pdf
           
-        - title: Integrate with OCI for CMP FinOps
-          url: /finops_oci.html
+        - title: Update the system configuration
+          url: /system_config.html
           output: web, pdf
 
   

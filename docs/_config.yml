@@ -8,10 +8,10 @@ repository: edcork.github.io/docs
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Ed Cork's portfolio
+topnav_title: Home
 # this appears on the top navigation bar next to the home button
 
-site_title: Ed's portfolio
+site_title: Ed Cork's tech writing portfolio
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Edward Cork
