@@ -7,7 +7,7 @@ toc: false
 Some blurb about this site
 <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">Services Panels</h2>
+           
         </div>
         <div class="col-md-3 col-sm-6">
             <div class="panel panel-default text-center">
@@ -18,7 +18,7 @@ Some blurb about this site
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Service One</h4>
+                    <h4>Writing</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
@@ -33,7 +33,7 @@ Some blurb about this site
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Service Two</h4>
+                    <h4>Editing</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
@@ -48,7 +48,7 @@ Some blurb about this site
                     </span>
                 </div>
                 <div class="panel-body">
-                    <h4>Service Three</h4>
+                    <h4>Design</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-primary">Learn More</a>
                 </div>

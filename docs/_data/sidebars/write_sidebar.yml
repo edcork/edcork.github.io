@@ -73,5 +73,9 @@ entries:
         - title: Update the system configuration
           url: /system_config.html
           output: web, pdf
+          
+        - title: Check the firewall settings
+          url: /firewall_settings.html
+          output: web, pdf
 
   

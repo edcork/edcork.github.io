@@ -33,15 +33,11 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Troubleshooting edit overview
-      url: /edit1_landing.html
-      output: web, pdf
-
-    - title: Troubleshooting edit original content
+    - title: Troubleshooting original content
       url: /edit1_original.html
       output: web, pdf
       
-    - title: Troubleshooting edit edited content
+    - title: Troubleshooting edited content
       url: /edit1_edited.html
       output: web, pdf
 
@@ -49,15 +45,11 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Troubleshooting edit overview
-      url: /edit2_landing.html
-      output: web, pdf
-
-    - title: Troubleshooting edit original content
+    - title: 2 ? original content
       url: /edit2_original.html
       output: web, pdf
       
-    - title: Troubleshooting edit edited content
+    - title: 2 ? edited content
       url: /edit2_edited.html
       output: web, pdf
       
@@ -65,15 +57,11 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Troubleshooting edit overview
-      url: /edit3_landing.html
-      output: web, pdf
-
-    - title: Troubleshooting edit original content
+    - title: 3 ? original content
       url: /edit3_original.html
       output: web, pdf
       
-    - title: Troubleshooting edit edited content
+    - title: 3 ? edited content
       url: /edit3_edited.html
       output: web, pdf
 
