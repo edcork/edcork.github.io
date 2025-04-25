@@ -1,11 +1,16 @@
 ---
 title: Update the system configuration
-sidebar: write_sidebar
-toc: false
-permalink: system_config.html
-folder: write
+layout: default
+parent: Prepare an environment to install OMT
+nav_order: 2
 ---
-Before you can deploy OPTIC Management Toolkit (OMT) with the embedded Kubernetes, you must: 
+
+**On this page**
+
+> - TOC
+> {:toc}
+
+Before you can deploy OMT with the embedded Kubernetes, you must: 
 
 *   Check the SSH configurations
 *   Ensure the localhost is resolved to 127.0.0.1
@@ -18,10 +23,9 @@ Before you can deploy OPTIC Management Toolkit (OMT) with the embedded Kubernet
 
 The  `node_prereq` script automates the system configuration process, refer to [Use the script to automate the system configuration](/doc/OMT/24.1/EmbeddedK8sSystemConfig#Use_the_script_to_automate_the_system_configuration "Use the script to automate the system configuration") for more information. If you decide not to use the `node_prereq` script and configure the parameters manually, follow the steps in the [Update the system configurations manually](/doc/OMT/24.1/EmbeddedK8sSystemConfig#Update_the_system_configurations_manually "Update the system configurations manually") section.
 
-Check the SSH configurations
-----------------------------
+## Check the SSH configurations ##
 
-OPTIC Management Toolkit (OMT) supports default SSH configurations. If you are using default SSH configurations, ignore the steps in this topic. If you don't have SSH enabled, or aren't aware of the current SSH configurations, follow the steps in this topic.
+OMT supports default SSH configurations. If you are using default SSH configurations, ignore the steps in this topic. If you don't have SSH enabled, or aren't aware of the current SSH configurations, follow the steps in this topic.
 
 OpenSSH provides secure and encrypted connections between machines. Enable SSH on all control plane and worker nodes (cluster nodes) in your deployment.
 
@@ -123,8 +127,7 @@ To check if you've enabled SCP, follow these steps: 
     ForceCommand internal-sftp
     
 
-Use the script to automate the system configuration
----------------------------------------------------
+## Use the script to automate the system configuration ##
 
 Role
 
@@ -174,8 +177,9 @@ If you want to automate only some required configurations, you can use command o
 *   The **\--disable-swap** command option disable swap space
 *   The **\--install-pkg** command option installs the required Linux packages
 
-Update the system configurations manually
------------------------------------------
+## Update the system configurations manually ##
+
+add text
 
 ### Ensure localhost is resolved to 127.0.0.1
 
@@ -1111,7 +1115,6 @@ The following example uses the `chrony` tool to synchronize time across operat
     
 9.  Repeat these steps on all other control plane nodes (if any) and worker nodes. You must also synchronize the time on the NFS servers, load balancers, and database servers once you have created them.
 
-Related topics
---------------
+## Related topics ##
 
 When you have finished, return to [Set up prerequisites (embedded K8s)](/doc/OMT/24.1/InstallPrereqsEmbed "Set up prerequisites for OMT (embedded K8s)") to continue.

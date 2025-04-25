@@ -1,23 +1,21 @@
 ---
 title: Check the firewall settings
-sidebar: write_sidebar
-toc: false
-permalink: firewall_settings.html
-folder: write
+layout: default
+parent: Prepare an environment to install OMT
+nav_order: 3
 ---
-Role
 
-Location
+**On this page**
 
-Privileges required
+> - TOC
+> {:toc}
 
-System administrator
 
-All control plane nodes, worker nodes, and NFS servers
+| Role                 | Location                                                   | Privileges required |
+| -------------------- | ---------------------------------------------------------- | ------------------- |
+| System administrator | All control plane nodes, worker nodes, and NFS servers<br> | Root                |
 
-Root
-
-If you haven't enabled a firewall, skip this section. 
+If you haven't enabled a firewall, skip this topic. 
 
 There are many firewall management tools to manage your firewall. For example, `firewalld` or `iptables`. The following steps are based on a `firewalld` managed firewall. If you are using another firewall management tool, contact your network administrator for detailed steps on how to add the related firewall rules.
 
@@ -26,9 +24,10 @@ To check whether `firewalld` manages your firewall, run the following command:
     systemctl status firewalld
 
   
-If your terminal resembles the following, then it means `firewalld` manages your firewall.
+If your terminal resembles the following, `firewalld` manages your firewall:
 
-\[root@sh ~\]# systemctl status firewalld
+```
+[root@sh ~\]# systemctl status firewalld
  firewalld.service - firewalld - dynamic firewall daemon
    Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
    Active: active (running) since Mon 2020-06-22 04:36:32 CST; 2 weeks 0 days ago
@@ -37,6 +36,7 @@ If your terminal resembles the following, then it means `firewalld` manages your
     Tasks: 2
    CGroup: /system.slice/firewalld.service
            └─878 /usr/bin/python -Es /usr/sbin/firewalld --nofork --nopid
+```
 
 ### Add firewall rules for the inbound connections
 
@@ -44,15 +44,15 @@ The following steps apply to a root user. If you are a sudo user, add `sudo` in 
 
     sudo iptables -S | grep -- '-P INPUT'
 
-  
 You can also add the related commands that sudo users need to perform to the `/etc/sudoers` file.
 
 **For the NFS servers**
 
-1.  Make sure the default policy for the `INPUT` chain is `ACCEPT`. If it isn't `ACCEPT`, contact your IT system administrator to change the policy. To check the default policy of the `INPUT` chain, run the following command:
+1.  Make sure the default policy for the `INPUT` chain is `ACCEPT`. To check the default policy, run the following command:
     
         iptables -S | grep -- '-P INPUT'
-    
+
+    If the default  policy isn't `ACCEPT`, contact your IT system administrator to change the policy.
 2.  Run the following commands on the NFS server:
     
         systemctl start firewalld; systemctl enable firewalld
@@ -72,9 +72,11 @@ If you've enabled firewalld, OMT will add firewall rules automatically on the co
 
 You must make sure you've added the related firewall rules for the required outbound ports to ensure the connection. For example, run the following commands on the worker nodes and control plane nodes to configure the firewall outbound port 5432 to connect an external PostgreSQL database:
 
-    systemctl start firewalld; systemctl enable firewalld
+```
+systemctl start firewalld; systemctl enable firewalld
     firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 0 -p tcp -m tcp --dport=5432 -j ACCEPT -m comment --comment "connect PostgreSQL"
     firewall-cmd --reload
+```
 
 ### Enable VRRP protocol for Keepalived in a multiple control plane node deployment 
 
@@ -83,7 +85,6 @@ If you want to set up a multiple control plane node (HA) environment by setting 
     firewall-cmd --add-protocol vrrp  --permanent
     firewall-cmd --reload
 
-Related topics
---------------
+## Related topics ##
 
 When you have finished, return to [Set up prerequisites (embedded K8s)](/doc/OMT/Main/InstallPrereqsEmbed "Set up prerequisites (embedded K8s)") to continue.

@@ -1,26 +1,31 @@
 ---
 title: Integrate with AWS for CMP FinOps
-sidebar: write_sidebar
-toc: false
-permalink: finops_aws.html
-folder: write
+layout: default
+parent: Integrate with cloud platforms for CMP FinOps
+nav_order: 1
 ---
+
+# Integrate with AWS for CMP FinOps
+{: .no_toc }
+
+**On this page**
+
+> - TOC
+> {:toc}
 
 Before you can use the Cloud Management Platform (CMP) FinOps solution, you must set up integrations with the cloud platforms from which you want to pull cloud data. We support integrations with Amazon Web Services (AWS), Azure, and Google Cloud Platform (GCP).
 
 The CMP FinOps solution uses three types of cloud data. You will need to set up a separate integration to retrieve Cloud Account Data, but for Cloud Billing and Cloud Recommendations, this data is retrieved within the same integration.
 
-*   Cloud account data – The CMP FinOps account management functionality enables you to centrally manage cloud accounts of supported cloud platforms. You must set up an Integration Studio-based integration to import cloud account data.
+* Cloud account data – The CMP FinOps account management functionality enables you to centrally manage cloud accounts of supported cloud platforms. You must set up an Integration Studio-based integration to import cloud account data.
 *   Cloud billing data – The CMP FinOps' cloud cost visualization and optimization functionalities, including cost governance reports, cloud insights, and cloud cost limits, are all based on cloud billing data. You must set up a Cloud Cost Data Provider-based integration to retrieve cloud billing data.
 *   Cloud recommendations data - The CMP FinOps' Optimization functionalities, including cloud insights, are based on cloud recommendations that are collected from the different cloud providers.  You must set up a Cloud Cost Data Provider-based integration to retrieve these cloud recommendations.
-    
     Setting up a Cloud Cost Data Provider-based integration with the appropriate permissions (as described below) will give you both cloud billing data and cloud recommendations data within the same integration.
-    
 
 This topic describes how to set up the two AWS integrations that support the CMP FinOps capability: the cloud accounts import integration and the billing data and recommendations retrieval integration.
 
-Complete prerequisite tasks in AWS
-----------------------------------
+## Complete prerequisite tasks in AWS
+
 
 To integrate with AWS, you must complete the following tasks in AWS at the management account level. 
 

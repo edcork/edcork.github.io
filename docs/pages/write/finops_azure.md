@@ -1,11 +1,17 @@
 ---
 title: Integrate with Azure for CMP FinOps
-sidebar: write_sidebar
-toc: false
-permalink: finops_azure.html
-folder: write
+layout: default
+parent: Integrate with cloud platforms for CMP FinOps
+nav_order: 2
 ---
 
+# Integrate with Azure for CMP FinOps
+{: .no_toc }
+
+**On this page**
+
+> - TOC
+> {:toc}
 
 Before you can use the Cloud Management Platform (CMP) FinOps solution, you must set up integrations with the cloud platforms from which you want to pull cloud data. We support integrations with Amazon Web Services (AWS), Azure, and Google Cloud Platform (GCP).
 
@@ -20,10 +26,9 @@ The CMP FinOps solution uses three types of cloud data. You will need to set up 
 
 This topic describes how to set up the two AWS integrations that support the CMP FinOps capability: the cloud accounts import integration and the billing data and recommendations retrieval integration.
 
-Complete prerequisite tasks in AWS
-----------------------------------
+## Complete prerequisite tasks in AWS
 
-To integrate with AWS, you must complete the following tasks in AWS at the management account level. 
+To integrate with AWS, you must complete the following tasks in AWS at the management account level.
 
 ### Set up IAM user and permissions
 

@@ -1,10 +1,17 @@
 ---
 title: Integrate with OCI for CMP FinOps
-sidebar: write_sidebar
-toc: false
-permalink: finops_oci.html
-folder: write
+layout: default
+parent: Integrate with cloud platforms for CMP FinOps
+nav_order: 3
 ---
+
+# Integrate with OCI for CMP FinOps
+{: .no_toc }
+
+**On this page**
+
+> - TOC
+> {:toc}
 
 Before you can use the Cloud Management Platform (CMP) FinOps solution, you must set up integrations with the cloud platforms from which you want to pull cloud data. We support integrations with Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP), and Oracle Cloud Infrastructure (OCI).
 
@@ -12,8 +19,7 @@ The CMP FinOps solution currently supports only the collection of cloud billing 
 
 This topic describes how to set up a Cloud Cost Data Provider-based integration to retrieve cloud billing data from OCI. To view this data, you will need to set up an integration with Power BI.
 
-Complete prerequisite tasks in OCI
-----------------------------------
+## Complete prerequisite tasks in OCI 
 
 OCI generates Cost and Usage (CUR) reports, which contain the cloud billing data that CMP FinOps uses, by default. You can't modify these reports. Therefore, you don't have to set up or configure CUR reports to set up an integration with OCI. However, you do have to perform some initial setup to access the reports.
 
