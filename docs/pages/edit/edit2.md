@@ -1,5 +1,5 @@
 ---
-title: "Example 2: Troubleshooting topic 2"
+title: "Sample 2: Troubleshooting topic 2"
 layout: default
 parent: Editing
 nav_order: 2
@@ -14,20 +14,17 @@ nav_order: 2
 
 **Source:** [SMAX 2021.11 documentation](https://docs.microfocus.com/doc/SMAX/2021.11/RabbitMQNotStart).
 
-**Summary of issues: 
-- logic issues ("powering off an environment", "and fail to remove these folders"—it's not the user that fails to do it)
-- Clarity (start of Solution)
-- product naming and consistency ("suite", "environment", "system", "OMT")
-- Accuracy: "fail to remove" wrong
-- Note: Link is wrong, there's no failure, issue fixed on Azure files 2.5 years prior to edit.
-- passive voice
-
+**Summary of issues**
+ 
+| Technical accuracy | You do not power off an environment.  The note says "If you... fail to remove these folders," but it's not the user that fails to do this. Further, there are no instructions at the linked Azure files topic, as the described issue was fixed 2.5 years earlier. |
+| Clarity | The connection between the first sentence and the first step of the Solution is lost due to poor structure.  |
+| Product naming and consistency | The terms "environment" and "system" are used interchangeably. The term "suite" is used instead of the correct product name. Inconsistent formatting of directory paths. |
 
 ***
 
 # ORIGINAL TEXT: RabbitMQ isn't ready
 
-The **infra-rabbitmq-\<n>** (\<n>=0, 1, or 2) pod isn’t ready. The pod's readiness state is stuck in 1/2. The following is an example:
+The **infra-rabbitmq-\<n>** (\<n>=0, 1, or 2) pod isn’t ready. The pod's readiness state is stuck in 1/2. The following is an example:
 
 ```
 NAME                         READY       STATUS        RESTARTS    AGE
@@ -76,28 +73,38 @@ How to manually restart RabbitMQ:
 
 ***
 
-# EDITED TEXT: RabbitMQ Pod Isn’t Ready SEE WORD FILE FOR MY VERSION, BELOW IS CHTGPT
+# EDITED TEXT: RabbitMQ pod isn't ready
 
-If the **infra-rabbitmq-\<n>** pod (where `<n>` is 0, 1, or 2) is not ready, its status shows **1/2**, and the pod is stuck. For example:
+The RabbitMQ pod (for example, __infra-rabbitmq-\<n>__, where __\<n>__ is 0, 1, or 2) isn't ready. The pod's readiness state is stuck at **1/2**. For example:
 
+```
 	NAME                         READY       STATUS        RESTARTS    AGE
 
 	infra-rabbitmq-0             1/2         Running       0           16h
+```
 
 ## Cause
-- The system was shut down without stopping Service Management and OMT.
-- The system does not have enough hardware resources.
-- There are network problems between the NFS server and worker nodes.
+This issue may occur because:
+- The system was shut down incorrectly. For example, you powered off the system without first shutting down Service Management and OMT.
+- Your system doesn’t have enough hardware resources.
+- There are network connectivity issues between the NFS server and the worker nodes.
+
 
 ## Solution
-RabbitMQ automatically restarts itself if it fails to start twice.
+OMT automatically restarts RabbitMQ if it fails to start twice. Therefore, first wait 15 minutes, and then check if the issue was resolved automatically.
 
-1. **Wait 15 minutes** to see if it recovers on its own.  
-2. **Check your system resources** and network connections.  
-3. If the problem continues, follow these steps to do a manual restart:
+If the issue still exists, check the system resources and network connectivity.
 
-1. On a control plane node (embedded Kubernetes) or a bastion node (managed Kubernetes), run:
-	```
-	kubectl scale statefulset infra-rabbitmq -n <Service Management namespace> --replicas=0
-	```
+If there are no resource or network issues, manually restart RabbitMQ. To do this, follow these steps:
 
+1.	Run the following command on a control plane node (embedded Kubernetes) or the bastion node (managed Kubernetes) to stop RabbitMQ:
+
+	`kubectl scale statefulset infra-rabbitmq -n <Service Management namespace> --replicas=0`
+2.	Wait until all RabbitMQ pods have stopped.  
+3.	Remove the **rabbitmq-infra-rabbitmq-\<n>/data/xservices/rabbitmq/x.x.x.xx/mnesia** folders from the NFS server (or the bastion node if you use a managed NFS, including: EFS, Azure NetApp Files, and Filestore). For example, remove the following folders:  
+	- /var/vols/itom/itsma/rabbitmq-infra-rabbitmq-0/data/xservices/rabbitmq/x.x.x.xx/mnesia
+	- /var/vols/itom/itsma/rabbitmq-infra-rabbitmq-1/data/xservices/rabbitmq/x.x.x.xx/mnesia
+	- /var/vols/itom/itsma/rabbitmq-infra-rabbitmq-2/data/xservices/rabbitmq/x.x.x.xx/mnesia
+4.	Restart RabbitMQ. To do this, run the following command on a control plane node (embedded Kubernetes) or on the bastion node (managed Kubernetes):
+
+	`kubectl scale statefulset infra-rabbitmq -n < Service Management namespace> --replicas=3`

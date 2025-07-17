@@ -5,23 +5,16 @@ nav_order: 2
 ---
 # Editing
 
-<p>Score	School level (US)	Notes
-100.00–90.00	5th grade	Very easy to read. Easily understood by an average 11-year-old student.
-90.0–80.0	6th grade	Easy to read. Conversational English for consumers.
-80.0–70.0	7th grade	Fairly easy to read.
-70.0–60.0	8th & 9th grade	Plain English. Easily understood by 13- to 15-year-old students.
-60.0–50.0	10th to 12th grade	Fairly difficult to read.
-50.0–30.0	College	Difficult to read.</p>
-{: .fs-6 .fw-300 }
+This section contains some examples of edits I've made while updating older topics.
 
-## Example 1
+## Sample 1: Troubleshooting topic 1
 
-txt
+This troubleshooting topic is an example of fixing generally poor language. 
 
-## Example 2
+## Sample 1: Troubleshooting topic 2
 
-txt
+Another troubleshooting topic, this time containing numerous technical inaccuracies.
 
-## Example 3
+## Sample 3: Integration guide
 
-txt
+In this parent topic that introduces some integration guides, poor structure makes the basic message unclear.

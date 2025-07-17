@@ -1,5 +1,5 @@
 ---
-title: "Editing sample 1: Troubleshooting topic 1"
+title: "Sample 1: Troubleshooting topic 1"
 layout: default
 parent: Editing
 nav_order: 1
@@ -16,18 +16,11 @@ nav_order: 1
 
 **Summary of issues**
 
-| Non-native language | good swedish fish |
-| :------------------ | :---------------- |
-| out of stock        | good and plenty   |
-| ok                  | good `oreos`      |
-| ok                  | good `zoute` drop |
-
--  issues: including "Massive" error messages, "a known issue of Kubernetes", "see details from", and "then run below command".
-- Formatting issues: The link to Kubernetes documentation uses the URL as title text. The "Terminating" state is formatted inconsistently. No need to format "kubelet" with code tags.
-- Technical accuracy: "Kubelet" should be "the kubelet", as defined by the  [Kubernetes glossary](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet). 
-- Structure: Information included in the "Cause" section is part of symptoms.
-- Redundancies: "on a node that has CDF installed" is redundant in documentation for documentation about the product CDF (*all* nodes should have CDF installed on them).
-
+| Non-native language mistakes | Including: "Massive" error messages, "a known issue of Kubernetes", "see details from", and "then run below command." |
+| Formatting issues | The link to the Kubernetes documentation uses the URL as title text. The "Terminating" state is formatted inconsistently. There is no need to format "Kubelet" with code tags.   |
+| Technical accuracy | "Kubelet" should be "the kubelet", as defined by the  [Kubernetes glossary](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet).       |
+| Structure | The first sentence of the Cause section is actually part of the symptoms. |
+| Redundancies | "On a node that has CDF installed" is redundant: this is documentation about the product CDF (therefore, *all* nodes have CDF installed on them). |
 
 ***
 

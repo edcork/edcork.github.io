@@ -1,5 +1,5 @@
 ---
-title: "Example 3: Integration doc"
+title: "Sample 3: Integration guide"
 layout: default
 parent: Editing
 nav_order: 3
@@ -14,13 +14,10 @@ nav_order: 3
 
 **Source:** [Service Management 25.1 documentation](https://docs.microfocus.com/doc/SMAX/25.1/IntegrateCloudProviderFinOps).
 
-**Summary of issues: 
-- ESL: long not massive
-- Passive voice
-- Tech terms: the kubelet not "Kubelet"
-- structure: Cause is part of symptoms.
-- Fleisch-Kincaid reading
-- Redundancies: "on a node that has CDF installed"
+**Summary of issues**
+ 
+| Clarity and structure| The topic is a series of lists, which obscure what should be a simple message: the product relies on 2 types of data, and each type of data is retrieved a different way.  |
+| Non-native language mistakes | "Firstly you need to..." |
 
 ***
 
@@ -40,40 +37,40 @@ You need to set up two types of integrations to retrieve the cloud data:
 
 See these topics for how to set up the integrations to retrieve cloud data from each cloud platform:
 
-- [Integrate with AWS for CMP FinOps](https://docs.microfocus.com/doc/SMAX/2023.05/SyncAWSProvider)
-- [Integrate with Azure for CMP FinOps](https://docs.microfocus.com/doc/SMAX/2023.05/SyncAzureProvider)
-- [Integrate with GCP for CMP FinOps](https://docs.microfocus.com/doc/SMAX/2023.05/SyncGCPProvider)
+- [Integrate with AWS for CMP FinOps](https://docs.microfocus.com/doc/SMAX/25.1/SyncAWSProvider)
+- [Integrate with Azure for CMP FinOps](https://docs.microfocus.com/doc/SMAX/25.1/SyncAzureProvider)
+- [Integrate with GCP for CMP FinOps](https://docs.microfocus.com/doc/SMAX/25.1/SyncGCPProvider)
 
 ## Related topics ##
 
-- [Integration Studio](https://docs.microfocus.com/doc/SMAX/2023.05/IntegrationHub)
-- [Cloud cost data providers](https://docs.microfocus.com/doc/SMAX/2023.05/CGROIntegrations)
-- [Cloud account management](https://docs.microfocus.com/doc/SMAX/2023.05/AccountMgmt)
-- [Cost governance reports](https://docs.microfocus.com/doc/SMAX/2023.05/ShowbackReports)
+- [Integration Studio](https://docs.microfocus.com/doc/SMAX/25.1/IntegrationHub)
+- [Cloud cost data providers](https://docs.microfocus.com/doc/SMAX/25.1/CGROIntegrations)
+- [Cloud account management](https://docs.microfocus.com/doc/SMAX/25.1/AccountMgmt)
+- [Cost governance reports](https://docs.microfocus.com/doc/SMAX/25.1/ShowbackReports)
 
 ***
 
 # EDITED TEXT: Integrations for CMP FinOps
 
-Cloud Management Platform (CMP) FinOps uses two types of cloud data: account data and cost data. Before you can use CMP FinOps, you must set up two integrations with your cloud provider to collect this data.
+Cloud Management Platform (CMP) FinOps uses two types of data: cloud account data and cloud cost data. Before you can use CMP FinOps, you must set up two integrations with your cloud provider to retrieve this data.
 
 ## Cloud account data ##
 
 CMP FinOps uses cloud account data to help you manage and configure your cloud accounts.
 
-You must set up an integration to import cloud account data from your cloud provider. You can do this using Integration Studio, our built-in integration platform.
+You can set up the integration to retrieve cloud account data using Integration Studio, Service Management's built-in integration platform.
 
 ## Cloud cost data ##
 
 CMP FinOps uses cloud cost data to provide cost visualizations and suggest improvements. This includes cloud cost governance reports, cloud insights, and cloud cost limits.
 
-You must set up an integration to fetch cloud cost data from your cloud provider. You can't do this using Integration Studio, as CMP FinOps fetches this data differently for each cloud provider. You must instead set up a Cloud Cost Data Provider in the Admin & Providers section.
+You can't set up an integration to retrieve cloud cost data using Integration Studio, as CMP FinOps retrieves this data differently for each cloud provider. You must instead set up a Cloud Cost Data Provider in the **Admin & Providers** section of Service Management.
 
 ## Related topics ##
 
-- To learn how to set up these integrations with AWS, see [Integrate with AWS for CMP FinOps](https://doc/SMAX/Main/SyncAWSProvider).
-- To learn how to set up these integrations with Azure, see [Integrate with Azure for CMP FinOps](https://doc/SMAX/Main/SyncAzureProvider).
-- To learn how to set up these integrations with GCP, see [Integrate with GCP for CMP FinOp](https://doc/SMAX/Main/SyncGCPProvider).
-- For general information about Integration Studio, see [Integration Studio](https://doc/SMAX/Main/IntegrationHub).
-- For general information about Cloud Cost Data Providers, see [Cloud cost data providers](https://doc/SMAX/Main/CGROIntegrations).
-- For basic information about FinOps, see [Get started with CMP FinOps](https://doc/SMAX/Main/IntegrationHub).
+- To learn how to set up these integrations with AWS, see [Integrate with AWS for CMP FinOps](https://doc/SMAX/25.1/SyncAWSProvider).
+- To learn how to set up these integrations with Azure, see [Integrate with Azure for CMP FinOps](https://doc/SMAX/25.1/SyncAzureProvider).
+- To learn how to set up these integrations with GCP, see [Integrate with GCP for CMP FinOp](https://doc/SMAX/25.1/SyncGCPProvider).
+- For general information about Integration Studio, see [Integration Studio](https://doc/SMAX/25.1/IntegrationHub).
+- For general information about Cloud Cost Data Providers, see [Cloud cost data providers](https://doc/SMAX/25.1/CGROIntegrations).
+- For an introduction to FinOps, see [Get started with CMP FinOps](https://doc/SMAX/25.1/IntegrationHub).

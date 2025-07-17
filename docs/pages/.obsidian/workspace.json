@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "design/help_restructure.md",
+                "file": "edit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "help_restructure"
+              "title": "edit"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "design/help_restructure.md",
+                "file": "edit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for help_restructure"
+              "title": "Backlinks for edit"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "design/help_restructure.md",
+                "file": "edit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from help_restructure"
+              "title": "Outgoing links from edit"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "design/help_restructure.md",
+                "file": "edit.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of help_restructure"
+              "title": "Outline of edit"
             }
           }
         ]
@@ -170,11 +170,15 @@
   },
   "active": "65f0a8f07aec116e",
   "lastOpenFiles": [
+    "edit.md.bak",
+    "edit/edit3.md.bak",
+    "edit/edit2.md.bak",
+    "edit/edit1.md.bak",
+    "design/help_restructure.md",
     "edit/edit1.md",
     "edit/edit2.md",
     "edit/edit3.md",
     "edit.md",
-    "design/help_restructure.md",
     "design.md.bak",
     "design/finops_audit.md",
     "write.md",
