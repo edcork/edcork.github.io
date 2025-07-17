@@ -1,10 +1,10 @@
 ---
 title: Home
 layout: home
-nav_order: 1
+nav_exclude: true
 ---
 
-I'm a lead tech writer at OpenText with 14+ years of experience in technical documentation. I mainly work on IT Service Management products and a Kubernetes-based container orchestration platform.
+I'm a lead tech writer, formerly at OpenText, with 15 years of experience in technical documentation. I mainly worked on IT Service Management products and a Kubernetes-based container orchestration platform.
 
 Also an occasional cycling coach and one-time archaeologist.
 

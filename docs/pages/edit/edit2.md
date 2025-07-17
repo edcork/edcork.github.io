@@ -5,7 +5,7 @@ parent: Editing
 nav_order: 2
 ---
 
-# Example 2: Troubleshooting topic 2
+# Editing sample 2: Troubleshooting topic
 {: .no_toc }
 
 **On this page**
@@ -14,7 +14,8 @@ nav_order: 2
 
 **Source:** [SMAX 2021.11 documentation](https://docs.microfocus.com/doc/SMAX/2021.11/RabbitMQNotStart).
 
-- Issues: logic issues ("powering off an environment", "and fail to remove these folders"—it's not the user that fails to do it)
+**Summary of issues: 
+- logic issues ("powering off an environment", "and fail to remove these folders"—it's not the user that fails to do it)
 - Clarity (start of Solution)
 - product naming and consistency ("suite", "environment", "system", "OMT")
 - Accuracy: "fail to remove" wrong

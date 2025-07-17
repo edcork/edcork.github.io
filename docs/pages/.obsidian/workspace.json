@@ -1,0 +1,184 @@
+{
+  "main": {
+    "id": "3f12fe93b73a3fa1",
+    "type": "split",
+    "children": [
+      {
+        "id": "f333b924837271d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65f0a8f07aec116e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "design/help_restructure.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "help_restructure"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e6cdc29181fd5122",
+    "type": "split",
+    "children": [
+      {
+        "id": "7203be4f25bf8f8b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4eedd339c6408443",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c09a0aefc6229d22",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "490cfc50f7243e62",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "aab01d420c0f3f2d",
+    "type": "split",
+    "children": [
+      {
+        "id": "a91c44487e6de677",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6358cdf478f62c51",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "design/help_restructure.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for help_restructure"
+            }
+          },
+          {
+            "id": "b1075e41b412f896",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "design/help_restructure.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from help_restructure"
+            }
+          },
+          {
+            "id": "c2cb378b0a6cb51b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "08c837c8c67fe7b3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "design/help_restructure.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of help_restructure"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "65f0a8f07aec116e",
+  "lastOpenFiles": [
+    "edit/edit1.md",
+    "edit/edit2.md",
+    "edit/edit3.md",
+    "edit.md",
+    "design/help_restructure.md",
+    "design.md.bak",
+    "design/finops_audit.md",
+    "write.md",
+    "design.md",
+    "write/create_agreement_model.md"
+  ]
+}

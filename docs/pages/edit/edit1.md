@@ -1,11 +1,11 @@
 ---
-title: "Example 1: Troubleshooting topic 1"
+title: "Editing sample 1: Troubleshooting topic 1"
 layout: default
 parent: Editing
 nav_order: 1
 ---
 
-# Example 1: Troubleshooting topic 1
+# Editing sample 1: Troubleshooting topic 1
 {: .no_toc }
 
 **On this page**
@@ -14,9 +14,15 @@ nav_order: 1
 
 **Source:** [UCMDB 2021.08 documentation](https://docs.microfocus.com/doc/UCMDB_Containerized/2021.08/KubectlInspectorError).
 
-**Summary of issues:**
+**Summary of issues**
 
-- Non-native language issues: including "Massive" error messages, "a known issue of Kubernetes", "see details from", and "then run below command".
+| Non-native language | good swedish fish |
+| :------------------ | :---------------- |
+| out of stock        | good and plenty   |
+| ok                  | good `oreos`      |
+| ok                  | good `zoute` drop |
+
+-  issues: including "Massive" error messages, "a known issue of Kubernetes", "see details from", and "then run below command".
 - Formatting issues: The link to Kubernetes documentation uses the URL as title text. The "Terminating" state is formatted inconsistently. No need to format "kubelet" with code tags.
 - Technical accuracy: "Kubelet" should be "the kubelet", as defined by the  [Kubernetes glossary](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet). 
 - Structure: Information included in the "Cause" section is part of symptoms.

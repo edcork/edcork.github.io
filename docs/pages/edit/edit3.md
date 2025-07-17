@@ -5,7 +5,7 @@ parent: Editing
 nav_order: 3
 ---
 
-# Example 3: Integration doc
+# Editing sample 3: Integration guide
 {: .no_toc }
 
 **On this page**
@@ -14,7 +14,7 @@ nav_order: 3
 
 **Source:** [Service Management 25.1 documentation](https://docs.microfocus.com/doc/SMAX/25.1/IntegrateCloudProviderFinOps).
 
-**Summary of issues: **
+**Summary of issues: 
 - ESL: long not massive
 - Passive voice
 - Tech terms: the kubelet not "Kubelet"
