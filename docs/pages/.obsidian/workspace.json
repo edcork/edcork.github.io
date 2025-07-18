@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "edit.md",
+                "file": "write/dev2prod_api.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "edit"
+              "title": "dev2prod_api"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "edit.md",
+                "file": "write/dev2prod_api.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for edit"
+              "title": "Backlinks for dev2prod_api"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "edit.md",
+                "file": "write/dev2prod_api.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from edit"
+              "title": "Outgoing links from dev2prod_api"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "edit.md",
+                "file": "write/dev2prod_api.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of edit"
+              "title": "Outline of dev2prod_api"
             }
           }
         ]
@@ -170,6 +170,26 @@
   },
   "active": "65f0a8f07aec116e",
   "lastOpenFiles": [
+    "edit/edit3.md",
+    "edit/edit2.md",
+    "edit/edit1.md",
+    "edit",
+    "write/system_config.md",
+    "write/retire_agreement_model.md",
+    "write/models.md",
+    "write/install_landing.md",
+    "write/firewall_settings.md",
+    "write/finops_oci.md",
+    "write/finops_landing.md",
+    "write/finops_azure.md",
+    "write/finops_aws.md",
+    "write/edit_agreement_model.md",
+    "write/dev2prod_api.md",
+    "write/create_sudouser.md",
+    "write/create_agreement_model.md",
+    "write",
+    "edit.md",
+    "write/install_landing.md.bak",
     "dummy.md.bak",
     "dummy.md",
     "write - Copy.md",
@@ -178,14 +198,9 @@
     "edit/edit2.md.bak",
     "edit/edit1.md.bak",
     "design/help_restructure.md",
-    "edit/edit1.md",
-    "edit/edit2.md",
-    "edit/edit3.md",
-    "edit.md",
     "design.md.bak",
     "design/finops_audit.md",
     "write.md",
-    "design.md",
-    "write/create_agreement_model.md"
+    "design.md"
   ]
 }

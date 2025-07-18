@@ -8,160 +8,178 @@ nav_order: 4
 # Dev2Prod REST API
 {: .no_toc }
 
-**On this page**
+<details close markdown="block">
+  <summary>
+  
+    On this page
+	
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
-> - TOC
-> {:toc}
+The Service Management Dev2Prod API enables you to synchronize configuration information or data from a development environment to a production environment (or between two development environments).  
 
-<p>Service Management provides a Dev2Prod API to &quot;copy&quot; configuration or data from a development tenant to a production tenant (or between two development tenants) to synchronize and align environments.</p>
+## API reference ##  
 
-## Reference
+The Dev2Prod API includes the following endpoints:
 
-<p>The following endpoints are available:</p>
+- `/export/types/{package_id}`
+- `/export/{id}`
+- `/import/{id}`
+- `/import/`
 
-<ul>
-	<li><code>/export/types/{package_id}</code></li>
-	<li><code>/export/{id}</code></li>
-	<li><code>/import/{id}</code></li>
-	<li><code>/import/</code></li>
-</ul>
+### /export/types/{package_id} ###
 
-<h2>/export/types/{package_id}</h2>
+Exports a customized package (created in Package Manager) on the source tenant to the File Repository Service (FRS).
 
-<p>Exports a customized package (created in Package Manager) on the source tenant to&nbsp;the File Repository Service (FRS).&nbsp;</p>
+#### URL structure ####
+{: .no_toc }
 
-<h6>URL structure</h6>
+`https://{serverAddress}/rest/{tenant_id}/dev2prod/export/types/{package_id}`
 
-<p><code>https://{serverAddress}/rest/{tenant_id}/dev2prod/export/types/{package_id}</code></p>
+#### Method ####
+{: .no_toc }
 
-<h6>Method</h6>
+`POST`
 
-<p><code>POST</code></p>
+#### Parameters ####
+{: .no_toc }
 
-<h6>Parameters</h6>
+- `{tenant_id}`: The tenant ID of the Service Management tenant. 
+- `{package_id}`: The ID of the export package.
 
-<ul>
-	<li><code>{tenant_id}</code>: The tenant ID of the Service Management tenant.&nbsp;</li>
-	<li><code>{package_id}</code>:&nbsp;The ID of the export package.</li>
-</ul>
+#### Example call ####
+{: .no_toc }
 
-<h6>Example call</h6>
+```
+https://company.net/rest/123456789/dev2prod/export/types/54321
+```
 
-<pre>
-<code>https://company.net/rest/123456789/dev2prod/export/types/54321</code></pre>
+#### Example request body ####
+{: .no_toc }
 
-<h6>Example request body</h6>
+```
+{}
+```
 
-<pre>
-<code>{}</code></pre>
+#### Example response ####
+{: .no_toc }
 
-<h6>Example response</h6>
-
-<pre>
-<code>{
+```
+{
  "Id": "66fabdf1e4b06908b04d4051"
-}</code></pre>
+}
+```
 
-<h6>Error codes</h6>
+#### Error codes ####
+{: .no_toc }
 
-<ul>
-	<li><code>400</code>: Invalid Request</li>
-	<li><code>401</code>: Unauthorized</li>
-	<li><code>403</code>:&nbsp;Forbidden</li>
-	<li><code>404</code>:&nbsp;Page/Resource was not found</li>
-	<li><code>500</code>:&nbsp;Internal Server Error</li>
-</ul>
+- `400`: Invalid Request
+- `401`: Unauthorized
+- `403`: Forbidden
+- `404`: Page/Resource was not found
+- `500`: Internal Server Error
 
-<h2>/export/{id}</h2>
+### /export/{id} ###
 
-<p>Gets the status of an export process.&nbsp;</p>
+Gets the status of an export process. 
 
-<h6>URL structure</h6>
+#### URL structure ####
+{: .no_toc }
 
 <p><code>https://{serverAddress}/rest/{tenant_id}/dev2prod/export/{id}</code></p>
 
-<h6>Method</h6>
+#### Method ####
+{: .no_toc }
 
-<p><code>GET</code></p>
+`GET`
 
-<h6>Parameters</h6>
+#### Parameters ####
+{: .no_toc }
 
-<ul>
-	<li><code>{tenant_id}</code>: The tenant ID of the Service Management tenant.&nbsp;</li>
-	<li><code>{id}</code>:&nbsp;The ID of the export process.</li>
-</ul>
+- `{tenant_id}`: The tenant ID of the Service Management tenant. 
+- `{id}`: The ID of the export process.
 
-<h6>Example call</h6>
+#### Example call ####
+{: .no_toc }
 
-<pre>
-<code>https://company.net/rest/123456789/dev2prod/export/66fabdf1e4b06908b04d4051</code></pre>
+```
+https://company.net/rest/123456789/dev2prod/export/66fabdf1e4b06908b04d4051
+```
 
-<h6>Example response</h6>
+#### Example response ####
+{: .no_toc }
 
-<pre>
-<code>	{
-	    "id": "6797556be4b0c05084915394",
-	    "PackageBundleName": "Package-10204-555500000-2025-01-27 09-44",
-	    "Status": "COMPLETED",
-	    "FileId": "c7e87b89-f214-4766-8032-bba6967e1c49",
-	    "StartTime": 1737971051843,
-	    "LastUpdateTime": 1737971053134,
-	    "ItemCount": 352,
-	    "Statistics": [
-	        {
-	            "PackageName": "metadata",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "workflow",
-	            "ItemCount": 24
-	        },
-	        {
-	            "PackageName": "formLayouts",
-	            "ItemCount": 117
-	        }
-	    ],
-	    "OperationType": "Export"
-	}</code></pre>
+```
+{
+    "id": "6797556be4b0c05084915394",
+    "PackageBundleName": "Package-10204-555500000-2025-01-27 09-44",
+    "Status": "COMPLETED",
+    "FileId": "c7e87b89-f214-4766-8032-bba6967e1c49",
+    "StartTime": 1737971051843,
+    "LastUpdateTime": 1737971053134,
+    "ItemCount": 352,
+    "Statistics": [
+        {
+            "PackageName": "metadata",
+            "ItemCount": 0
+        },
+        {
+            "PackageName": "workflow",
+            "ItemCount": 24
+        },
+        {
+            "PackageName": "formLayouts",
+            "ItemCount": 117
+        }
+    ],
+    "OperationType": "Export"
+}
+```
 
-<h6>Error codes</h6>
+#### Error codes ####
+{: .no_toc }
 
-<ul>
-	<li><code>400</code>: Invalid Request</li>
-	<li><code>401</code>: Unauthorized</li>
-	<li><code>403</code>:&nbsp;Forbidden</li>
-	<li><code>404</code>:&nbsp;Page/Resource was not found</li>
-	<li><code>500</code>:&nbsp;Internal Server Error</li>
-</ul>
+- `400`: Invalid Request
+- `401`: Unauthorized
+- `403`: Forbidden
+- `404`: Page/Resource was not found
+- `500`: Internal Server Error
 
-<h2>/import/{id}</h2>
+### /import/{id} ###
 
-<p>Gets the status of an import process.</p>
+Gets the status of an import process.
 
-<h6>URL structure</h6>
+#### URL structure ####
+{: .no_toc }
 
-<p><code>https://{serverAddress}/rest/{tenant_id}/dev2prod/import/{id}</code></p>
+`https://{serverAddress}/rest/{tenant_id}/dev2prod/import/{id}`
 
-<h6>Method</h6>
+#### Method ####
+{: .no_toc }
 
-<p><code>GET</code></p>
+`GET`
 
-<h6>Parameters</h6>
+#### Parameters ####
+{: .no_toc }
 
-<ul>
-	<li><code>{tenant_id}</code>: The tenant ID of the Service Management tenant.&nbsp;</li>
-	<li><code>{id}</code>:&nbsp;The ID of the import process.</li>
-</ul>
+- `{tenant_id}`: The tenant ID of the Service Management tenant.
+- `{id}`: The ID of the import process.
 
-<h6>Example call</h6>
+#### Example call ####
+{: .no_toc }
 
-<pre>
-<code>https://company.net/rest/123456789/dev2prod/import/66fabdf1e4b06908b04d4051</code></pre>
+```
+https://company.net/rest/123456789/dev2prod/import/66fabdf1e4b06908b04d4051
+```
 
-<h6>Example response - success</h6>
+#### Example response - success ####
+{: .no_toc }
 
-<pre>
-<code>{
+```
+{
     "TimeToLive": 9946986,
     "StudioLocked": false,
     "SystemLocked": false,
@@ -216,335 +234,294 @@ nav_order: 4
         "Skipped": 0
     },
     "OperationType": "Import"
-}</code></pre>
+}
+```
 
-<h6>Error codes</h6>
+#### Error codes ####
+{: .no_toc }
 
-<ul>
-	<li><code>400</code>: Invalid Request</li>
-	<li><code>401</code>: Unauthorized</li>
-	<li><code>403</code>:&nbsp;Forbidden</li>
-	<li><code>404</code>:&nbsp;Page/Resource was not found</li>
-	<li><code>500</code>:&nbsp;Internal Server Error</li>
-</ul>
+- `400`: Invalid Request
+- `401`: Unauthorized
+- `403`: Forbidden
+- `404`: Page/Resource was not found
+- `500`: Internal Server Error
 
-<h2>/import/</h2>
+### /import/ ###
 
-<p>Imports a Dev2Prod package to the current tenant.</p>
+Imports a Dev2Prod package to the current tenant.
 
-<h6>URL structure</h6>
+#### URL structure ####
+{: .no_toc }
 
-<p><code>https://{serverAddress}/rest/{tenant_id}/dev2prod/import</code></p>
+`https://{serverAddress}/rest/{tenant_id}/dev2prod/import`
 
-<h6>Method</h6>
+#### Method ####
+{: .no_toc }
 
-<p><code>POST</code></p>
+`POST`
 
-<h6>Parameters</h6>
+#### Parameters ####
+{: .no_toc }
 
-<ul>
-	<li><code>{tenant_id}</code>: The tenant ID of the Service Management tenant.&nbsp;</li>
-	<li><code>dryRun</code>:&nbsp;Simulates the import process. Helps to find&nbsp;any conflicts or errors without comitting any changes.</li>
-</ul>
+- `{tenant_id}`: The tenant ID of the Service Management tenant. 
+- `dryRun`: Simulates the import process. Helps to find any conflicts or errors without comitting any changes.
 
-<h6>Example call</h6>
+#### Example call ####
+{: .no_toc }
 
-<pre>
-<code>https://company.net/rest/123456789/dev2prod/import?dryRun=true</code></pre>
+```
+https://company.net/rest/123456789/dev2prod/import?dryRun=true
+```
 
-<h6>Example request body</h6>
+#### Example request body ####
+{: .no_toc }
 
-<pre>
-<code>{
+```
+{
   "FileId": "9bf82520-f087-4763-af10-cf1ed38d893d"
-}</code></pre>
+}
+```
 
-<h6>Example response</h6>
+#### Example response ####
+{: .no_toc }
 
-<pre>
-<code>{
+```
+{
  "Id": "67975cd8e4b0c0508491541f"
-}</code></pre>
+}
+```
 
-<h6>Error codes</h6>
+#### Error codes ####
+{: .no_toc }
 
-<ul>
-	<li><code>400</code>: Invalid Request</li>
-	<li><code>401</code>: Unauthorized</li>
-	<li><code>403</code>:&nbsp;Forbidden</li>
-	<li><code>404</code>:&nbsp;Page/Resource was not found</li>
-	<li><code>500</code>:&nbsp;Internal Server Error</li>
-</ul>
+- `400`: Invalid Request
+- `401`: Unauthorized
+- `403`: Forbidden
+- `404`: Page/Resource was not found
+- `500`: Internal Server Error
 
-## Use case: Use API calls to perform a synchronization
+## Use case: Use API calls to synchronize two environments
 
-<p>Service Management provides a&nbsp;REST API&nbsp;that, together with the Case Exchange API, you can use to perform Dev2Prod synchronization. Reference information these APIs is available in the following topics:</p>
+To synchronize two environments using API calls, you will use the [Case Exchange REST API](/dummy) together with Dev2Prod REST API. 
 
-<ul>
-	<li><a href="/doc/423/25.2/dev2prodapi" title="Dev2Prod REST API">Dev2Prod REST API</a></li>
-	<li><a href="/doc/423/25.2/caseexchangeapi" title="Case Exchange REST API">Case Exchange REST API</a></li>
-</ul>
+### Prerequisites ###
 
-<h3>Prerequisites</h3>
+You have already generated a full or granular export package on the source tenant. For detailed instructions how to do this, see [Dev2Prod - Synchronize your development and production tenants](/dummy).
 
-<p>You have already generated a full or granular export package on the source tenant, as described above.</p>
+### Workflow and examples ###
 
-<h3>Workflow and examples</h3>
+1. Run the `https://{serverAddress}/rest/{tenant_id}/dev2prod/export/types/{id}` POST method API to export the package to the File Repository Service (FRS). The expected response is the export ID.
 
-<p>The workflow is as follows:</p>
-
-<ol>
-	<li>Run the <code>https://{serverAddress}/rest/{tenant_id}/dev2prod/export/types/{id}</code>&nbsp;POST method API to export the package to&nbsp;the File Repository Service (FRS). The expected response is the export ID.
-
-	<p><strong>Example</strong><br />
-	This example exports package &quot;54321&quot; on tenant 123456789.<br />
-	<br />
-	API:</p>
-
-	<pre>
-<code>https://company.net/rest/123456789/dev2prod/export/types/54321</code></pre>
-	<br />
-	Response body:
-	<pre>
-<code>{
+	**Example**<br />
+	This example exports package **54321** on tenant **123456789**.
+	- API: `https://company.net/rest/123456789/dev2prod/export/types/54321`
+	- Response body: 
+	```
+{
  "Id": "66fabdf1e4b06908b04d4051"
-}</code></pre>
-	</li>
-	<li>Use the export ID returned in the previous step to run the <code>https://{serverAddress}/rest/{tenant_id}/dev2prod/export/{id}</code>&nbsp;GET method API and&nbsp;view the export details.
-	<p><strong>Example</strong><br />
-	This example queries export &quot;66fabdf1e4b06908b04d4051&quot; on tenant 123456789.<br />
-	<br />
-	API:</p>
+}
+```
 
-	<pre>
-<code>https://company.net/rest/123456789/dev2prod/export/66fabdf1e4b06908b04d4051</code></pre>
-	<br />
-	Response body:
-	<pre>
-<code>	{
-	    "id": "6797556be4b0c05084915394",
-	    "PackageBundleName": "Package-54321-123456789-2025-01-27 09-44",
-	    "Status": "COMPLETED",
-	    "FileId": "c7e87b89-f214-4766-8032-bba6967e1c49",
-	    "StartTime": 1737971051843,
-	    "LastUpdateTime": 1737971053134,
-	    "ItemCount": 352,
-	    "Statistics": [
-	        {
-	            "PackageName": "metadata",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "workflow",
-	            "ItemCount": 24
-	        },
-	        {
-	            "PackageName": "formLayouts",
-	            "ItemCount": 117
-	        },
-	        {
-	            "PackageName": "customAction",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "indexConfiguration",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "featureInstances",
-	            "ItemCount": 26
-	        },
-	        {
-	            "PackageName": "uiComponentConfig",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "notificationTemplateDefinitions",
-	            "ItemCount": 88
-	        },
-	        {
-	            "PackageName": "notificationTemplateBodies",
-	            "ItemCount": 97
-	        },
-	        {
-	            "PackageName": "SLTTenantSetting",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "data",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "userOptionMetadata",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "rulesInEntity",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "many2manyRelations",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "attachments",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "customAppSltSettings",
-	            "ItemCount": 0
-	        },
-	        {
-	            "PackageName": "resourceBundles",
-	            "ItemCount": 0
-	        }
-	    ],
-	    "OperationType": "Export"
-	}</code></pre>
-	</li>
-	<li>Run the <code>https://{serverAddress}/rest/{tenant_id}/ces/attachment/{attachment_id}</code>&nbsp;GET method API to download the exported package to the source tenant. Use the <code>FileID</code> value from the previous response as the attachment ID. The expected response is ?<br />
-	&nbsp;
-	<p><strong>Example</strong><br />
-	This example downloads package &quot;c7e87b89-f214-4766-8032-bba6967e1c49&quot; on tenant 123456789.<br />
-	<br />
-	API:</p>
-
-	<pre>
-<code>https://company.net/rest/123456789/dev2prod/ces/attachment/c7e87b89-f214-4766-8032-bba6967e1c49</code></pre>
-	</li>
-	<li>Run the <code>https://{serverAddress}/rest/{tenant_id}/ces/attachment</code>&nbsp;POST method API to upload the package to FRS.<br />
-	&nbsp;
-	<p><strong>Example</strong><br />
-	This example uploads package &quot;??&quot; on tenant 123456789.<br />
-	<br />
-	API:</p>
-
-	<pre>
-<code>https://company.net/rest/123456789/ces/attachment</code></pre>
-	<br />
-	Request body:
-	<pre>
-<code>{
- ??
-}</code></pre>
-	<br />
-	Response body:
-	<pre>
-<code>{
+2. Use the export ID returned in the previous step to run the `https://{serverAddress}/rest/{tenant_id}/dev2prod/export/{id}` GET method API and view the export details.
+	
+	**Example**<br />
+	This example queries export **66fabdf1e4b06908b04d4051** on tenant **123456789**.
+	- API: `https://company.net/rest/123456789/dev2prod/export/66fabdf1e4b06908b04d4051`
+	- Response body:
+	```
+{
+	"id": "6797556be4b0c05084915394",
+	"PackageBundleName": "Package-54321-123456789-2025-01-27 09-44",
+	"Status": "COMPLETED",
+	"FileId": "c7e87b89-f214-4766-8032-bba6967e1c49",
+	"StartTime": 1737971051843,
+	"LastUpdateTime": 1737971053134,
+	"ItemCount": 352,
+	"Statistics": [
+		{
+			"PackageName": "metadata",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "workflow",
+			"ItemCount": 24
+		},
+		{
+			"PackageName": "formLayouts",
+			"ItemCount": 117
+		},
+		{
+			"PackageName": "customAction",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "indexConfiguration",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "featureInstances",
+			"ItemCount": 26
+		},
+		{
+			"PackageName": "uiComponentConfig",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "notificationTemplateDefinitions",
+			"ItemCount": 88
+		},
+		{
+			"PackageName": "notificationTemplateBodies",
+			"ItemCount": 97
+		},
+		{
+			"PackageName": "SLTTenantSetting",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "data",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "userOptionMetadata",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "rulesInEntity",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "many2manyRelations",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "attachments",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "customAppSltSettings",
+			"ItemCount": 0
+		},
+		{
+			"PackageName": "resourceBundles",
+			"ItemCount": 0
+		}
+	],
+	"OperationType": "Export"
+}
+```
+3. Run the `https://{serverAddress}/rest/{tenant_id}/ces/attachment/{attachment_id}` GET method API to download the exported package to the source tenant. Use the `FileID` value from the previous response as the attachment ID.
+	 
+	**Example**<br />
+	This example downloads package **c7e87b89-f214-4766-8032-bba6967e1c49** on tenant **123456789**.
+	- API: `https://company.net/rest/123456789/dev2prod/ces/attachment/c7e87b89-f214-4766-8032-bba6967e1c49`
+4. Run the `https://{serverAddress}/rest/{tenant_id}/ces/attachment` POST method API to upload the package to FRS.
+	 
+	**Example**<br />
+	This example uploads package **c7e87b89-f214-4766-8032-bba6967e1c49** on tenant **123456789**.
+	- API: `https://company.net/rest/123456789/ces/attachment`
+	- Headers: Set **User-Agent** to **Apache-HttpClient/4.4.1**. 
+	- Request body: Set to **Files[]**, and then click **Choose Files** to select the file to attach.
+	- Response body:
+```
+{
  "Id": "66fabdf1e4b06908b04d4051"
-}</code></pre>
-	</li>
-	<li>Run the <code>https://{serverAddress}/rest/{tenant_id}/dev2prod/import?dryRun=true</code>&nbsp;POST method API to simulate importing the package to the target tenant.<br />
-	&nbsp;
-	<p><strong>Example</strong><br />
-	This example simulates importing package &quot;c7e87b89-f214-4766-8032-bba6967e1c49&quot; on tenant 123456789.<br />
-	<br />
-	API:</p>
-
-	<pre>
-<code>https://company.net/rest/123456789/dev2prod/import?dryRun=true</code></pre>
-	<br />
-	Request body:
-	<pre>
-<code>{
+}```
+5. Run the `https://{serverAddress}/rest/{tenant_id}/dev2prod/import?dryRun=true` POST method API to simulate importing the package to the target tenant.
+	 
+	**Example**<br />
+	This example simulates importing package **c7e87b89-f214-4766-8032-bba6967e1c49** on tenant **123456789**.
+	- API: `https://company.net/rest/123456789/dev2prod/import?dryRun=true`
+	- Request body: 
+	```
+{
   "FileId": "c7e87b89-f214-4766-8032-bba6967e1c49"
-}</code></pre>
-	<br />
-	Response body:
-	<pre>
-<code>{
+}
+```
+	- Response body:
+	```
+{
  "Id": "66fabdf1e4b06908b04d4051"
-}</code></pre>
-	</li>
-	<li>Run the <code>https://{serverAddress}/rest/{tenant_id}/dev2prod/import/{id}</code>&nbsp;GET method API to check the import status. If there are no errors, the import dry-run was successful, and you can import the package.<br />
-	&nbsp;
-	<p><strong>Example</strong><br />
-	This example checks the status of import &quot;66fabdf1e4b06908b04d4051&quot; on tenant 123456789.<br />
-	<br />
-	API:</p>
-
-	<pre>
-<code>https://company.net/rest/123456789/dev2prod/import/66fabdf1e4b06908b04d4051</code></pre>
-	<br />
-	Response body:
-	<pre>
-<code>{
-    "TimeToLive": 9946986,
-    "StudioLocked": false,
-    "SystemLocked": false,
-    "id": "66fabdf1e4b06908b04d4051",
-    "FileId": "c7e87b89-f214-4766-8032-bba6967e1c49",
-    "Status": "COMPLETED",
-    "DryRun": true,
-    "PackageManagerId": "67975a8be4b0c050849153b2",
-    "StartTime": 1737972352849,
-    "LastUpdateTime": 1737972406603,
-    "ProcessingServerName": "company-server",
-    "Results": [
-        {
-            "PackageName": "metadata",
-            "Statistics": {
-                "Modified": 300,
-                "Removed": 0,
-                "Failed": 0,
-                "Skipped": 0
-            },
-            "Errors": [],
-            "Warnings": []
-        },
-        {
-            "PackageName": "SLTTenantSetting",
-            "Statistics": {
-                "Modified": 0,
-                "Removed": 0,
-                "Failed": 0,
-                "Skipped": 0
-            },
-            "Errors": [],
-            "Warnings": []
-        },
-        {
-            "PackageName": "indexConfiguration",
-            "Statistics": {
-                "Modified": 26,
-                "Removed": 0,
-                "Failed": 0,
-                "Skipped": 0
-            },
-            "Errors": [],
-            "Warnings": []
-        }
-    ],
-    "Totals": {
-        "Added": 0,
-        "Modified": 326,
-        "Removed": 0,
-        "Failed": 0,
-        "Skipped": 0
-    },
-    "OperationType": "Import"
-}</code></pre>
-	</li>
-	<li>Run the <code>https://{serverAddress}/rest/{tenant_id}/dev2prod/import</code>&nbsp;POST method API to import the package to the source tenant.<br />
-	&nbsp;
-	<p><strong>Example</strong><br />
-	This example imports package &quot;c7e87b89-f214-4766-8032-bba6967e1c49&quot; on tenant 123456789.<br />
-	<br />
-	API:</p>
-
-	<pre>
-<code>https://company.net/rest/123456789/dev2prod/import</code></pre>
-	<br />
-	Request body:
-	<pre>
-<code>{
+}
+```
+6. Run the `https://{serverAddress}/rest/{tenant_id}/dev2prod/import/{id}` GET method API to check the import status. If there are no errors, the dry run was successful, and you can import the package.
+	 
+	**Example**<br />
+	This example checks the status of import **66fabdf1e4b06908b04d4051** on tenant **123456789**.
+	- API: `https://company.net/rest/123456789/dev2prod/import/66fabdf1e4b06908b04d4051`
+	- Response body: 
+	```
+{
+"TimeToLive": 9946986,
+"StudioLocked": false,
+"SystemLocked": false,
+"id": "66fabdf1e4b06908b04d4051",
+"FileId": "c7e87b89-f214-4766-8032-bba6967e1c49",
+"Status": "COMPLETED",
+"DryRun": true,
+"PackageManagerId": "67975a8be4b0c050849153b2",
+"StartTime": 1737972352849,
+"LastUpdateTime": 1737972406603,
+"ProcessingServerName": "company-server",
+"Results": [
+	{
+		"PackageName": "metadata",
+		"Statistics": {
+			"Modified": 300,
+			"Removed": 0,
+			"Failed": 0,
+			"Skipped": 0
+		},
+		"Errors": [],
+		"Warnings": []
+	},
+	{
+		"PackageName": "SLTTenantSetting",
+		"Statistics": {
+			"Modified": 0,
+			"Removed": 0,
+			"Failed": 0,
+			"Skipped": 0
+		},
+		"Errors": [],
+		"Warnings": []
+	},
+	{
+		"PackageName": "indexConfiguration",
+		"Statistics": {
+			"Modified": 26,
+			"Removed": 0,
+			"Failed": 0,
+			"Skipped": 0
+		},
+		"Errors": [],
+		"Warnings": []
+	}
+],
+"Totals": {
+	"Added": 0,
+	"Modified": 326,
+	"Removed": 0,
+	"Failed": 0,
+	"Skipped": 0
+},
+"OperationType": "Import"
+}
+```
+7. Run the `https://{serverAddress}/rest/{tenant_id}/dev2prod/import` POST method API to import the package to the source tenant.
+	 
+	**Example**<br />
+	This example imports package **c7e87b89-f214-4766-8032-bba6967e1c49** on tenant **123456789**.
+	- API:`https://company.net/rest/123456789/dev2prod/import`
+	- Request body:
+	```
+{
   "FileId": "c7e87b89-f214-4766-8032-bba6967e1c49"
-}</code></pre>
-	Response body:
-
-	<pre>
-<code>{
+}
+```
+	- Response body:
+	```
+{
  "Id": "66fabdf1e4b06908b04d4051"
-}</code></pre>
-	</li>
-</ol>
+}
+```
