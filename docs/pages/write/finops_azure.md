@@ -3,6 +3,7 @@ title: Integrate with Azure for CMP FinOps
 layout: default
 parent: Integrate with cloud platforms to enable CMP FinOps
 nav_order: 2
+has_toc: false
 ---
 
 # Integrate with Azure for CMP FinOps

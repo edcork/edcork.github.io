@@ -3,6 +3,7 @@ title: Enable a regular user to install OMT
 layout: default
 parent: Prepare an environment to install OMT
 nav_order: 1
+has_toc: false
 ---
 
 # Enable a regular user to install OMT

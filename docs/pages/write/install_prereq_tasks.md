@@ -3,6 +3,7 @@ title: "Prepare an environment to install OMT"
 layout: default
 parent: Install OMT
 nav_order: 1
+has_toc: false
 ---
 
 # Prepare an environment to install OMT

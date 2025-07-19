@@ -3,6 +3,7 @@ title: Record models
 layout: default
 parent: Writing
 nav_order: 3
+has_toc: false
 ---
 
 # Record models

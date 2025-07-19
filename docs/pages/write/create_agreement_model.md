@@ -3,6 +3,7 @@ title: Create an agreement model
 layout: default
 parent: Record models
 nav_order: 1
+has_toc: false
 ---
 
 **On this page**

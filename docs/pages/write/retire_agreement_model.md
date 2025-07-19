@@ -3,6 +3,7 @@ title: Retire an agreement model
 layout: default
 parent: Record models
 nav_order: 3
+has_toc: false
 ---
 
 **On this page**

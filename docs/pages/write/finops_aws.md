@@ -3,6 +3,7 @@ title: Integrate with AWS for CMP FinOps
 layout: default
 parent: Integrate with cloud platforms to enable CMP FinOps
 nav_order: 1
+has_toc: false
 ---
 
 # Integrate with AWS for CMP FinOps

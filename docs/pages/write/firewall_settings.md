@@ -3,6 +3,7 @@ title: Check the firewall settings
 layout: default
 parent: Prepare an environment to install OMT
 nav_order: 3
+has_toc: false
 ---
 
 # Check the firewall settings

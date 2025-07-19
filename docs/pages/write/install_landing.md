@@ -3,6 +3,7 @@ title: "Install OMT"
 layout: default
 parent: Writing
 nav_order: 1
+has_toc: false
 ---
 
 # Install OMT
