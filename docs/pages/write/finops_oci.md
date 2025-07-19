@@ -1,7 +1,7 @@
 ---
 title: Integrate with OCI for CMP FinOps
 layout: default
-parent: Integrate with cloud platforms for CMP FinOps
+parent: Integrate with cloud platforms to enable CMP FinOps
 nav_order: 3
 ---
 

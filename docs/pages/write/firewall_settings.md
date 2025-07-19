@@ -5,15 +5,19 @@ parent: Prepare an environment to install OMT
 nav_order: 3
 ---
 
-**On this page**
+# Check the firewall settings
+{: .no_toc }
 
-> - TOC
-> {:toc}
-
-
-| Role                 | Location                                                   | Privileges required |
-| -------------------- | ---------------------------------------------------------- | ------------------- |
-| System administrator | All control plane nodes, worker nodes, and NFS servers<br> | Root                |
+<details close markdown="block">
+  <summary>
+  
+    On this page
+	
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 If you haven't enabled a firewall, skip this topic. 
 
@@ -38,13 +42,7 @@ If your terminal resembles the following, `firewalld` manages your firewall:
            └─878 /usr/bin/python -Es /usr/sbin/firewalld --nofork --nopid
 ```
 
-### Add firewall rules for the inbound connections
-
-The following steps apply to a root user. If you are a sudo user, add `sudo` in front of each command before you run it. For example:
-
-    sudo iptables -S | grep -- '-P INPUT'
-
-You can also add the related commands that sudo users need to perform to the `/etc/sudoers` file.
+## Add firewall rules for the inbound connections
 
 **For the NFS servers**
 
@@ -54,21 +52,21 @@ You can also add the related commands that sudo users need to perform to the `/e
 
     If the default  policy isn't `ACCEPT`, contact your IT system administrator to change the policy.
 2.  Run the following commands on the NFS server:
-    
-        systemctl start firewalld; systemctl enable firewalld
-        firewall-cmd --permanent --add-port=111/udp
-        firewall-cmd --permanent --add-port=111/tcp
-        firewall-cmd --permanent --add-port=22/tcp
-        firewall-cmd --permanent --add-port=2049/tcp
-        firewall-cmd --permanent --add-port=20048/tcp
-        firewall-cmd --reload
-    
+    ```
+	systemctl start firewalld; systemctl enable firewalld
+	firewall-cmd --permanent --add-port=111/udp
+	firewall-cmd --permanent --add-port=111/tcp
+	firewall-cmd --permanent --add-port=22/tcp
+	firewall-cmd --permanent --add-port=2049/tcp
+	firewall-cmd --permanent --add-port=20048/tcp
+	firewall-cmd --reload
+    ```
 
 **For the control plane nodes and worker nodes**
 
 If you've enabled firewalld, OMT will add firewall rules automatically on the control plane and worker nodes with your confirmation.
 
-### Add firewall rules for the outbound connections 
+## Add firewall rules for the outbound connections 
 
 You must make sure you've added the related firewall rules for the required outbound ports to ensure the connection. For example, run the following commands on the worker nodes and control plane nodes to configure the firewall outbound port 5432 to connect an external PostgreSQL database:
 
@@ -78,7 +76,7 @@ systemctl start firewalld; systemctl enable firewalld
     firewall-cmd --reload
 ```
 
-### Enable VRRP protocol for Keepalived in a multiple control plane node deployment 
+## Enable VRRP protocol for Keepalived in a multiple control plane node deployment 
 
 If you want to set up a multiple control plane node (HA) environment by setting the `HA_VIRTUAL_IP` parameter in the `install.properties` file, make sure you've enabled the `vrrp` protocol when you have enabled the firewall on the node. Keepalived will the `vrrp` protocol to support virtual IP. In most default settings, the `vrrp` protocol is enabled. If you have used some custom settings for the server or if Keepalived doesn't work well, run the following command on the node to enable the `vrrp` protocol:
 
@@ -86,5 +84,6 @@ If you want to set up a multiple control plane node (HA) environment by setting 
     firewall-cmd --reload
 
 ## Related topics ##
+{: .no_toc }
 
 When you have finished, return to [Set up prerequisites (embedded K8s)](/doc/OMT/Main/InstallPrereqsEmbed "Set up prerequisites (embedded K8s)") to continue.

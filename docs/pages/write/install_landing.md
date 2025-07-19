@@ -1,72 +1,69 @@
 ---
-title: "Prepare an environment to install OMT"
+title: "Install OMT"
 layout: default
 parent: Writing
 nav_order: 1
 ---
 
-# Prepare an environment to install OMT
+# Install OMT
 {: .no_toc }
 
-**On this page**
+<details close markdown="block">
+  <summary>
+  
+    On this page
+	
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
-> - TOC
-> {:toc}
+This section describes how to install OMT. The following is a high level view of the process.
 
-Before you install OPTIC Management Toolkit (OMT), you must perform some prerequisite tasks to configure the environment.
+# Step 1: Plan your deployment
 
-## Prepare to install the embedded Kubernetes ##
+Refer to the [Sizing and directory structure](https://docs.microfocus.com/doc/OMT/24.2/DirectoryStructureEmbedded), and [System requirements](https://docs.microfocus.com/doc/OMT/24.2/SystemReqsEmbed) topics.
 
-You must ensure that the cluster is correctly configured for the install script to deploy the Kubernetes that is embedded in OMT. This comprises the following tasks.
+## Decide which capabilities to enable
+
+OMT includes a number of capabilities that you can enable or disable during installation. Some capabilities help with the installation process itself, and others add functionality when you use OMT.
+
+The following table describes the capabilities. When installing OMT with its embedded Kubernetes, all capabilities are enabled by default.
 
 
-|  Task   |  Required   |  Description  |  Detailed steps|
-| --- | --- | --- | --- |
-| Enable a regular user to install OMT  |  Optional  |  You need only do this if you will use a regular user to perform the installation.  |  [Enable a regular user to install OMT](/doc/OMT/24.1/AutoSudoInstall "Enable a regular user to install OMT")|
-| Update the system configuration  |  Mandatory  |  Update the system configuration to meet the deployment requirements. This includes ensuring the localhost resolves to 127.0.0.1, setting the required system parameters, disabling swap space, making sure all required Linux packages are installed, checking the SSH connection, checking default gateway, checking the host name on every node, and synchronizing time. A script is available to automate this process.  |  [Make required system configurations](/doc/OMT/24.1/EmbeddedK8sSystemConfig "Make required system configurations")  |
-| Check the firewall settings  |  Mandatory (if you've set a firewall)  | If you have enabled a firewall in your network, you must check that the firewall settings meet the deployment requirements.    |  [Check the firewall settings](/doc/OMT/24.1/CheckNetworkSetting "Check the firewall settings")  |
-| Check that the required ports are open | Mandatory | Check that all the ports that OMT required for network communication are open. | [Check that the required ports are open (embedded K8s)](/doc/OMT/24.1/OpenPortsEmbedded "Check that the required ports are open (embedded K8s)") |
-| Configure High Availability (HA) | Optional | If you have more than one control plane node, you can configure HA. To do this, you can either use Keepalived (included in OMT) or set up your own load balancer(s). | [Configure Keepalived for High Availability](/doc/OMT/24.1/ConfigKeepalived "Configure Keepalived for High Availability") [Configure an internal load balancer](/doc/OMT/24.1/ConfigureLB "Configure an internal load balancer") |
-| Configure the `install.properties` file. | Optional | Configure the installation of the control plane and worker nodes in the `install.properties` file. You can also use command options to do this when you run the `install` command. | [Configure the install.properties file](/doc/OMT/24.1/ConfigureInstallProperties "Configure the install.properties file") |
-| Run a preliminary check of the nodes | Optional | You can run a script (`pre-check.sh`) that checks the readiness of the nodes for the deployment. This step is optional. However, it's highly advisable that you perform a preliminary check on all the control plane nodes and worker nodes before you perform the remaining preparatory tasks to check whether your prepared nodes meet the basic requirements to install OPTIC Management Toolkit (OMT). | [Run a preliminary check](/doc/OMT/24.1/PrelimCheckInstall "Run a preliminary check") |
+|Capability|Description|Default setting|
+|---|---|---|
+|Cluster management|The cluster management capability provides the necessary components for managing the Kubernetes cluster.|Enabled|
+|Deployment management|The deployment management capability provides the necessary components for deploying a product.|Enabled|
+|Log collection|The logging capability collects logs from OMT infrastructure and applications. By default, the logs are saved to an NFS volume. However, you can also forward the logs to an external receiver, such as Elasticsearch Server or Splunk.<br /><br />If you install OMT with the log collection capability disabled, logs remain wherever they're generated.|Enabled|
+|Monitoring|The monitoring capability uses the Prometheus and Grafana open source projects. Prometheus collects container based metrics associated with the OMT cluster, and streams them to applications (including Operations Bridge) and many third-party software solutions (known as exporters). Grafana is the default visualization tool for Prometheus.<br /><br />If you install OMT with the monitoring and NFS provisioner capabilities enabled, the NFS provisioner capability automatically configures an additional NFS persistent volume for the monitoring capability.<br /><br />If you install OMT with the NFS provisioner capability disabled, you must manually configure an additional persistent volume for the monitoring capability.|Enabled|
+|Monitoring content|The monitoring content capability provides a set of out of the box Grafana dashboards to use with the monitoring capability.|Enabled|
+|NFS provisioner|The NFS provisioner is an infrastructure capability that creates all the required NFS PVs automatically when you install OMT. You need only to set up an NFS server and create a volume on it.|Enabled|
+|Tools|The tools capability provides a set of CLI tools (scripts) to help you administer the Kubernetes cluster and deploy applications.|Enabled|
+|Kubernetes backup|The Kubernetes backup capability uses Velero to back up and restore Kubernetes application deployments.|Enabled|
+		
 
-## Request certificates ##
+# Step 2: Prepare a Docker Hub account
 
-Certificates protect the network traffics between OMT and external services. The network traffic flows include:
+You need a valid Docker Hub account that we've authorized to download application images from our Docker Hub image registry. If you don't already have one, you must set up the Docker account and then contact us with your account details. For more information about how to do this, see [Activate your Docker Hub account](https://docs.microfocus.com/doc/OMT/24.2/ActivateDockerAccountEmbed).
 
-*   Browser  -> OMT  
-    The OMT installer will create certificate authorities (CAs) to generate and sign server certificates for the ingress controller. However, the browsers in your organization won't be able to validate these certificates, as they're not in your organization's trust store. If you want the browsers in your organization to connect to OMT securely, you must contact your IT administrator and request a server certificate pair (including a server certificate, a server key, and the CA cert which signed the server certificate). The server certificate pair is generated for the external access host name of OMT. For more information, see [Request server certificates (embedded K8s)](/doc/OMT/24.1/RequestCertificatesEmbedded "Request server certificates (embedded K8s)").
-*   OMT -> external database  
-    If you are installing OMT with an external database, connect the database with TLS mode. In this case, contact the database administrator to request the CA certificate to validate the database server certificate. You'll use the CA certificate when you configure the `config.json` file later.
-*   OMT -> external image registry  
-    If you are installing OMT with an external image registry, if the registry server certificate is already trusted on the operating system level, the CA cert of the registry isn't required. Otherwise, contact the external registry administrator to request the CA cert to validate the registry server certificate. The CA cert will be used while running the install command.
+# Step 3: Prepare infrastructure
 
-These certificates are required for OMT installation. For the certificates required by applications, please check the applications' documentation.
+To deploy OMT with its embedded Kubernetes you must prepare the required infrastructure for OMT and its Kubernetes cluster. For more information, see [Prepare the infrastructure for OMT](https://docs.microfocus.com/doc/OMT/24.2/InfraEmbedded).
 
-## Set up persistent volumes ##
+# Step 4: Download the OMT installation package
 
-If a container stops or restarts, all changes made inside the container are lost. To save information such as configuration files and databases, the information must be stored outside of the container in a persistent volume (PV).
+Download the installation package from the [Software Licenses and Downloads](https://sld.microfocus.com/mysoftware/index) portal.
 
-When you install OMT with the embedded Kubernetes, the NFS provisioner capability (which is enabled by default) creates the required PVs automatically. To use this capability, you must create a single volume on the NFS server. When you run the `install` command, you will specify the NFS server URL and the path to this volume in command options.
+# Step 5: Set up prerequisites
 
-For more information about how to set up persistent volumes, see [Set up persistent volumes (embedded K8s)](/doc/OMT/24.1/PreparePersistentVolumesEmbedded "Set up persistent volumes (embedded K8s)").
+Perform the prerequisite tasks to configure your environment for the installation. For more information, see [Set up prerequisites for OMT](https://docs.microfocus.com/doc/OMT/24.2/InstallPrereqsEmbed).
 
-## Create external databases ##
+# Step 6: Deploy
 
-OMT uses an IdM database. Unless you will use the PostgreSQL instance that's embedded in OMT, you must create it on the database server that you prepared earlier. For more information about how to do this, see [Configure external databases (embedded K8s)](/doc/OMT/24.1/PrepareExternalDatabasesEmbedded "Configure external databases (embedded K8s)").
+Deploy OMT and its embedded Kubernetes. For more information, see [Deploy OMT](https://docs.microfocus.com/doc/OMT/24.2/DeployEmbed).
 
-If you want to use the embedded database instance, you don't need to create the databases. The install script will deploy the required databases automatically if you don't specify any database options when you run the `install` command.
+# Step 7: Complete the post installation tasks
 
-## Decide what happens to log files ##
-
-OMT infrastructure and applications produce log files. By default, OMT collects these logs on an NFS volume (`itom-logging-vol`). However, you can also forward the logs to an external receiver, such as Elasticsearch Server or Splunk. For more information about how to do this, see [Forward application logs to an external receiver (embedded K8s)](/doc/OMT/24.1/MountLogsEmbedded "Forward application logs to an external receiver (embedded K8s)").
-
-## Configure on-access security scans ##
-
-OMT installation may fail if you have enabled on-access scanning by security products such as McAfee Endpoint Security, Microsoft Defender, or Trend Micro Deep Security Agent in your environment. To prevent this, you must exclude certain directories from the on-access scan.
-
-Further information is available in the [Security products can't scan files before they're deleted](/doc/OMT/24.1/McafeeCannotScanFilesDeleted "Security products can't scan files before they're deleted") troubleshooting topic.
-
-## Create and configure a config.json file ##
-
-Before you run the `install` command, you must [Create and configure a config.json file (embedded K8s)](/doc/OMT/24.1/ConfigureConfigJsonEmbedded "Create and configure a config.json file (embedded K8s)") that contains all the necessary parameters for the installation script. This file will capture information about many of the decisions you have made while following the steps in this topic.
+Some deployment scenarios require further configuration after you install OMT and its embedded Kubernetes. For more information, see [Post installation tasks for OMT](https://docs.microfocus.com/doc/OMT/24.2/PostInstallEmbed).

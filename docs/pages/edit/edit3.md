@@ -50,7 +50,7 @@ See these topics for how to set up the integrations to retrieve cloud data from 
 
 ***
 
-# EDITED TEXT: Integrations for CMP FinOps
+# EDITED TEXT: Integrate with cloud platforms to enable CMP FinOps
 
 Cloud Management Platform (CMP) FinOps uses two types of data: cloud account data and cloud cost data. Before you can use CMP FinOps, you must set up two integrations with your cloud provider to retrieve this data.
 
