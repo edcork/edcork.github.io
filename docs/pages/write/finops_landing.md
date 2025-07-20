@@ -4,6 +4,7 @@ layout: default
 parent: Writing
 nav_order: 2
 has_toc: false
+nav_exclude: true
 ---
 
 # Integrate with cloud platforms to enable CMP FinOps

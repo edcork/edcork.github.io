@@ -2,10 +2,11 @@
 title: Editing
 layout: default
 nav_order: 2
+has_toc: false
 ---
 # Editing
 
-This section contains some examples of edits I've made while updating older topics.
+This section contains some examples of my editing.
 
 ## Sample 1: Troubleshooting topic 1
 

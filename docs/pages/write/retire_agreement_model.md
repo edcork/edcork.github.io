@@ -1,29 +1,31 @@
 ---
 title: Retire an agreement model
 layout: default
-parent: Record models
+parent: Service Management record models
 nav_order: 3
 has_toc: false
 ---
 
-**On this page**
+# Retire an agreement model
+{: .no_toc }
 
-> - TOC
-> {:toc}
-
-To retire an agreement model means changing its status, as shown in the workflow snapshot at the top of the model, from **Active** to **Inactive**.
+Retiring an agreement model means changing its status from Active to Inactive. The current status is displayed in the workflow snapshot at the top of the model.
 
 {: .important }
->You must have the appropriate permissions to be able to retire an agreement model.
+>You must have appropriate permissions to retire an agreement model.
 >
->If you retire an agreement model, this has no effect on existing service level agreement records.
+>If you retire an agreement model, this has no effect on existing service level agreement records that were created using the model.
 
 1. From the main menu, select **Plan** > **Service Level** > **Agreement Models**.
-2. Click the record identifier in the <b>Id</b> column to display the selected model.
-3. Click **Retired**.
-4. Click **Save** on the toolbar.
+
+2. In the **ID** column, click the number of the agreement model that you want to retire. 
+
+	Service Management displays the model details.
+	
+3. On the toolbar, click **Retired**, and then click **Save**.
 
 ## Related topics ##
+{: .no_toc }
 
-- [How to create an agreement model](/doc/423/25.2/createagreementmodel)
-- [How to edit an agreement model](/doc/423/25.2/editagreementmodel)
+- [Create an agreement model](/pages/write/create_agreement_model.html)
+- [Edit an agreement model](/pages/write/edit_agreement_model.html)

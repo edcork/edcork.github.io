@@ -37,13 +37,13 @@ All of these tasks (excpet SSH) can be automated by running the  `node_prereq` s
 
 OMT supports default SSH configurations. If you are using default SSH configurations, ignore the steps in this topic. If you don't have SSH enabled, or aren't aware of the current SSH configurations, follow the steps in this topic.
 
-OpenSSH provides secure and encrypted connections between machines. Enable SSH on all control plane and worker nodes (cluster nodes) in your deployment.
+OpenSSH provides secure and encrypted connections between machines. Enable SSH on all master and worker nodes (cluster nodes) in your deployment.
 
 You can run the following command to check whether SSH is enabled and running as the root user or the regular user with elevated permissions:
 
     systemctl is-active sshd
 
-If the output is `active`, SSH is enabled on this node. However, if you have customized the SSH configurations, perform the following steps on all control plane nodes and worker nodes to check whether your SSH configuration meets the installation requirements.
+If the output is `active`, SSH is enabled on this node. However, if you have customized the SSH configurations, perform the following steps on all master nodes and worker nodes to check whether your SSH configuration meets the installation requirements.
 
 ### Check whether you have enabled SSH
 
@@ -62,12 +62,12 @@ Check the output of the `systemctl is-active sshd` command to make sure that SSH
 
 ### Check MAC and Cipher algorithms
 
-For security reasons, the IT administrator may allow only limited algorithms for SSH client connection. Make sure the `/etc/ssh/sshd\_config` files on all the control plane nodes and worker nodes are configured with at least one of the following values. If no MAC/Cipher algorithm is configured in the `/etc/ssh/sshd\_config` file, the server uses the default MAC/Cipher algorithm whose default value contains the MAC and Cipher requested by OMT. In that case, you can ignore this "Check MAC and Cipher algorithms" section.
+For security reasons, the IT administrator may allow only limited algorithms for SSH client connection. Make sure the `/etc/ssh/sshd\_config` files on all the master nodes and worker nodes are configured with at least one of the following values. If no MAC/Cipher algorithm is configured in the `/etc/ssh/sshd\_config` file, the server uses the default MAC/Cipher algorithm whose default value contains the MAC and Cipher requested by OMT. In that case, you can ignore this "Check MAC and Cipher algorithms" section.
 
 *   **For MAC algorithms:** `hmac-sha1,hmac-sha2-256,hmac-sha2-512,hmac-sha1-96`
 *   **For Cipher algorithms:** `3des-cbc,aes128-cbc,aes192-cbc,aes256-cbc,aes128-ctr,aes192-ctr,aes256-ctr,arcfour128,arcfour256,blowfish-cbc`  
       
-    For example, add the following lines to the `/etc/ssh/sshd_config` files on all the control plane nodes and worker nodes:
+    For example, add the following lines to the `/etc/ssh/sshd_config` files on all the master nodes and worker nodes:
     ```
     MACs hmac-sha2-256,hmac-sha2-512 
     Ciphers aes128-cbc,aes192-cbc,aes256-cbc,aes128-ctr,aes192-ctr,aes256-ctr
@@ -93,7 +93,7 @@ To add the cluster nodes by using a user name and key authentication, make sure 
 
 ### Enable the password or key authentication setting
 
-If the password or key authentication setting isn't enabled, follow these steps on all control plane and worker nodes to enable the setting:
+If the password or key authentication setting isn't enabled, follow these steps on all master and worker nodes to enable the setting:
 
 1.  Log on to the cluster node as the root user.
 2.  Open the `/etc/ssh/sshd_config` file with a supported editor.
@@ -145,7 +145,7 @@ The `node_prereq` script depends on the `yum` command to install the related pac
 
 ### Copy the script to each node
 
-1.  Copy the `<OMT_Embedded_K8s_2x.x-xxx>/node_prereq` script from the first control plane node to the `/tmp` directory on each of the remaining nodes (control plane nodes, worker nodes, and NFS server).
+1.  Copy the `<OMT_Embedded_K8s_2x.x-xxx>/node_prereq` script from the first master node to the `/tmp` directory on each of the remaining nodes (master nodes, worker nodes, and NFS server).
 2.  Navigate to the directory that contains the `node_prereq` script, and then run the following command to add the executive permission:
     
         chmod +x node_prereq
@@ -181,7 +181,7 @@ ADD TEXT!!!!!!
 
 ### Ensure localhost is resolved to 127.0.0.1
 
-Flannel uses the default gateway to create packet routing for communication. To enable network communication across all the cluster nodes, you must ensure localhost resolves to 127.0.0.1 on all control plane and worker nodes. To do this, follow these steps:
+Flannel uses the default gateway to create packet routing for communication. To enable network communication across all the cluster nodes, you must ensure localhost resolves to 127.0.0.1 on all master and worker nodes. To do this, follow these steps:
 
 1.  Run the following command to check your localhost setting:  
     
@@ -205,7 +205,7 @@ Flannel uses the default gateway to create packet routing for communication. To 
 
 ### Set the required system parameters
 
-OMT uses the `br_netfilter` module to enable transparent masquerading and to ease Virtual Extensible LAN (VxLAN) traffic for communication between Kubernetes pods across the cluster nodes. Therefore, you must make sure the `br_netfilter` module is installed on all control plane and worker nodes before you set the system parameters. To do this, follow these steps:
+OMT uses the `br_netfilter` module to enable transparent masquerading and to ease Virtual Extensible LAN (VxLAN) traffic for communication between Kubernetes pods across the cluster nodes. Therefore, you must make sure the `br_netfilter` module is installed on all master and worker nodes before you set the system parameters. To do this, follow these steps:
 
 1.  Log in to the node.
 2.  Run the following command to check whether the `br_netfilter` module is enabled:
@@ -331,9 +331,9 @@ For example:
 
 If you get an error message after the `node_prereq` script checks the node host name, you'll have to configure the host name.
 
-If you have configured Domain Name Service (DNS) in your environment, and the control plane and worker nodes can resolve the FQDN of all cluster nodes, load balancer host, NFS server, and external databases, skip this section.
+If you have configured Domain Name Service (DNS) in your environment, and the master and worker nodes can resolve the FQDN of all cluster nodes, load balancer host, NFS server, and external databases, skip this section.
 
-If the Domain Name Service (DNS) isn't configured in your environment, configure the `/etc/hosts` file on every node (control plane and worker) in the cluster. List all the control plane nodes, worker nodes, external database servers, external access host (HA virtual IP, load balancer), and NFS servers in the `/etc/hosts` file. In an environment that doesn't have DNS configured, you must also configure the `KUBE_DNS_HOSTS` parameter in the `install.properties` file as described in the "Configure the install.properties file" topic. To set up the host name resolution after the installation, follow the steps listed in the "Update the DNS entries" topic.
+If the Domain Name Service (DNS) isn't configured in your environment, configure the `/etc/hosts` file on every node (master and worker) in the cluster. List all the master nodes, worker nodes, external database servers, external access host (HA virtual IP, load balancer), and NFS servers in the `/etc/hosts` file. In an environment that doesn't have DNS configured, you must also configure the `KUBE_DNS_HOSTS` parameter in the `install.properties` file as described in the "Configure the install.properties file" topic. To set up the host name resolution after the installation, follow the steps listed in the "Update the DNS entries" topic.
 
 Add the IP address and FQDN details of all the nodes in the cluster. This includes the external access host (HA virtual IP, load balancer), external database servers, and NFS server. Add an entry for each server using the following syntax:  
 ```
@@ -360,7 +360,7 @@ OMT components require the time on all nodes to be synchronized. If you receive 
 
 The following example uses the `chrony` tool to synchronize time across operating systems. You must have a time server prepared for the time synchronization.
 
-1.  On the first control plane node, run the following command to install the `chrony` client:
+1.  On the first master node, run the following command to install the `chrony` client:
     
         yum install chrony -y
     

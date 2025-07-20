@@ -9,10 +9,16 @@ has_toc: false
 # Integrate with OCI for CMP FinOps
 {: .no_toc }
 
-**On this page**
-
-> - TOC
-> {:toc}
+<details close markdown="block">
+  <summary>
+  
+    On this page
+	
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 Before you can use the Cloud Management Platform (CMP) FinOps solution, you must set up integrations with the cloud platforms from which you want to pull cloud data. We support integrations with Amazon Web Services (AWS), Azure, Google Cloud Platform (GCP), and Oracle Cloud Infrastructure (OCI).
 
@@ -59,8 +65,7 @@ OCI does not have service accounts. In order to grant CMP FinOps API access to t
     Update the `<group>` placeholder in this text with the name of the group that you created earlier. For example, "oci\_finops".
 5.  Click **Create**.
 
-Set up a Cloud Cost Data Provider-based integration 
-----------------------------------------------------
+## Set up a Cloud Cost Data Provider-based integration
 
 This integration enables you to retrieve historical and current cloud billing data for expenditures associated with your cloud provider. This information will be available within the reporting interface.
 
@@ -114,8 +119,8 @@ After you create the integration, a full data collection (including historical d
   
 To avoid this issue, we strongly recommend that you disable the integration until the initial full data collection is complete. You can then enable the integration again to resume scheduled data collection. To do this, click the toggle switch under **COLLECTION SETTINGS** so that it says **Collection is disabled**. When the full data collection is complete, click the toggle switch again so that it says **Collection is enabled.**
 
-Related topics
---------------
+## Related topics
+{: .no_toc }
 
 *   For more information about cost and usage reports in OCI, see [Cost and Usage Reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costusagereportsoverview.htm "Cost and Usage Reports").
 *   For more information about users in OCI, see [Managing Users](https://docs.oracle.com/en-us/iaas/Content/Identity/users/about-managing-users.htm "Managing Users").

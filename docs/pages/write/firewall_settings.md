@@ -63,13 +63,13 @@ If your terminal resembles the following, `firewalld` manages your firewall:
 	firewall-cmd --reload
     ```
 
-**For the control plane nodes and worker nodes**
+**For the master nodes and worker nodes**
 
-If you've enabled firewalld, OMT will add firewall rules automatically on the control plane and worker nodes with your confirmation.
+If you've enabled firewalld, OMT will add firewall rules automatically on the master and worker nodes with your confirmation.
 
 ## Add firewall rules for the outbound connections 
 
-You must make sure you've added the related firewall rules for the required outbound ports to ensure the connection. For example, run the following commands on the worker nodes and control plane nodes to configure the firewall outbound port 5432 to connect an external PostgreSQL database:
+You must make sure you've added the related firewall rules for the required outbound ports to ensure the connection. For example, run the following commands on the worker nodes and master nodes to configure the firewall outbound port 5432 to connect an external PostgreSQL database:
 
 ```
 systemctl start firewalld; systemctl enable firewalld
@@ -77,9 +77,9 @@ systemctl start firewalld; systemctl enable firewalld
     firewall-cmd --reload
 ```
 
-## Enable VRRP protocol for Keepalived in a multiple control plane node deployment 
+## Enable VRRP protocol for Keepalived in a multiple master node deployment 
 
-If you want to set up a multiple control plane node (HA) environment by setting the `HA_VIRTUAL_IP` parameter in the `install.properties` file, make sure you've enabled the `vrrp` protocol when you have enabled the firewall on the node. Keepalived will the `vrrp` protocol to support virtual IP. In most default settings, the `vrrp` protocol is enabled. If you have used some custom settings for the server or if Keepalived doesn't work well, run the following command on the node to enable the `vrrp` protocol:
+If you want to set up a multiple master node (HA) environment by setting the `HA_VIRTUAL_IP` parameter in the `install.properties` file, make sure you've enabled the `vrrp` protocol when you have enabled the firewall on the node. Keepalived will the `vrrp` protocol to support virtual IP. In most default settings, the `vrrp` protocol is enabled. If you have used some custom settings for the server or if Keepalived doesn't work well, run the following command on the node to enable the `vrrp` protocol:
 
     firewall-cmd --add-protocol vrrp  --permanent
     firewall-cmd --reload

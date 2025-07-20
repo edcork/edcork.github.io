@@ -35,10 +35,12 @@ b83ace3b5e0870284e554502e8922563a4d9587b800b6b699dc2c2acfcc9b7cc" from runtime s
 When you check the pod status, some pods are stuck in `Terminating` state.
 
 ## Cause
+{: .no_toc }
 
 This issue occurs because `Kubelet` loops when trying to inspect a Docker container for a pod whose image has been deleted or cleaned up. This is a known issue of Kubernetes. See details from [https://github.com/kubernetes/kubernetes/issues/84214](https://github.com/kubernetes/kubernetes/issues/84214).
 
 ## Solution 
+{: .no_toc }
 
 1.  Log on to the node where you receive these error messages.
 2.  Run the following command to check the pod status:  
@@ -61,10 +63,12 @@ b83ace3b5e0870284e554502e8922563a4d9587b800b6b699dc2c2acfcc9b7cc" from runtime s
 
 
 ## Cause
+{: .no_toc }
 
 This is a known issue in Kubernetes. For more information, see [Kubelet gets stuck trying to inspect a container whose image has been cleaned up](https://github.com/kubernetes/kubernetes/issues/84214).
 
 ## Solution
+{: .no_toc }
 
 1.  Log on to the node where you receive the error messages.
 2.  Run the following command to check the pod status, and then identify the pods that are stuck in the "Terminating" state:  

@@ -33,6 +33,7 @@ infra-rabbitmq-0             1/2         Running       0           16h
 ```
 
 ## Cause
+{: .no_toc }
 
 There are many causes for this issue. Here are some examples.
 
@@ -41,6 +42,7 @@ There are many causes for this issue. Here are some examples.
 - There are issues with the network connectivity between the NFS server and worker nodes.
 
 ## Solution
+{: .no_toc }
 
 When RabbitMQ fails to start twice, the system will automatically perform a fresh start of RabbitMQ. When this issue occurs:
 
@@ -84,6 +86,8 @@ The RabbitMQ pod (for example, __infra-rabbitmq-\<n>__, where __\<n>__ is 0, 1, 
 ```
 
 ## Cause
+{: .no_toc }
+
 This issue may occur because:
 - The system was shut down incorrectly. For example, you powered off the system without first shutting down Service Management and OMT.
 - Your system doesn’t have enough hardware resources.
@@ -91,13 +95,15 @@ This issue may occur because:
 
 
 ## Solution
+{: .no_toc }
+
 OMT automatically restarts RabbitMQ if it fails to start twice. Therefore, first wait 15 minutes, and then check if the issue was resolved automatically.
 
 If the issue still exists, check the system resources and network connectivity.
 
 If there are no resource or network issues, manually restart RabbitMQ. To do this, follow these steps:
 
-1.	Run the following command on a control plane node (embedded Kubernetes) or the bastion node (managed Kubernetes) to stop RabbitMQ:
+1.	Run the following command on a master node (embedded Kubernetes) or the bastion node (managed Kubernetes) to stop RabbitMQ:
 
 	`kubectl scale statefulset infra-rabbitmq -n <Service Management namespace> --replicas=0`
 2.	Wait until all RabbitMQ pods have stopped.  
@@ -105,6 +111,6 @@ If there are no resource or network issues, manually restart RabbitMQ. To do thi
 	- /var/vols/itom/itsma/rabbitmq-infra-rabbitmq-0/data/xservices/rabbitmq/x.x.x.xx/mnesia
 	- /var/vols/itom/itsma/rabbitmq-infra-rabbitmq-1/data/xservices/rabbitmq/x.x.x.xx/mnesia
 	- /var/vols/itom/itsma/rabbitmq-infra-rabbitmq-2/data/xservices/rabbitmq/x.x.x.xx/mnesia
-4.	Restart RabbitMQ. To do this, run the following command on a control plane node (embedded Kubernetes) or on the bastion node (managed Kubernetes):
+4.	Restart RabbitMQ. To do this, run the following command on a master node (embedded Kubernetes) or on the bastion node (managed Kubernetes):
 
 	`kubectl scale statefulset infra-rabbitmq -n < Service Management namespace> --replicas=3`

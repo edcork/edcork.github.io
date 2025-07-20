@@ -9,10 +9,16 @@ has_toc: false
 # Integrate with Azure for CMP FinOps
 {: .no_toc }
 
-**On this page**
-
-> - TOC
-> {:toc}
+<details close markdown="block">
+  <summary>
+  
+    On this page
+	
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 Before you can use the Cloud Management Platform (CMP) FinOps solution, you must set up integrations with the cloud platforms from which you want to pull cloud data. We support integrations with Amazon Web Services (AWS), Azure, and Google Cloud Platform (GCP).
 
@@ -327,8 +333,8 @@ After you create the integration, a full data collection (including historical d
   
 To avoid this issue, we strongly recommend that you disable the integration until the initial full data collection is complete. You can then enable the integration again to resume scheduled data collection. To do this, click the toggle switch under **COLLECTION SETTINGS** so that it says **Collection is disabled**. When the full data collection is complete, click the toggle switch again so that it says **Collection is enabled.**
 
-Related topics
---------------
+## Related topics
+{: .no_toc }
 
 *   For general information about the Integration Studio, see [Integration Studio](/doc/SMAX/Main/IntegrationHub "Integration Studio").
 *   For information on triggering integration scenarios based on scheduler, see [Scheduler](/doc/SMAX/Main/XIEScheduler "Scheduler").

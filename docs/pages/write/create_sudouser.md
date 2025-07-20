@@ -30,7 +30,7 @@ The `node_prereq` script can grant a specified regular user authority to run all
 
 To configure sudo permission, you must run the `node_prereq` script on the cluster node with a root user and the regular user must already exist on the node. Perform the following steps to delegate authority to install OMT to a regular user:
 
-1.  Download the OMT installation package to the first control plane node and unzip it.
+1.  Download the OMT installation package to the first master node and unzip it.
     
 2.  Change directory into the OMT installation package directory and run the following command to delegate authority to install OMT to a regular user:
     

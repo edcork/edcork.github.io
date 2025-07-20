@@ -1,0 +1,644 @@
+https://docs.microfocus.com/doc/406/2022.05/home
+
+
+Release notes
+
+Enhancements
+
+Fixed issues
+
+Deprecation and obsolescence
+
+Known issues
+
+OMT 2022.05 P1 release notes
+
+Install an OMT patch
+
+OMT 2022.05 P2 release notes
+
+OMT 2022.05 P4 release notes
+
+Apply an OMT patch
+
+Get started
+
+Glossary
+
+User roles
+
+Deployment models
+
+Service dependency
+
+OMT architecture
+
+Components
+
+Packaging
+
+Networking
+
+Security
+
+Storage
+
+High availability (HA)
+
+Databases
+
+Back up, restore, and disaster recovery
+
+Elasticity
+
+Monitoring
+
+Licensing
+
+Supportability
+
+Install
+
+Deployment Architecture
+
+System requirements
+
+Activate your Docker Hub account
+
+Download the installation package
+
+Set up prerequisites
+
+Deploy OMT
+
+Post installation tasks
+
+Uninstall
+
+Reference topics
+
+Create and configure a config.json file
+
+Manage High Availability (HA) in a cluster with multiple master nodes
+
+Configure Keepalived for High Availability
+
+Configure storage for the Kubernetes backup capability
+
+Set up persistent storage
+
+Forward application logs to an external receiver
+
+Configure sudo access
+
+Synchronize time
+
+Make required system configurations
+
+Check the default gateway settings
+
+Check the firewall settings
+
+Check the host name and set up host name resolutions
+
+Configure the install.properties file
+
+Check the SSH configurations
+
+Create a new Security Context Constraint (external K8s)
+
+Request server certificates
+
+Configure external databases
+
+Download the OMT images and then upload them to an external image registry
+
+Run a preliminary check
+
+Configure an internal load balancer
+
+Configure external load balancers
+
+Install the itom-cdf-alias script for non-root users
+
+Upgrade
+
+System requirements
+
+Download the OMT packages
+
+Set up prerequisites for upgrades
+
+Upgrade
+
+Post-upgrade configurations
+
+Reference
+
+Free disk space
+
+Generate an upgrade runbook
+
+Check that the hostname hasn't changed
+
+Back up data
+
+Upload images to an external registry
+
+Configure permissions
+
+Configure SSH connections
+
+Disable on-access security scans
+
+Make sure that all nodes or pods are running
+
+Administer
+
+Cluster management
+
+Management portal
+
+Restart OMT
+
+Update the DNS entries
+
+Update the operating system
+
+Post steps after applying an OS patch
+
+Convert from CentOS to RHEL using convert2rhel
+
+Configure application proxies after you install OMT
+
+Change the POD_CIDR parameter value after OMT installation
+
+Change the SERVICE_CIDR parameter value after OMT installation
+
+Change the HA virtual IP address after OMT installation
+
+Enabling Highly Availability (HA) of the cluster after OMT installation
+
+Monitor the deployment with the "cdf-help" and Kubernetes commands
+
+Update the persistent volumes (PVs) to use new storage locations
+
+Change from root user to non-root user after installation
+
+Rebind a PV and a PVC
+
+Add or remove nodes from a cluster on the Management portal
+
+Add or remove nodes from a cluster via CLI commands
+
+Manage node labels
+
+Change cluster runlevel
+
+Security overview
+
+Enable a firewall on a node
+
+Manage OMT certificates
+
+Set the security context
+
+Enable the Pod Security Policy
+
+Change system UID and GID after installation
+
+Disaster recovery
+
+Back up
+
+Update scheduled time or backup scope for the Kubernetes backup capability
+
+Restore
+
+Back up and restore IdM
+
+Clean up local registry images
+
+Change the password of the local registry admin user
+
+Change the registry setting
+
+Administer AppHub
+
+Change the external access host name of the OMT cluster
+
+Modify the configuration information of external databases
+
+Add, remove, and reconfigure OMT capabilities
+
+Create a values.yaml file to enable capabilities after installation
+
+Enable the cluster management and deployment management capabilities
+
+Enable the log collection capability
+
+Enable the monitoring capability
+
+Enable the Tools capability on a new bastion node
+
+Enable the Kubernetes backup capability manually on external Kubernetes
+
+Disable a capability
+
+Administer the logging capability
+
+Administer the monitoring capability
+
+Map a pod IP address in the Grafana dashboard with the real host IP address
+
+Configure the number of Prometheus and alertmanager replicas
+
+Configure resource requests and limits of the monitoring capability
+
+Configure the collection interval of the monitoring capability
+
+Configure the log retention period of the monitoring capability
+
+Expose Prometheus
+
+CLI tools
+
+Use
+
+OPTIC AppHub
+
+Log in to AppHub
+
+AppHub Applications page
+
+Save a draft
+
+Export application resources
+
+Missing images
+
+Signature validation
+
+AppHub Deployments page
+
+Viewing a Deployment
+
+Editing a Deployment
+
+Upgrading a Deployment
+
+Rolling Back a Deployment
+
+Onboarding a Deployment
+
+Troubleshooting Deployments
+
+Using the YAML Editor
+
+Manage applications and deployments
+
+Upload a Helm chart using AppHub or the CLI
+
+Download the application images and then upload them to an image registry
+
+Deploy the application using AppHub or the CLI
+
+Deleting a Deployment using AppHub or the CLI
+
+Identity Management (IdM)
+
+Manage organizations
+
+Customize an organization
+
+Manage users
+
+Manage groups
+
+Manage roles and roles-based access control
+
+Set up database user authentication
+
+Set up LDAP authentication
+
+Set up certificate-based authentication
+
+Set up SAML authentication
+
+Set up OAuth 2.0 authentication
+
+Set up RADIUS authentication
+
+Set up reference authentication
+
+Create and configure authentication groups
+
+Add a proxy to access an external IdP
+
+IdM system settings
+
+IdM audit
+
+Manage OpenID Connect
+
+Monitoring
+
+Access the Grafana homepage
+
+Grafana dashboards
+
+Kubernetes Dashboard
+
+View existing images
+
+Manage cluster
+
+Manage deployments
+
+Manage namespaces
+
+Manage replica sets
+
+Manage replication controllers
+
+Manage stateful sets
+
+Manage daemon sets
+
+View jobs
+
+Pods in OMT
+
+Manage pods
+
+View Services
+
+View Ingresses
+
+View Persistent Volume Claims
+
+View Secrets
+
+View ConfigMaps
+
+Troubleshoot
+
+Troubleshoot installation
+
+Can't export the NFS volumes
+
+IDM pod cannot start due to expired IDM database ca certificates
+
+Can't access service which is running on another node
+
+Can't log in to the Docker Hub
+
+Installation fails with PV issues
+
+"Checking containerd service not installed" error during OMT installation
+
+"Checking HA_VIRTUAL_IP unreachable" error during OMT installation
+
+"Checking image availability timeout" error during OMT installation
+
+"Checking kernel parameters" error during OMT installation
+
+"Checking kubelet service not installed " error during OMT installation
+
+"Checking localhost" error during OMT installation
+
+"Checking port xxx failed" during OMT installation
+
+"Checking swap is disabled" error during OMT installation
+
+"database connection test failed" error during OMT installation
+
+Fail to install some required prerequisite packages
+
+FAILED: Checking DNS server connection timeout
+
+FATAL: Invalid value for --nfs-server
+
+Image xxx not found
+
+Installation fails if DNS is not configured
+
+Installation failed when registry certificate expired in kube-registry-cert secret
+
+"Insufficient CPU, insufficient memory" error message and a pod is stuck in "Pending" state
+
+Invalid character "{" in host name
+
+"IPv4 forwarding is disabled" error during OMT installation
+
+OMT installation fails due to intermittent DNS resolution failures
+
+OMT installation fails with a "fail to pull image" error message
+
+OMT installation fails with the first master node in the NotReady status
+
+OMT on GKE doesn't support an SSL connection to the native Google PostgreSQL database
+
+"Package net-tools is not installed" error during OMT installation
+
+Primary DNS server goes down and OMT installation fails
+
+"semodule: Failed on… selinux-addition.pp!" error message and installation fails
+
+Timeout errors occur when OMT calls the AKS API server
+
+"Too many pods" error when installing an application
+
+"userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedKeyTypes" error while adding worker node or upgrading OMT
+
+Troubleshoot upgrade
+
+AppHub failed to display the deployment after upgrading OMT
+
+"Checking connectivity to registry...Failed" during upgrade precheck
+
+"Device is busy" or "waiting for IO/CPU to become free" error messages during upgrade
+
+"Error: client: etcd cluster is unavailable or misconfigured; error: tls: bad certificate" during upgrade
+
+"Failed to find CDF_HOME" error
+
+"Failed to pull image" error when you try to upgrade OMT
+
+Failed to pull images during upgrade when McAfee on-access scan is enabled
+
+Flannel pod doesn't start after you restart a node
+
+IdM pod crashes during OMT upgrade
+
+Jobs aren't updated after you upgrade OMT
+
+kube-apiserver doesn't enable encryption correctly after an upgrade
+
+Kubernetes keeps forwarding requests to the old iptables rules after upgrading OMT
+
+Kubernetes security issue: CVE-2021-25740: Endpoint and EndpointSlice permissions allow cross-Namespace forwarding
+
+No pod running on the newly added node after upgrading OMT
+
+"panic: runtime error: index out of range [1] with length 1" error when upgrading OMT
+
+Patching a deployment on GKE 1.17 takes a long time
+
+Prometheus pod is missing after you upgrade OMT
+
+Service portal is down and pods are in init status
+
+"UPGRADE FAILED" error after updating certificates from OMT Management Portal
+
+Upgrade failed with message "Failed to push apphub images"
+
+Upgrade fails after your session is disconnected
+
+Upgrade OMT failed with "plugin/forward: no nameservers found" error
+
+Upgrade pre-check fails with "dial tcp: lookup registry.hub.docker.com" error
+
+Upgrade failed with error "pods \"kube-registry-xxx-\" is forbidden: PodSecurityPolicy: unable to admit pod"
+
+Upgrade fails when the system locale isn't en_US.utf8
+
+"Warning FailedCreatePodSandBox" message and pods do not start during upgrade
+
+"WARNING! Not ready endpoint(s) in core namespace detected." in upgrade precheck
+
+Troubleshoot administration
+
+Application helm charts didn't display on AppHub after uploading successfully
+
+AppHub failed to upload charts with "Read timed out" error
+
+Can't access a node from other nodes by using its FQDN
+
+Can't delete an application deployment on AppHub
+
+Can't delete a pod after a worker node crashes
+
+Can't log into OMT Swagger UI page
+
+Can't reset Grafana Admin password
+
+Can't restart the PostgreSQL data pod
+
+Can't run kubectl or kube-status.sh commands as a non-root user
+
+Can't run the replaceExternalAccess.sh script
+
+CDF-API-server volume verification failed
+
+Certificates don't show up on AppHub
+
+cleanRegistry failed with error "failed to garbage collect: error enumerating blobs..."
+
+Cluster node becomes NotReady after a vMotion VM migration
+
+"curl: (77) Problem with the SSL CA cert (path? access rights?)" error occurs when running gen_secret.sh
+
+Domain name can't be resolved or a resolution error occurs in pod
+
+"error="failed to new session: ssh: rejected: connect failed (open failed)" when adding node
+
+"Error from server" error when you try to get a secret
+
+"error: unknown shorthand flag" when deployment_status.sh checks PVs
+
+"ERROR renewCert.Execute() Error: exit status 1" while renewing external certificates
+
+"exit status 127" error after running changeRegistry
+
+Failed to add a master node using HA_VIRTUAL_IP
+
+Failed to add a node with "ALREADY DONE" in the log
+
+"Failed to get IP address of itom-pg-backup pod" when running backup_recover.sh or db_admin.sh
+
+Failed to remove bound PVC using volume_admin.sh
+
+Fluentd has high CPU usage
+
+Grafana and Prometheus-operator pods in CrashLoopBackOff state
+
+itom-prometheus-grafana pod gets stuck in Init:CrashLoopBackOff status
+
+Intermittently failed to connect exposed service via external FQDN with HA using Keepalived
+
+itom-vault pod is running but other pods don't start
+
+Kubelet gets stuck with "runtime service failed: rpc error: code = Unknown" error messages
+
+Kubernetes gets stuck when rebooting the server
+
+Log files under log volume didn't get rotated
+
+"No valid CRL for current time found" error and the cdfapiserver service doesn't start
+
+Pods failed to start up and stuck in init status after upgrading Linux distribution
+
+Prometheus pod crashes repeatedly
+
+Prometheus targets down: serviceMonitor/core/itom-prometheus-kube-etcd/0 (1/3 up)
+
+Red Hat, CentOS, or Oracle Linux restarts unexpectedly
+
+replaceExternalAccessHost script fails with "Waiting for idm pod ready..."
+
+Security products can't scan files before they are deleted
+
+Some components can't get the real IP addresses when firewall masquerade setting is enabled
+
+Some PostgreSQL pod stuck in 1/2 state
+
+The Deployments page keeps loading but not showing the deployments
+
+The downloadimages.sh script failed to authenticate the docker account with 2FA enabled
+
+The Grafana pod is in CrashLoopBackOff state or server error is returned when opening the Grafana dashboard
+
+The Kubelet service doesn't work when installing an application to a pre-occupied port
+
+The itom-vault pod doesn't go up after system reboot
+
+The itom-vault pod failed to start and is in CrashLoopBackOff state
+
+Vault pod crashed with error "FATAL unseal vault failed"
+
+Vault pod failed to start when NFS disk usage reaching 100%
+
+"UnrecognizedClientException" error while creating ECR repository with aws-create-repository
+
+Worker nodes cannot be deleted from the OMT Management Portal
+
+Troubleshoot IdM
+
+Users can't log in to IdM because authentication is misconfigured
+
+Admin user can't log in to the Management Portal after resetting an expired password
+
+IdM fails to connect to database
+
+IdM pods are in "idle in transaction" state in PostgreSQL
+
+IdM pods fail to restart automatically after database recovered from broken
+
+"INVALID TOKEN" error happens when login with SAML authentication
+
+Invalid user name/password or user account is locked or expired
+
+Login is slow for LDAP users
+
+"Unable to upgrade connection" error trying to get IdM secret
+
+You can't log in and a "The service is unavailable at this time" message is displayed
+
+OMT Doctor
+
+Find the log files
+
+Contact support
+
+Practitioner notes
