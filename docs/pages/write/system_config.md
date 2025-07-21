@@ -132,7 +132,7 @@ To check if you've enabled SCP, follow these steps:
 
 If you don't want to use the `node_prereq` script, follow the steps below.
 
-### Ensure localhost is resolved to 127.0.0.1
+### Make sure localhost is resolved to 127.0.0.1
 
 Flannel uses the default gateway to create packet routing for communication. To enable network communication across all the cluster nodes, make sure localhost resolves to 127.0.0.1 on all master and worker nodes.
 

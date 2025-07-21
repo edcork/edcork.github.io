@@ -42,7 +42,7 @@ To integrate with AWS, you must complete the following tasks in AWS at the manag
 Generate the security credentials required by the integrations and then grant the required permissions to the corresponding user:
 
 1.  Log in to the AWS management account as an administrator or the root user.
-2.  Navigate to the IAM service and then open the **Policies** page.
+2.  Go to to the IAM service and then open the **Policies** page.
 3.  Add a policy with the following services and permissions:
     
     Service
@@ -102,7 +102,7 @@ Generate the security credentials required by the integrations and then grant th
     *   `lambda:ListFunctions`
     
     You'll need this policy for the cloud accounts import integration.
-4.  Navigate to the **Users** page, and then create an IAM user.
+4.  Go to to the **Users** page, and then create an IAM user.
     *   Make sure that the user's access type is **programmatic access**.
     *   Enter some meaningful tags for the user. The CMP FinOps capability will make use of this information.
 5.  Attach the policy added earlier and the following AWS managed policies to an appropriate principal entity (user, group, or role), depending on how you manage user permissions in AWS:
@@ -117,7 +117,7 @@ For details, see the [AWS documentation](https://docs.aws.amazon.com/ "AWS docum
 ### Enable rightsizing recommendations
 
 1.  Log in to the AWS management account as an administrator or the root user.
-2.  Navigate to the **AWS Billing and Cost Management** console, and then open the **Cost Management Preferences** page.
+2.  Go to to the **AWS Billing and Cost Management** console, and then open the **Cost Management Preferences** page.
 3.  On the **General** tab, select the **Rightsizing Recommendations** and **Enable Allow linked accounts to see recommendations** options.
 4.  Save your changes.
 
@@ -182,8 +182,8 @@ Create a dedicated integration user for each integration. 
 
 1.  Log in to Suite Administration (https://<External Access Host>/bo) as suite admin and create an integration user with the **Integration user** role for the integration.
 2.  Log in to Agent Interface as the tenant admin and do the following:
-    *   Navigate to **Administration** \> **Master Data** > **People** > **Roles**, and create a role (with the Application value **SMAX**) with the **Create**, **View**, and **Update** permissions for the **Cloud Account** record type. 
-    *   Navigate to **Administration** \> **Master Data** \> **People**, locate the integration user, and then assign the created role to the user.
+    *   Go to to **Administration** \> **Master Data** > **People** > **Roles**, and create a role (with the Application value **SMAX**) with the **Create**, **View**, and **Update** permissions for the **Cloud Account** record type. 
+    *   Go to to **Administration** \> **Master Data** \> **People**, locate the integration user, and then assign the created role to the user.
 
 Section end - CreateIntUser
 
@@ -192,7 +192,7 @@ Section end - CreateIntUser
 Create an endpoint using the Rest Executor 2.0 endpoint type:
 
 1.  Log in to Agent Interface as the cloud integration administrator.
-2.  Navigate to **Administration** \> **Utilities** \> **Integration** > **Endpoints**.
+2.  Go to to **Administration** \> **Utilities** \> **Integration** > **Endpoints**.
 3.  Click **Add**.
 4.  Select **Rest Executor 2.0** as the endpoint type, enter a name for the endpoint (for example, AWS), and then click **Add**. The system creates the endpoint.
 5.  Click **Configure** and set these fields:
@@ -240,7 +240,7 @@ Create an endpoint using the Rest Executor 2.0 endpoint type:
 
 In the following steps, you'll create an integration with the predefined template.
 
-1.  Navigate to **Administration** \> **Utilities** > **Integration** > **Integration studio**. 
+1.  Go to to **Administration** \> **Utilities** > **Integration** > **Integration studio**. 
 2.  Click **New**, enter the name of your integration, and then click **Save**. The system displays the Integration page.
 3.  In the **Details** section, configure the integration user you created for the current SMAX system.
 4.  Select the **Active** option to activate the integration.
@@ -276,7 +276,7 @@ Section end - scheduling
 
 ### Check the scenario execution status
 
-To check the scenario execution status, navigate to **Administration** > **Utilities** > **Integration** > **Endpoints**, and then select the AWS endpoint in the left pane. The system displays the execution history for the AWS integration. Each record displayed in this grid corresponds to one scenario rule. Make sure all rules in the cloud accounts import scenario have the green **Success** status.
+To check the scenario execution status, go to to **Administration** > **Utilities** > **Integration** > **Endpoints**, and then select the AWS endpoint in the left pane. The system displays the execution history for the AWS integration. Each record displayed in this grid corresponds to one scenario rule. Make sure all rules in the cloud accounts import scenario have the green **Success** status.
 
 *   You can check the start and end time (and duration) for two main activities of the scenario: cloud accounts syncing and stale accounts status setting. To do this, click the hyperlinked ID for these rules (_Capture sync time_ and _Clean up sync time end_), and check the value in the **Output details** field. The field displays both the start time and end time for the corresponding activity.
 *   The **Connector** column indicates the system where the action of the rule is applied: Management & Governance (AWS), SMAX, or Common. Unlike other values, Common means that this rule doesn't call any APIs, instead, it just sets some values or performs some calculations.
@@ -312,7 +312,7 @@ With this integration, you can configure retrieval of historical and current bil
     If you forgot to make a note of the billing bucket name and billing report path when you configured the data export, follow these steps to identify them:
     
     1.  Sign in to the AWS Management Console and open the Amazon S3 console at [https://console.aws.amazon.com/s3/](https://console.aws.amazon.com/s3/ "https://console.aws.amazon.com/s3/").
-    2.  In the left navigation pane, select **Buckets**, and then navigate to the bucket associated with the integration.
+    2.  In the left navigation pane, select **Buckets**, and then go to to the bucket associated with the integration.
     3.  Click the **Copy S3 URI** button, and then paste the URI to a text editor. The URI is formatted as follows:
         
             s3://<billing bucket name>/<billing report path>

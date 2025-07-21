@@ -41,10 +41,10 @@ You have already generated a full or granular export package on the source tenan
 	- API: `https://company.net/rest/123456789/dev2prod/export/types/54321`
 	- Response body: 
 	```
-{
- "Id": "66fabdf1e4b06908b04d4051"
-}
-```
+	{
+	 "Id": "66fabdf1e4b06908b04d4051"
+	}
+	```
 
 2. Use the export ID returned in the previous step to run the `https://{serverAddress}/rest/{tenant_id}/dev2prod/export/{id}` GET method API and view the export details.
 	

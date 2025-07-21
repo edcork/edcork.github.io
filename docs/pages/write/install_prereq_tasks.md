@@ -24,14 +24,14 @@ Before you install OPTIC Management Toolkit (OMT), configure your environment by
 
 ## Prepare to deploy the embedded Kubernetes ##
 
-Ensure your cluster meets the requirements for OMT’s embedded Kubernetes.
+Make sure your cluster meets the requirements for OMT’s embedded Kubernetes.
 
 
 |  Task   |  Required?   |  Description  |  Detailed steps|
 | --- | --- | --- | --- |
 | Enable a regular user to install OMT  |  Optional  |  Required only if installing OMT as a non-root user.  |  [Enable a regular user to install OMT](/pages/write/create_sudouser.html)|
 | Update the system configuration  |  Mandatory  |  Configure system settings, including: <br> • Localhost resolution (`127.0.0.1`)<br> • System parameters<br> • Disabled swap space<br> • Required Linux packages<br> • SSH connectivity<br> • Hostname consistency<br> • Time synchronization<br><br>A script is available to automate this. |  [Make required system configurations](/pages/write/system_config.html)  |
-| Check the firewall settings  |  Mandatory (if you've set a firewall)  | Ensure your firewall rules meet OMT’s requirements.  |  [Check the firewall settings](/pages/write/firewall_settings.html)  |
+| Check the firewall settings  |  Mandatory (if you've set a firewall)  | Make sure your firewall rules meet OMT’s requirements.  |  [Check the firewall settings](/pages/write/firewall_settings.html)  |
 | Check that the required ports are open | Mandatory | Confirm all network ports OMT requires for communication are open. | <span style="color: red;"><u>Check that the required ports are open</u></span> |
 | Configure High Availability (HA) | Optional | If you have more than one master node, you can configure HA. You can either use Keepalived (included in OMT) or set up your own load balancer(s). | <span style="color: red;"><u>Configure Keepalived for High Availability</u></span><br/><br/><span style="color: red;"><u>Configure an internal load balancer</u></span> |
 | Configure the `install.properties` file. | Optional | Configure the installation of the master and worker nodes in the `install.properties` file. You can alternatively use command options to do this when you run the `install` command. | <span style="color: red;"><u>Configure the install.properties file</u></span> |
