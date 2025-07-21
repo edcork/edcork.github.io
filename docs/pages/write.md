@@ -6,27 +6,67 @@ has_toc: false
 ---
 # Writing
 
-This section contains examples of different types of topic and writing for different audiences.
+*Demonstrating audience-centric documentation*  
 
-## Install OMT
+---
 
-This example aims to demonstrate different levels of detail aimed at different levels of experience.
+## 1. OMT installation documentation suite  
+**Project:** Kubernetes-based platform installation  
 
-- "Install OMT" is a reference topic that guides users through the (long) installation process.
-- "Prepare an environment to install OMT" describes the how to configure the environment at a very high level. This topic is aimed at experienced users who have installed OMT before. They need to know what to do, but not how to do it.
-- The three child topics are examples of task topics. They're aimed at less experienced users who need more support to configure the environment. The topics contain step-by-step instructions for the tasks described in "Prepare an environment to install OMT."
+**Document types:**  
+- **Reference guide** ("Install OMT")  
+- **Procedural guide** (Task-based child topics)  
+- **Quick configuration guide** ("Prepare an environment to install OMT")  
 
-OMT is a Kubernetes-based platform, on which other products (such as Service Management) are deployed and managed.
+**Audience adaptation:**  
 
-## Service Management record models
+| Document | Audience | Detail level |  
+|----------|----------|--------------|  
+| Reference guide | New users | Comprehensive, step-by-step |  
+| Quick guide | Experienced admins | High-level checklist |  
+| Task topics | Junior admins | Detailed procedures |  
 
-This example includes a concept landing page and a number of task-based child topics.  
+**Skills demonstrated:**  
+✔ Multi-level information architecture  
+✔ Audience analysis and adaptation  
+✔ Technical procedure documentation  
 
-Models are essentially templates that can be applied when creating different types of record in Service Management. The content and function of these models differ according to the module (and record type) in Service Management. These examples are from the Service Level Agreement module.
+---
 
-## Dev2Prod REST API
+## 2. Service management record models  
+**Project:** Service level agreement (SLA) module  
 
-An example of reference API documentation. 
+**Document structure:**  
+- **Concept overview** (Landing page explaining model functionality)  
+- **Task-based guides** (Application procedures for different record types)  
 
-The Dev2Prod REST API enables users to synchronize two Service Management environments (typically, development and production environments) without using the GUI.
+**Key features:**  
+- Template-based documentation system  
+- Module-specific variant handling  
+- UI-independent process documentation  
 
+**Skills demonstrated:**  
+✔ Conceptual vs. procedural content separation  
+✔ Template documentation techniques  
+✔ Product feature documentation  
+
+---
+
+## 3. Dev2Prod REST API reference  
+**Project:** Environment synchronization API  
+
+**Documentation type:**  
+- Endpoint reference  
+- Authentication methods  
+- Payload examples  
+- Error code taxonomy  
+
+**Technical highlights:**  
+- GUI-independent operation documentation  
+- Code sample integration  
+- Synchronization workflow mapping  
+
+**Skills demonstrated:**  
+✔ API documentation best practices  
+✔ Developer-centric content design  
+✔ Technical reference creation  
