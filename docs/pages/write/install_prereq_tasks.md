@@ -1,7 +1,7 @@
 ---
 title: "Prepare an environment to install OMT"
 layout: default
-parent: Install OMT
+parent: "Sample 1: Install OMT"
 nav_order: 1
 has_toc: false
 ---

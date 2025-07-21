@@ -6,67 +6,37 @@ has_toc: false
 ---
 # Writing
 
-*Demonstrating audience-centric documentation*  
+These samples highlight my ability to adapt content for different users, from system administrators to developers. 
+
+### Key skills showcased:
+- **Audience analysis** – Adjusting depth for beginners vs. experts  
+- **Information architecture** – Structuring complex workflows  
+- **Tool proficiency** – Markdown, HTML, Git-based workflows  
 
 ---
 
-## 1. OMT installation documentation suite  
-**Project:** Kubernetes-based platform installation  
+## Featured Samples
 
-**Document types:**  
-- **Reference guide** ("Install OMT")  
-- **Procedural guide** (Task-based child topics)  
-- **Quick configuration guide** ("Prepare an environment to install OMT")  
+### 1. [Sample 1: OMT Installation Suite](/pages/write/install_omt.html)
+*Kubernetes platform documentation*  
+- Reference manual (end-to-end installation)  
+- Quick-start guide for experienced users  
+- Task-based subguides for junior admins  
 
-**Audience adaptation:**  
+*Skills: Multi-level documentation, procedural writing*
 
-| Document | Audience | Detail level |  
-|----------|----------|--------------|  
-| Reference guide | New users | Comprehensive, step-by-step |  
-| Quick guide | Experienced admins | High-level checklist |  
-| Task topics | Junior admins | Detailed procedures |  
+### 2. [Sample 2: Service Management Models](/pages/write/servicemanagement.html)
+*Templates for enterprise software*  
+- Concept overviews  
+- Module-specific configuration guides  
 
-**Skills demonstrated:**  
-✔ Multi-level information architecture  
-✔ Audience analysis and adaptation  
-✔ Technical procedure documentation  
+*Skills: Conceptual writing, UI-agnostic instructions*
 
----
+### 3. [Sample 3: Dev2Prod REST API](/pages/write/dev2prod.html)  
+*Environment synchronization tool*  
+- Endpoint documentation  
+- Authentication workflows  
+- Error handling references  
 
-## 2. Service management record models  
-**Project:** Service level agreement (SLA) module  
+*Skills: API documentation, code sample integration*
 
-**Document structure:**  
-- **Concept overview** (Landing page explaining model functionality)  
-- **Task-based guides** (Application procedures for different record types)  
-
-**Key features:**  
-- Template-based documentation system  
-- Module-specific variant handling  
-- UI-independent process documentation  
-
-**Skills demonstrated:**  
-✔ Conceptual vs. procedural content separation  
-✔ Template documentation techniques  
-✔ Product feature documentation  
-
----
-
-## 3. Dev2Prod REST API reference  
-**Project:** Environment synchronization API  
-
-**Documentation type:**  
-- Endpoint reference  
-- Authentication methods  
-- Payload examples  
-- Error code taxonomy  
-
-**Technical highlights:**  
-- GUI-independent operation documentation  
-- Code sample integration  
-- Synchronization workflow mapping  
-
-**Skills demonstrated:**  
-✔ API documentation best practices  
-✔ Developer-centric content design  
-✔ Technical reference creation  

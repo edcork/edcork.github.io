@@ -1,11 +1,11 @@
 ---
-title: "Sample 2: Troubleshooting topic 2"
+title: "Sample 2: Cloud integration guide"
 layout: default
 parent: Editing
 nav_order: 2
 ---
 
-# Editing sample 2: Troubleshooting topic
+# Editing sample 2: Cloud integration guide
 {: .no_toc }
 
 **On this page**

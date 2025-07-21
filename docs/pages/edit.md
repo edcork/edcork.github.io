@@ -6,16 +6,43 @@ has_toc: false
 ---
 # Editing
 
-This section contains some examples of my editing.
+These samples demonstrate improving technical documentation through structural editing, terminology standardization, and user-focused simplification.
 
-## Sample 1: Troubleshooting topic 1
+## Edited documentation samples
 
-This troubleshooting topic is an example of fixing generally poor language. 
+### [1. Kubernetes troubleshooting](/pages/edit/edit1.html)
+**Original challenges:**  
+- Non-native English phrasing 
+- Inconsistent technical terminology  
+- Poor symptom/cause separation  
 
-## Sample 1: Troubleshooting topic 2
+**Editorial improvements:**  
+✔ Restructured into clear symptom→cause→solution flow  
+✔ Standardized Kubernetes terminology per official glossary  
+✔ Clarified cyclical restart behavior  
 
-Another troubleshooting topic, this time containing numerous technical inaccuracies.
+### [2. RabbitMQ readiness troubleshooting](/pages/edit/edit2.html)  
+**Original challenges:**  
+- Inconsistent product naming 
+- Outdated Azure Files troubleshooting steps  
+- Redundant environmental references  
 
-## Sample 3: Integration guide
+**Editorial improvements:**  
+✔ Unified product terminology throughout  
+✔ Removed obsolete procedures  
+✔ Streamlined directory path formatting  
 
-In this parent topic that introduces some integration guides, poor structure makes the basic message unclear.
+### [3. Cloud integration guide](/pages/edit/edit3.html)
+**Original challenges:**  
+- Overly complex list-based structure  
+- Unclear differentiation between data types  
+- Non-native phrasing 
+
+**Editorial improvements:**  
+✔ Reorganized into clear data-type sections  
+✔ Added conceptual overview paragraph  
+✔ Standardized integration methodology  
+
+
+
+

@@ -1,12 +1,12 @@
 ---
-title: "Install OMT"
+title: "Sample 1: Install OMT"
 layout: default
 parent: Writing
 nav_order: 1
 has_toc: false
 ---
 
-# Install OMT
+# Sample 1: Install OMT
 {: .no_toc }
 
 <details close markdown="block">

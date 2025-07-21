@@ -1,7 +1,7 @@
 ---
 title: Retire an agreement model
 layout: default
-parent: Service Management record models
+parent: "Sample 2: Service Management record models"
 nav_order: 3
 has_toc: false
 ---
