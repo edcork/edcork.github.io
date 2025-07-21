@@ -582,7 +582,7 @@
   },"83": {
     "doc": "Install OMT",
     "title": "Step 5: Set up prerequisites",
-    "content": "Perform the prerequisite tasks to configure your environment for the installation. For more information, see Set up prerequisites for OMT. ",
+    "content": "Perform the prerequisite tasks to configure your environment for the installation. For more information, see Prepare an environment to install OMT. ",
     "url": "/pages/write/install_landing.html#step-5-set-up-prerequisites",
     
     "relUrl": "/pages/write/install_landing.html#step-5-set-up-prerequisites"
