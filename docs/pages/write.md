@@ -17,7 +17,7 @@ These samples highlight my ability to adapt content for different users, from sy
 
 ## Featured Samples
 
-### 1. [Sample 1: OMT Installation Suite](/pages/write/install_omt.html)
+### 1. [Sample 1: OMT Installation](/pages/write/install_landing.html)
 *Kubernetes platform documentation*  
 - Reference manual (end-to-end installation)  
 - Quick-start guide for experienced users  
@@ -25,14 +25,14 @@ These samples highlight my ability to adapt content for different users, from sy
 
 *Skills: Multi-level documentation, procedural writing*
 
-### 2. [Sample 2: Service Management Models](/pages/write/servicemanagement.html)
+### 2. [Sample 2: Service Management Models](/pages/write/models.html)
 *Templates for enterprise software*  
 - Concept overviews  
 - Module-specific configuration guides  
 
 *Skills: Conceptual writing, UI-agnostic instructions*
 
-### 3. [Sample 3: Dev2Prod REST API](/pages/write/dev2prod.html)  
+### 3. [Sample 3: Dev2Prod REST API](/pages/write/dev2prod_api.html)  
 *Environment synchronization tool*  
 - Endpoint documentation  
 - Authentication workflows  
