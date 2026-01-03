@@ -2,7 +2,8 @@
 title: Online help restructure
 layout: default
 parent: Design
-nav_order: 1
+nav_exclude: true
+# nav_order: 1
 has_toc: false
 ---
 
@@ -16,4 +17,3 @@ A content audit and workshops with SMEs enabled me to:
 - Focused review sessions with SMEs identified X% of troubleshooting topics to be redundant 141/129
 - Reduce the maximum depth of the ToC to 3 (down from X)
 
-{% include side-by-side.html %}
