@@ -1,0 +1,24 @@
+---
+---
+/* 1. FONT OVERRIDE */
+body, h1, h2, h3, h4, h5, h6, p, a, li {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+/* 2. COLOR VARIABLES (THE DARK BLUE) */
+:root {
+    --jtd-brand-color: #003c6c; 
+    --jtd-brand-color-dark: #002a4d; 
+    --link-color: #003c6c;
+    --link-color-visited: #003c6c;
+}
+
+/* 3. LINK & LOGO OVERRIDES */
+a { color: #003c6c !important; }
+.site-title, .site-nav-title { color: #003c6c !important; }
+
+/* 4. PAGE TITLES & HEADERS (NEW) */
+/* This targets the main page title (h1) and sub-headers (h2, h3) */
+h1, h2, h3 {
+    color: #003c6c !important;
+}

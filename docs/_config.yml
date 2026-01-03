@@ -1,6 +1,11 @@
 title: "Ed Cork's tech writing portfolio"
 description: Examples of the type of projects I have worked on.
-theme: just-the-docs
+# theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
 
 url: https://edcork.github.io/
 
@@ -11,7 +16,7 @@ aux_links:
 
 defaults:
   - scope:
-      path: # "docs" # an empty string here means all files in the project
+      path: "" # "docs" # an empty string here means all files in the project
       type: "pages"
     values:
       layout: "default"
@@ -124,7 +129,7 @@ liquid:
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: `_includes/footer_custom.html`
+footer_content: "_includes/footer_custom.html"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
