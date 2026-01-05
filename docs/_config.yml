@@ -1,10 +1,10 @@
 title: "Ed Cork's tech writing portfolio"
 description: Examples of the type of projects I have worked on.
-# theme: just-the-docs
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
+# remote_theme: just-the-docs/just-the-docs
 
 plugins:
-  - jekyll-remote-theme
+#  - jekyll-remote-theme
   - jekyll-seo-tag
 
 url: https://edcork.github.io/
@@ -12,7 +12,7 @@ url: https://edcork.github.io/
 aux_links:
   #Template Repository: https://github.com/just-the-docs/just-the-docs-template
   #"Just the Docs on GitHub":
-    - "https://github.com/just-the-docs/just-the-docs"
+  # - "https://github.com/just-the-docs/just-the-docs"
 
 defaults:
   - scope:
@@ -101,7 +101,7 @@ mermaid:
 heading_anchors: true
 
 # Makes Aux links open in a new tab. Default is false
-aux_links_new_tab: false
+# aux_links_new_tab: false
 
 # Enable or disable the side/mobile menu globally
 nav_enabled: true
@@ -144,7 +144,7 @@ gh_edit_branch: "main" # the branch that your docs is served from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 # Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
-color_scheme: "light"
+color_scheme: nil
 
 callouts_level: quiet # or loud
 
