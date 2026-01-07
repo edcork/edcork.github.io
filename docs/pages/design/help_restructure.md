@@ -44,33 +44,31 @@ has_toc: false
   }
 </style>
 
-The decision to make an internal document publically-visible presented an opportunity to restructure it for clarity, navigability, and SEO.
+The decision to make an internal document publically-visible presented me with an opportunity to restructure it for clarity, navigability, and SEO.
 
-## Impact Summary
+## Impact summary
 
 | Metric | Before | After | Change |
 |:---|:---|:---|:---|
-| **Total Topics** | 491 files | 241 files | Reduced by >50% |
-| **Topic Depth** | 6 levels | 3 levels | Flatter hierarchy |
-| **Troubleshooting**| High redundancy | Streamlined | Removed obsolete topics (60% reduction)|
-| **Installation** | 4 discrete user journeys | 1 unified journey | Merged user workflows |
+| **Total topics** | 491 files | 241 files | Reduced by 50% |
+| **Topic depth** | 6 levels | 3 levels | Flattened by 50% |
+| **Troubleshooting**|142 | 56 | 60% of topics identified as obsolete)|
+| **Installation** | 4 discrete user journeys | 1 unified journey | Significant simplification |
 
 ## Methodology
 
-To achieve a 50% reduction in content volume, I shifted the architecture from a feature-based structure to a task-based workflow. Key steps included:
+* **Content audit:** I cataloged the existing 491 topics to identify structural redundancies, such as empty landing pages, duplicates, and pages that could be combined. I was able to reduce the navigation depth from 6 levels to 3 to improve SEO and discoverability.
+* **SME validation:** I conducted workshops with Subject Matter Experts to review all troubleshooting topics for references to resolved issues or obsolete software versions.
+* **User journey consolidation:** I unified four fragmented installation sections into a single linear narrative that covered all installation scenarios.
 
-* **Content Audit:** I cataloged the existing 491 topics to identify redundancies, specifically targeting "Troubleshooting" guides that referenced resolved issues or outdated software versions.
-* **SME Validation:** I conducted workshops with Subject Matter Experts to verify which internal content was safe for public release, allowing for the deprecation of over 200 obsolete files.
-* **User Journey Consolidation:** I unified the four fragmented installation sections into a single linear narrative, reducing the navigation depth from 6 levels to 3 to improve SEO and discoverability.
+## Structural comparison 
 
-## Structural Comparison (Full Evidence)
-
-Below is the complete file structure comparison. Click to expand.
+Below is the complete file structure comparison. 
 
 <div class="toc-row">
 
   <div>
-    <h4 style="color: #7253ed; margin-top: 0;">Before (491 items)</h4>
+    <h3 style="margin-top: 0;">Before (491 pages)</h3>
     
     <div class="tree-scroll" style="max-height: 700px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background-color: #fafafa;">
 
@@ -733,7 +731,7 @@ Below is the complete file structure comparison. Click to expand.
 
 
 <div>
-    <h4 style="color: #7253ed; margin-top: 0;">After (241 items)</h4>
+    <h3 style="margin-top: 0;">After (241 pages)</h3>
     
     <div class="tree-scroll" style="max-height: 700px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background-color: #fafafa;">
 <ul>
