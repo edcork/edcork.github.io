@@ -21,7 +21,7 @@ These samples demonstrate improving technical documentation through structural e
 ✔ Standardized Kubernetes terminology per official glossary  
 ✔ Clarified cyclical restart behavior  
 
-### [2. RabbitMQ readiness troubleshooting](/pages/edit/edit2.html)  
+### [2. Infrastructure troubleshooting](/pages/edit/edit2.html)  
 **Original challenges:**  
 - Inconsistent product naming 
 - Outdated Azure Files troubleshooting steps  
