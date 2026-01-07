@@ -6,15 +6,28 @@ nav_order: 1
 has_toc: false
 ---
 <style>
-  /* 1. Hide the browser's default black triangle */
-  details > summary {
-    list-style: none;
+  /* 1. Layout: Side-by-Side Container */
+  .toc-row {
+    display: flex;        /* Enforce side-by-side layout */
+    gap: 20px;            /* Space between the columns */
+    align-items: flex-start; /* Align tops of the boxes */
+    width: 100%;
   }
-  details > summary::-webkit-details-marker {
-    display: none;
+  
+  /* Target the columns (divs) directly */
+  .toc-row > div {
+    flex: 1;              /* Force both boxes to be equal width */
+    min-width: 0;         /* Prevent overflow issues */
   }
 
-  /* 2. Reset the list style for the scrollable area (Previous fix) */
+  /* 2. Responsive: Stack them on mobile phones */
+  @media (max-width: 768px) {
+    .toc-row {
+      flex-direction: column;
+    }
+  }
+
+  /* 3. Reset Lists for Scrolling (Strict bullets) */
   .tree-scroll ul {
     list-style-type: disc !important;
     padding-left: 20px !important;
@@ -23,6 +36,7 @@ has_toc: false
   .tree-scroll li {
     list-style-position: outside !important;
     position: static !important;
+    margin-bottom: 2px; /* A tiny bit of breathing room between items */
   }
   .tree-scroll li::before {
     content: none !important;
@@ -34,23 +48,31 @@ The decision to make an internal document publically-visible presented an opport
 
 ## Impact Summary
 
-A content audit and workshops with SMEs enabled me to:
-
 | Metric | Before | After | Change |
 |:---|:---|:---|:---|
-| **Total Topics** | 491 files | 241 files | **Reduced by >50%** |
-| **Topic Depth** | 6 levels | 3 levels | **Flatter hierarchy** |
-| **Troubleshooting**| High redundancy | Streamlined | Removed 60% obsolete topics |
-| **Installation** | 4 fragmented sections | 1 unified journey | Merged user workflow |
+| **Total Topics** | 491 files | 241 files | Reduced by >50% |
+| **Topic Depth** | 6 levels | 3 levels | Flatter hierarchy |
+| **Troubleshooting**| High redundancy | Streamlined | Removed obsolete topics (60% reduction)|
+| **Installation** | 4 discrete user journeys | 1 unified journey | Merged user workflows |
+
+## Methodology
+
+To achieve a 50% reduction in content volume, I shifted the architecture from a feature-based structure to a task-based workflow. Key steps included:
+
+* **Content Audit:** I cataloged the existing 491 topics to identify redundancies, specifically targeting "Troubleshooting" guides that referenced resolved issues or outdated software versions.
+* **SME Validation:** I conducted workshops with Subject Matter Experts to verify which internal content was safe for public release, allowing for the deprecation of over 200 obsolete files.
+* **User Journey Consolidation:** I unified the four fragmented installation sections into a single linear narrative, reducing the navigation depth from 6 levels to 3 to improve SEO and discoverability.
 
 ## Structural Comparison (Full Evidence)
 
 Below is the complete file structure comparison. Click to expand.
 
-<details>
-<summary style="cursor: pointer; font-weight: bold;">▶ Click to view "Before" Structure (491 items)</summary>
+<div class="toc-row">
 
-<div class="tree-scroll" style="max-height: 400px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
+  <div>
+    <h4 style="color: #7253ed; margin-top: 0;">Before (491 items)</h4>
+    
+    <div class="tree-scroll" style="max-height: 700px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background-color: #fafafa;">
 
 <ul>
   <li>Release notes
@@ -706,15 +728,14 @@ Below is the complete file structure comparison. Click to expand.
 </ul>
 
 </div>
-</details>
+</div>
 
-<br>
 
-<details>
-<summary style="cursor: pointer; font-weight: bold;">▶ Click to view "After" Structure (241 items)</summary>
 
-<div class="tree-scroll" style="max-height: 400px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
-
+<div>
+    <h4 style="color: #7253ed; margin-top: 0;">After (241 items)</h4>
+    
+    <div class="tree-scroll" style="max-height: 700px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background-color: #fafafa;">
 <ul>
   <li>Release notes
     <ul>
@@ -1026,7 +1047,9 @@ Below is the complete file structure comparison. Click to expand.
 </ul>
 
 </div>
-</details>
+</div>
+
+</div>
 
 
 
