@@ -5,333 +5,53 @@ parent: Design
 nav_order: 1
 has_toc: false
 ---
+<style>
+  /* 1. Hide the browser's default black triangle */
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* 2. Reset the list style for the scrollable area (Previous fix) */
+  .tree-scroll ul {
+    list-style-type: disc !important;
+    padding-left: 20px !important;
+    margin-left: 0 !important;
+  }
+  .tree-scroll li {
+    list-style-position: outside !important;
+    position: static !important;
+  }
+  .tree-scroll li::before {
+    content: none !important;
+    display: none !important;
+  }
+</style>
 
 The decision to make an internal document publically-visible presented an opportunity to restructure it for clarity, navigability, and SEO.
 
+## Impact Summary
+
 A content audit and workshops with SMEs enabled me to:
 
-- Reduce the total number of topics by over 50% (491 down to 241)
-- Identify and remove obsolete troubleshooting topics (identified 60% of troubleshooting topics to be redundant)
-- Merge 4 installtion sub-sections into a single user journey
-- Reduce the maximum depth of the ToC to 3 (down from 6)
+| Metric | Before | After | Change |
+|:---|:---|:---|:---|
+| **Total Topics** | 491 files | 241 files | **Reduced by >50%** |
+| **Topic Depth** | 6 levels | 3 levels | **Flatter hierarchy** |
+| **Troubleshooting**| High redundancy | Streamlined | Removed 60% obsolete topics |
+| **Installation** | 4 fragmented sections | 1 unified journey | Merged user workflow |
 
-OMT: 241 topics. TS: 56. Depth 3.
-CDF: 491 topics. TS: 142. Depth 6. 
+## Structural Comparison (Full Evidence)
 
+Below is the complete file structure comparison. Click to expand.
 
-## OMT
-<ul>
-  <li>Release notes
-    <ul>
-      <li>Enhancements</li>
-      <li>Fixed issues</li>
-      <li>Deprecation and obsolescence</li>
-      <li>Known issues</li>
-    </ul>
-  </li>
-  <li>Get started
-    <ul>
-      <li>Glossary</li>
-      <li>User roles</li>
-      <li>Deployment models</li>
-      <li>Service dependency</li>
-      <li>OMT architecture
-        <ul>
-          <li>Components</li>
-          <li>Packaging</li>
-          <li>Networking</li>
-          <li>Security</li>
-          <li>Storage</li>
-          <li>High availability (HA)</li>
-          <li>Databases</li>
-          <li>Back up, restore and disaster recovery</li>
-          <li>Elasticity</li>
-          <li>Monitoring</li>
-          <li>Licensing</li>
-          <li>Supportability</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Install
-    <ul>
-      <li>Deployment Architecture</li>
-      <li>System requirements</li>
-      <li>Activate your Docker Hub account</li>
-      <li>Download the installation package</li>
-      <li>Set up prerequisites</li>
-      <li>Deploy OMT</li>
-      <li>Post installation tasks</li>
-      <li>Uninstall</li>
-      <li>Reference topics
-        <ul>
-          <li>Create and configure a config.json file</li>
-          <li>Manage High Availability (HA) in a cluster with multiple control plane nodes</li>
-          <li>Configure Keepalived for High Availability</li>
-          <li>Configure storage for the Kubernetes backup capability</li>
-          <li>Set up persistent storage</li>
-          <li>Forward application logs to an external receiver</li>
-          <li>Configure sudo access</li>
-          <li>Synchronize time</li>
-          <li>Make required system configurations</li>
-          <li>Check the default gateway settings</li>
-          <li>Check the firewall settings</li>
-          <li>Check the host name and set up host name resolutions</li>
-          <li>Configure the install.properties file</li>
-          <li>Check the SSH configurations</li>
-          <li>Create a new Security Context Constraint (external K8s)</li>
-          <li>Request server certificates</li>
-          <li>Configure external databases</li>
-          <li>Download the OMT images and then upload them to an external image registry</li>
-          <li>Run a preliminary check</li>
-          <li>Configure an internal load balancer</li>
-          <li>Configure external load balancers</li>
-          <li>Install the itom-cdf-alias script for non-root users</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Upgrade
-    <ul>
-      <li>System requirements</li>
-      <li>Download the OMT packages</li>
-      <li>Set up prerequisites for upgrades</li>
-      <li>Upgrade OMT</li>
-      <li>Post-upgrade configurations</li>
-      <li>Reference
-        <ul>
-          <li>Free disk space</li>
-          <li>Generate an upgrade runbook</li>
-          <li>Check that the hostname hasn't changed</li>
-          <li>Back up data</li>
-          <li>Upload images to an external registry</li>
-          <li>Configure permissions</li>
-          <li>Configure SSH connections</li>
-          <li>Disable on-access security scans</li>
-          <li>Make sure that all nodes or pods are running</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Administer
-    <ul>
-      <li>Cluster management
-        <ul>
-          <li>Management Portal</li>
-          <li>Restart OMT</li>
-          <li>Update the DNS entries</li>
-          <li>Update the operating system</li>
-          <li>Post steps after applying an OS patch</li>
-          <li>Convert from CentOS to RHEL using convert2rhel</li>
-          <li>Configure application proxies after you install OMT</li>
-          <li>Change the POD_CIDR parameter value after OMT installation</li>
-          <li>Change the SERVICE_CIDR parameter value after OMT installation</li>
-          <li>Change the HA virtual IP address after OMT installation</li>
-          <li>Enable High Availability (HA) after you install OMT</li>
-          <li>Monitor the deployment with the "cdf-help" and Kubernetes commands</li>
-          <li>Change the persistent volumes (PVs) after you install OMT</li>
-          <li>Change from root user to non-root user after installation</li>
-          <li>Rebind a PV and a PVC</li>
-          <li>Add or remove nodes from a cluster by using the Management portal</li>
-          <li>Add or remove nodes from a cluster via CLI commands</li>
-          <li>Manage node labels</li>
-          <li>Change cluster runlevel</li>
-          <li>Security overview</li>
-          <li>Enable a firewall on a node</li>
-          <li>Manage OMT certificates</li>
-          <li>Set the security context</li>
-          <li>Enable the Pod Security Policy</li>
-          <li>Change system UID and GID after installation</li>
-          <li>Disaster recovery</li>
-          <li>Back up</li>
-          <li>Update scheduled time or backup scope for the Kubernetes backup capability</li>
-          <li>Restore</li>
-          <li>Back up and restore IdM</li>
-          <li>Clean up local registry images</li>
-          <li>Change the password of the local registry admin user</li>
-          <li>Change the registry setting</li>
-        </ul>
-      </li>
-      <li>Administer AppHub
-        <ul>
-          <li>Change the external access host name of the OMT cluster</li>
-          <li>Modify the configuration information of external databases</li>
-          <li>Add, remove, and reconfigure OMT capabilities</li>
-          <li>Create a values.yaml file to enable capabilities after installation</li>
-          <li>Enable the cluster management and deployment management capabilities</li>
-          <li>Enable the log collection capability</li>
-          <li>Enable the monitoring capability</li>
-          <li>Enable the Tools capability on a new bastion node</li>
-          <li>Enable the Kubernetes backup capability manually on external Kubernetes</li>
-          <li>Disable a capability</li>
-        </ul>
-      </li>
-      <li>Administer the logging capability</li>
-      <li>Administer the monitoring capability
-        <ul>
-          <li>Map a pod IP address in the Grafana dashboard with the real host IP address</li>
-          <li>Configure the number of Prometheus and alertmanager replicas</li>
-          <li>Configure resource requests and limits of the monitoring capability</li>
-          <li>Configure the collection interval of the monitoring capability</li>
-          <li>Configure the log retention period of the monitoring capability</li>
-          <li>Expose Prometheus</li>
-        </ul>
-      </li>
-      <li>CLI tools</li>
-    </ul>
-  </li>
-  <li>Use
-    <ul>
-      <li>Get started with AppHub
-        <ul>
-          <li>Log in to AppHub</li>
-          <li>AppHub Applications page</li>
-          <li>Save a draft application configuration</li>
-          <li>Export application resources</li>
-          <li>Missing images</li>
-          <li>Signature validation</li>
-          <li>AppHub Deployments page</li>
-          <li>Viewing a Deployment</li>
-          <li>Editing a Deployment</li>
-          <li>Upgrading a Deployment</li>
-          <li>Rolling Back a Deployment</li>
-          <li>Onboarding a Deployment</li>
-          <li>Troubleshooting Deployments</li>
-          <li>Using the YAML Editor</li>
-        </ul>
-      </li>
-      <li>Manage applications and deployments
-        <ul>
-          <li>Upload a Helm chart using AppHub or the CLI</li>
-          <li>Download the application images and then upload them to an image registry</li>
-          <li>Deploy the application using AppHub or the CLI</li>
-          <li>Delete a deployment using AppHub or the CLI</li>
-        </ul>
-      </li>
-      <li>Identity Management (IdM)
-        <ul>
-          <li>Manage organizations</li>
-          <li>Customize an organization's login page</li>
-          <li>Manage users</li>
-          <li>Manage groups</li>
-          <li>Manage roles and roles-based access control</li>
-          <li>Set up database user authentication</li>
-          <li>Set up LDAP authentication</li>
-          <li>Set up certificate-based authentication</li>
-          <li>Set up SAML authentication</li>
-          <li>Set up OAuth 2.0 authentication</li>
-          <li>Set up RADIUS authentication</li>
-          <li>Set up reference authentication</li>
-          <li>Create and configure authentication groups</li>
-          <li>Add a proxy to access an external IdP</li>
-          <li>IdM system settings</li>
-          <li>IdM audit</li>
-          <li>Manage OpenID Connect</li>
-        </ul>
-      </li>
-      <li>Monitoring
-        <ul>
-          <li>Access the Grafana homepage</li>
-          <li>Grafana dashboards</li>
-        </ul>
-      </li>
-      <li>Kubernetes Dashboard
-        <ul>
-          <li>View existing images</li>
-          <li>Manage cluster</li>
-          <li>Manage deployments</li>
-          <li>Manage namespaces</li>
-          <li>Manage replica sets</li>
-          <li>Manage replication controllers</li>
-          <li>Manage stateful sets</li>
-          <li>Manage daemon sets</li>
-          <li>View jobs</li>
-          <li>Pods in OMT</li>
-          <li>Manage pods</li>
-          <li>View Services</li>
-          <li>View Ingresses</li>
-          <li>View Persistent Volume Claims</li>
-          <li>View Secrets</li>
-          <li>View ConfigMaps</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>Troubleshoot
-    <ul>
-      <li>Troubleshoot installation
-        <ul>
-          <li>Can't export the NFS volumes</li>
-          <li>Can't access service which is running on another node</li>
-          <li>"Checking containerd service not installed" error during OMT installation</li>
-          <li>"Checking HA_VIRTUAL_IP unreachable" error during OMT installation</li>
-          <li>"Checking image availability timeout" error during OMT installation</li>
-          <li>"Checking kernel parameters" error during OMT installation</li>
-          <li>"Checking kubelet service not installed " error during OMT installation</li>
-          <li>"Checking localhost" error during OMT installation</li>
-          <li>"Checking swap is disabled" error during OMT installation</li>
-          <li>"database connection test failed" error during OMT installation</li>
-          <li>"Insufficient CPU, insufficient memory" error message and a pod is stuck in "Pending" state</li>
-          <li>"IPv4 forwarding is disabled" error during OMT installation</li>
-          <li>OMT installation fails due to intermittent DNS resolution failures</li>
-          <li>"Package net-tools is not installed" error during OMT installation</li>
-          <li>Primary DNS server goes down and OMT installation fails</li>
-        </ul>
-      </li>
-      <li>Troubleshoot upgrade
-        <ul>
-          <li>"Failed to pull image" error when you try to upgrade OMT</li>
-          <li>Flannel pod doesn't start after you restart a node</li>
-          <li>IdM pod crashes during OMT upgrade</li>
-          <li>Jobs aren't updated after you upgrade OMT</li>
-          <li>Kubernetes keeps forwarding requests to the old iptables rules after upgrading OMT</li>
-          <li>"panic: runtime error: index out of range [1] with length 1" error when upgrading OMT</li>
-          <li>Prometheus pod is missing after you upgrade OMT</li>
-          <li>"UPGRADE FAILED" error after updating certificates from OMT Management Portal</li>
-          <li>"Warning FailedCreatePodSandBox" error and pods don't start during OMT upgrade</li>
-        </ul>
-      </li>
-      <li>Troubleshoot administration
-        <ul>
-          <li>Can't access a node from other nodes by using its FQDN</li>
-          <li>Can't delete an application deployment on AppHub</li>
-          <li>Can't delete a pod after a worker node crashes</li>
-          <li>Can't reset Grafana Admin password</li>
-          <li>Can't restart the PostgreSQL data pod</li>
-          <li>Can't run kubectl or kube-status.sh commands as a non-root user</li>
-          <li>Can't run the replaceExternalAccess.sh script</li>
-          <li>Certificates don't show up on AppHub</li>
-          <li>"curl: (77) Problem with the SSL CA cert (path? access rights?)" error occurs when running gen_secret.sh</li>
-          <li>"Error from server" error when you try to get a secret</li>
-          <li>"Failed to get IP address of itom-pg-backup pod" when running backup_recover.sh or db_admin.sh</li>
-          <li>Grafana and Prometheus-operator pods in CrashLoopBackOff state</li>
-          <li>itom-prometheus-grafana pod gets stuck in Init:CrashLoopBackOff status</li>
-          <li>itom-vault pod is running but other pods don't start</li>
-          <li>"No valid CRL for current time found" error and the cdfapiserver service doesn't start</li>
-          <li>Prometheus pod crashes repeatedly</li>
-          <li>Red Hat, CentOS, or Oracle Linux restarts unexpectedly</li>
-          <li>Security products can't scan files before they are deleted</li>
-          <li>"UnrecognizedClientException" error while creating ECR repository with aws-create-repository</li>
-        </ul>
-      </li>
-      <li>Troubleshoot IdM
-        <ul>
-          <li>Admin user can't log in to the Management Portal after resetting an expired password</li>
-          <li>IdM pods don't restart automatically after a broken database recovers</li>
-          <li>Invalid user name/password or user account is locked or expired</li>
-          <li>Login is slow for LDAP users</li>
-          <li>You can't log in and a "The service is unavailable at this time" message is displayed</li>
-        </ul>
-      </li>
-      <li>OMT Doctor</li>
-      <li>Find the log files</li>
-      <li>Contact support</li>
-    </ul>
-  </li>
-</ul>
+<details>
+<summary style="cursor: pointer; font-weight: bold;">▶ Click to view "Before" Structure (491 items)</summary>
 
+<div class="tree-scroll" style="max-height: 400px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
 
-## CDF
 <ul>
   <li>Release notes
     <ul>
@@ -984,4 +704,331 @@ CDF: 491 topics. TS: 142. Depth 6.
     </ul>
   </li>
 </ul>
+
+</div>
+</details>
+
+<br>
+
+<details>
+<summary style="cursor: pointer; font-weight: bold;">▶ Click to view "After" Structure (241 items)</summary>
+
+<div class="tree-scroll" style="max-height: 400px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
+
+<ul>
+  <li>Release notes
+    <ul>
+      <li>Enhancements</li>
+      <li>Fixed issues</li>
+      <li>Deprecation and obsolescence</li>
+      <li>Known issues</li>
+    </ul>
+  </li>
+  <li>Get started
+    <ul>
+      <li>Glossary</li>
+      <li>User roles</li>
+      <li>Deployment models</li>
+      <li>Service dependency</li>
+      <li>OMT architecture
+        <ul>
+          <li>Components</li>
+          <li>Packaging</li>
+          <li>Networking</li>
+          <li>Security</li>
+          <li>Storage</li>
+          <li>High availability (HA)</li>
+          <li>Databases</li>
+          <li>Back up, restore and disaster recovery</li>
+          <li>Elasticity</li>
+          <li>Monitoring</li>
+          <li>Licensing</li>
+          <li>Supportability</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Install
+    <ul>
+      <li>Deployment Architecture</li>
+      <li>System requirements</li>
+      <li>Activate your Docker Hub account</li>
+      <li>Download the installation package</li>
+      <li>Set up prerequisites</li>
+      <li>Deploy OMT</li>
+      <li>Post installation tasks</li>
+      <li>Uninstall</li>
+      <li>Reference topics
+        <ul>
+          <li>Create and configure a config.json file</li>
+          <li>Manage High Availability (HA) in a cluster with multiple control plane nodes</li>
+          <li>Configure Keepalived for High Availability</li>
+          <li>Configure storage for the Kubernetes backup capability</li>
+          <li>Set up persistent storage</li>
+          <li>Forward application logs to an external receiver</li>
+          <li>Configure sudo access</li>
+          <li>Synchronize time</li>
+          <li>Make required system configurations</li>
+          <li>Check the default gateway settings</li>
+          <li>Check the firewall settings</li>
+          <li>Check the host name and set up host name resolutions</li>
+          <li>Configure the install.properties file</li>
+          <li>Check the SSH configurations</li>
+          <li>Create a new Security Context Constraint (external K8s)</li>
+          <li>Request server certificates</li>
+          <li>Configure external databases</li>
+          <li>Download the OMT images and then upload them to an external image registry</li>
+          <li>Run a preliminary check</li>
+          <li>Configure an internal load balancer</li>
+          <li>Configure external load balancers</li>
+          <li>Install the itom-cdf-alias script for non-root users</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Upgrade
+    <ul>
+      <li>System requirements</li>
+      <li>Download the OMT packages</li>
+      <li>Set up prerequisites for upgrades</li>
+      <li>Upgrade OMT</li>
+      <li>Post-upgrade configurations</li>
+      <li>Reference
+        <ul>
+          <li>Free disk space</li>
+          <li>Generate an upgrade runbook</li>
+          <li>Check that the hostname hasn't changed</li>
+          <li>Back up data</li>
+          <li>Upload images to an external registry</li>
+          <li>Configure permissions</li>
+          <li>Configure SSH connections</li>
+          <li>Disable on-access security scans</li>
+          <li>Make sure that all nodes or pods are running</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Administer
+    <ul>
+      <li>Cluster management
+        <ul>
+          <li>Management Portal</li>
+          <li>Restart OMT</li>
+          <li>Update the DNS entries</li>
+          <li>Update the operating system</li>
+          <li>Post steps after applying an OS patch</li>
+          <li>Convert from CentOS to RHEL using convert2rhel</li>
+          <li>Configure application proxies after you install OMT</li>
+          <li>Change the POD_CIDR parameter value after OMT installation</li>
+          <li>Change the SERVICE_CIDR parameter value after OMT installation</li>
+          <li>Change the HA virtual IP address after OMT installation</li>
+          <li>Enable High Availability (HA) after you install OMT</li>
+          <li>Monitor the deployment with the "cdf-help" and Kubernetes commands</li>
+          <li>Change the persistent volumes (PVs) after you install OMT</li>
+          <li>Change from root user to non-root user after installation</li>
+          <li>Rebind a PV and a PVC</li>
+          <li>Add or remove nodes from a cluster by using the Management portal</li>
+          <li>Add or remove nodes from a cluster via CLI commands</li>
+          <li>Manage node labels</li>
+          <li>Change cluster runlevel</li>
+          <li>Security overview</li>
+          <li>Enable a firewall on a node</li>
+          <li>Manage OMT certificates</li>
+          <li>Set the security context</li>
+          <li>Enable the Pod Security Policy</li>
+          <li>Change system UID and GID after installation</li>
+          <li>Disaster recovery</li>
+          <li>Back up</li>
+          <li>Update scheduled time or backup scope for the Kubernetes backup capability</li>
+          <li>Restore</li>
+          <li>Back up and restore IdM</li>
+          <li>Clean up local registry images</li>
+          <li>Change the password of the local registry admin user</li>
+          <li>Change the registry setting</li>
+        </ul>
+      </li>
+      <li>Administer AppHub
+        <ul>
+          <li>Change the external access host name of the OMT cluster</li>
+          <li>Modify the configuration information of external databases</li>
+          <li>Add, remove, and reconfigure OMT capabilities</li>
+          <li>Create a values.yaml file to enable capabilities after installation</li>
+          <li>Enable the cluster management and deployment management capabilities</li>
+          <li>Enable the log collection capability</li>
+          <li>Enable the monitoring capability</li>
+          <li>Enable the Tools capability on a new bastion node</li>
+          <li>Enable the Kubernetes backup capability manually on external Kubernetes</li>
+          <li>Disable a capability</li>
+        </ul>
+      </li>
+      <li>Administer the logging capability</li>
+      <li>Administer the monitoring capability
+        <ul>
+          <li>Map a pod IP address in the Grafana dashboard with the real host IP address</li>
+          <li>Configure the number of Prometheus and alertmanager replicas</li>
+          <li>Configure resource requests and limits of the monitoring capability</li>
+          <li>Configure the collection interval of the monitoring capability</li>
+          <li>Configure the log retention period of the monitoring capability</li>
+          <li>Expose Prometheus</li>
+        </ul>
+      </li>
+      <li>CLI tools</li>
+    </ul>
+  </li>
+  <li>Use
+    <ul>
+      <li>Get started with AppHub
+        <ul>
+          <li>Log in to AppHub</li>
+          <li>AppHub Applications page</li>
+          <li>Save a draft application configuration</li>
+          <li>Export application resources</li>
+          <li>Missing images</li>
+          <li>Signature validation</li>
+          <li>AppHub Deployments page</li>
+          <li>Viewing a Deployment</li>
+          <li>Editing a Deployment</li>
+          <li>Upgrading a Deployment</li>
+          <li>Rolling Back a Deployment</li>
+          <li>Onboarding a Deployment</li>
+          <li>Troubleshooting Deployments</li>
+          <li>Using the YAML Editor</li>
+        </ul>
+      </li>
+      <li>Manage applications and deployments
+        <ul>
+          <li>Upload a Helm chart using AppHub or the CLI</li>
+          <li>Download the application images and then upload them to an image registry</li>
+          <li>Deploy the application using AppHub or the CLI</li>
+          <li>Delete a deployment using AppHub or the CLI</li>
+        </ul>
+      </li>
+      <li>Identity Management (IdM)
+        <ul>
+          <li>Manage organizations</li>
+          <li>Customize an organization's login page</li>
+          <li>Manage users</li>
+          <li>Manage groups</li>
+          <li>Manage roles and roles-based access control</li>
+          <li>Set up database user authentication</li>
+          <li>Set up LDAP authentication</li>
+          <li>Set up certificate-based authentication</li>
+          <li>Set up SAML authentication</li>
+          <li>Set up OAuth 2.0 authentication</li>
+          <li>Set up RADIUS authentication</li>
+          <li>Set up reference authentication</li>
+          <li>Create and configure authentication groups</li>
+          <li>Add a proxy to access an external IdP</li>
+          <li>IdM system settings</li>
+          <li>IdM audit</li>
+          <li>Manage OpenID Connect</li>
+        </ul>
+      </li>
+      <li>Monitoring
+        <ul>
+          <li>Access the Grafana homepage</li>
+          <li>Grafana dashboards</li>
+        </ul>
+      </li>
+      <li>Kubernetes Dashboard
+        <ul>
+          <li>View existing images</li>
+          <li>Manage cluster</li>
+          <li>Manage deployments</li>
+          <li>Manage namespaces</li>
+          <li>Manage replica sets</li>
+          <li>Manage replication controllers</li>
+          <li>Manage stateful sets</li>
+          <li>Manage daemon sets</li>
+          <li>View jobs</li>
+          <li>Pods in OMT</li>
+          <li>Manage pods</li>
+          <li>View Services</li>
+          <li>View Ingresses</li>
+          <li>View Persistent Volume Claims</li>
+          <li>View Secrets</li>
+          <li>View ConfigMaps</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Troubleshoot
+    <ul>
+      <li>Troubleshoot installation
+        <ul>
+          <li>Can't export the NFS volumes</li>
+          <li>Can't access service which is running on another node</li>
+          <li>"Checking containerd service not installed" error during OMT installation</li>
+          <li>"Checking HA_VIRTUAL_IP unreachable" error during OMT installation</li>
+          <li>"Checking image availability timeout" error during OMT installation</li>
+          <li>"Checking kernel parameters" error during OMT installation</li>
+          <li>"Checking kubelet service not installed " error during OMT installation</li>
+          <li>"Checking localhost" error during OMT installation</li>
+          <li>"Checking swap is disabled" error during OMT installation</li>
+          <li>"database connection test failed" error during OMT installation</li>
+          <li>"Insufficient CPU, insufficient memory" error message and a pod is stuck in "Pending" state</li>
+          <li>"IPv4 forwarding is disabled" error during OMT installation</li>
+          <li>OMT installation fails due to intermittent DNS resolution failures</li>
+          <li>"Package net-tools is not installed" error during OMT installation</li>
+          <li>Primary DNS server goes down and OMT installation fails</li>
+        </ul>
+      </li>
+      <li>Troubleshoot upgrade
+        <ul>
+          <li>"Failed to pull image" error when you try to upgrade OMT</li>
+          <li>Flannel pod doesn't start after you restart a node</li>
+          <li>IdM pod crashes during OMT upgrade</li>
+          <li>Jobs aren't updated after you upgrade OMT</li>
+          <li>Kubernetes keeps forwarding requests to the old iptables rules after upgrading OMT</li>
+          <li>"panic: runtime error: index out of range [1] with length 1" error when upgrading OMT</li>
+          <li>Prometheus pod is missing after you upgrade OMT</li>
+          <li>"UPGRADE FAILED" error after updating certificates from OMT Management Portal</li>
+          <li>"Warning FailedCreatePodSandBox" error and pods don't start during OMT upgrade</li>
+        </ul>
+      </li>
+      <li>Troubleshoot administration
+        <ul>
+          <li>Can't access a node from other nodes by using its FQDN</li>
+          <li>Can't delete an application deployment on AppHub</li>
+          <li>Can't delete a pod after a worker node crashes</li>
+          <li>Can't reset Grafana Admin password</li>
+          <li>Can't restart the PostgreSQL data pod</li>
+          <li>Can't run kubectl or kube-status.sh commands as a non-root user</li>
+          <li>Can't run the replaceExternalAccess.sh script</li>
+          <li>Certificates don't show up on AppHub</li>
+          <li>"curl: (77) Problem with the SSL CA cert (path? access rights?)" error occurs when running gen_secret.sh</li>
+          <li>"Error from server" error when you try to get a secret</li>
+          <li>"Failed to get IP address of itom-pg-backup pod" when running backup_recover.sh or db_admin.sh</li>
+          <li>Grafana and Prometheus-operator pods in CrashLoopBackOff state</li>
+          <li>itom-prometheus-grafana pod gets stuck in Init:CrashLoopBackOff status</li>
+          <li>itom-vault pod is running but other pods don't start</li>
+          <li>"No valid CRL for current time found" error and the cdfapiserver service doesn't start</li>
+          <li>Prometheus pod crashes repeatedly</li>
+          <li>Red Hat, CentOS, or Oracle Linux restarts unexpectedly</li>
+          <li>Security products can't scan files before they are deleted</li>
+          <li>"UnrecognizedClientException" error while creating ECR repository with aws-create-repository</li>
+        </ul>
+      </li>
+      <li>Troubleshoot IdM
+        <ul>
+          <li>Admin user can't log in to the Management Portal after resetting an expired password</li>
+          <li>IdM pods don't restart automatically after a broken database recovers</li>
+          <li>Invalid user name/password or user account is locked or expired</li>
+          <li>Login is slow for LDAP users</li>
+          <li>You can't log in and a "The service is unavailable at this time" message is displayed</li>
+        </ul>
+      </li>
+      <li>OMT Doctor</li>
+      <li>Find the log files</li>
+      <li>Contact support</li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+</details>
+
+
+
+
 
