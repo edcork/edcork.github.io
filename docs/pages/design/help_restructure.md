@@ -10,15 +10,14 @@ The decision to make an internal document publically-visible presented an opport
 
 A content audit and workshops with SMEs enabled me to:
 
-- Reduce the total number of topics by over a third (491 down to 315)
-- Identify and remove obsolete troubleshooting topics (identified X% of troubleshooting topics to be redundant 141/129)
+- Reduce the total number of topics by over 50% (491 down to 241)
+- Identify and remove obsolete troubleshooting topics (identified 60% of troubleshooting topics to be redundant)
 - Merge 4 installtion sub-sections into a single user journey
-- Reduce the maximum depth of the ToC to 3 (down from X)
+- Reduce the maximum depth of the ToC to 3 (down from 6)
 
-OMT: 315 topics. TS: 130. Depth 3.
-CDF: 491 topics. TS: 142. Depth 5. 
-Check for ommitted CDF sections, esp TS. Look at OMT TS- anything that may be new(compare to later versions)
-Can remove TS from OMT, add to CDF (check old UCMDB for clues), fiddle with TOC for depth
+OMT: 241 topics. TS: 56. Depth 3.
+CDF: 491 topics. TS: 142. Depth 6. 
+
 
 ## OMT
 <ul>
@@ -263,138 +262,64 @@ Can remove TS from OMT, add to CDF (check old UCMDB for clues), fiddle with TOC 
       <li>Troubleshoot installation
         <ul>
           <li>Can't export the NFS volumes</li>
-          <li>IDM pod cannot start due to expired IDM database ca certificates</li>
           <li>Can't access service which is running on another node</li>
-          <li>Can't log in to the Docker Hub</li>
-          <li>Installation fails with PV issues</li>
           <li>"Checking containerd service not installed" error during OMT installation</li>
           <li>"Checking HA_VIRTUAL_IP unreachable" error during OMT installation</li>
           <li>"Checking image availability timeout" error during OMT installation</li>
           <li>"Checking kernel parameters" error during OMT installation</li>
           <li>"Checking kubelet service not installed " error during OMT installation</li>
           <li>"Checking localhost" error during OMT installation</li>
-          <li>"Checking port xxx failed" during OMT installation</li>
           <li>"Checking swap is disabled" error during OMT installation</li>
           <li>"database connection test failed" error during OMT installation</li>
-          <li>Fail to install some required prerequisite packages</li>
-          <li>FAILED: Checking DNS server connection timeout</li>
-          <li>FATAL: Invalid value for --nfs-server</li>
-          <li>Image xxx not found</li>
-          <li>Installation fails if DNS is not configured</li>
-          <li>Installation failed when registry certificate expired in kube-registry-cert secret</li>
           <li>"Insufficient CPU, insufficient memory" error message and a pod is stuck in "Pending" state</li>
-          <li>Invalid character "{" in host name</li>
           <li>"IPv4 forwarding is disabled" error during OMT installation</li>
           <li>OMT installation fails due to intermittent DNS resolution failures</li>
-          <li>OMT installation fails with a "fail to pull image" error message</li>
-          <li>OMT installation fails with the first control plane node in the NotReady status</li>
-          <li>OMT on GKE doesn't support an SSL connection to the native Google PostgreSQL database</li>
           <li>"Package net-tools is not installed" error during OMT installation</li>
           <li>Primary DNS server goes down and OMT installation fails</li>
-          <li>"semodule: Failed on... selinux-addition.pp!" error message and installation fails</li>
-          <li>Timeout errors occur when OMT calls the AKS API server</li>
-          <li>"Too many pods" error when installing an application</li>
-          <li>"userauth_pubkey: key type ssh-rsa not in PubkeyAcceptedKeyTypes" error while adding worker node or upgrading OMT</li>
         </ul>
       </li>
       <li>Troubleshoot upgrade
         <ul>
-          <li>AppHub failed to display deployments after upgrading OMT</li>
-          <li>"Checking connectivity to registry failed" during upgrade precheck</li>
-          <li>"Device is busy" or "waiting for IO/CPU to become free" error messages during upgrade</li>
-          <li>"Error: client: etcd cluster is unavailable or misconfigured; error: tls: bad certificate" during upgrade</li>
-          <li>"Failed to find CDF_HOME" error</li>
           <li>"Failed to pull image" error when you try to upgrade OMT</li>
-          <li>Failed to pull images during upgrade when McAfee on-access scan is enabled</li>
           <li>Flannel pod doesn't start after you restart a node</li>
           <li>IdM pod crashes during OMT upgrade</li>
           <li>Jobs aren't updated after you upgrade OMT</li>
-          <li>kube-apiserver doesn't enable encryption correctly after an upgrade</li>
           <li>Kubernetes keeps forwarding requests to the old iptables rules after upgrading OMT</li>
-          <li>Kubernetes security issue: CVE-2021-25740: Endpoint and EndpointSlice permissions allow cross-Namespace forwarding</li>
-          <li>No pod running on the newly added node after upgrading OMT</li>
           <li>"panic: runtime error: index out of range [1] with length 1" error when upgrading OMT</li>
-          <li>Patching a deployment on GKE 1.17 takes a long time</li>
           <li>Prometheus pod is missing after you upgrade OMT</li>
-          <li>Service portal is down and pods are in init status</li>
           <li>"UPGRADE FAILED" error after updating certificates from OMT Management Portal</li>
-          <li>Upgrade failed with message "Failed to push apphub images"</li>
-          <li>Upgrade fails after your session is disconnected</li>
-          <li>Upgrade OMT failed with "plugin/forward: no nameservers found" error</li>
-          <li>Upgrade pre-check fails with "dial tcp: lookup registry.hub.docker.com" error</li>
-          <li>Upgrade failed with error "pods \"kube-registry-xxx-\" is forbidden: PodSecurityPolicy: unable to admit pod"</li>
-          <li>Upgrade fails when the system locale isn't en_US.utf8</li>
-          <li>"Warning FailedCreatePodSandBox" message and pods don't start during upgrade</li>
-          <li>"WARNING! Not ready endpoint(s) in core namespace detected." in upgrade precheck</li>
+          <li>"Warning FailedCreatePodSandBox" error and pods don't start during OMT upgrade</li>
         </ul>
       </li>
       <li>Troubleshoot administration
         <ul>
-          <li>Application helm charts didn't display on AppHub after uploading successfully</li>
-          <li>AppHub failed to upload charts with "Readtimedout" error</li>
           <li>Can't access a node from other nodes by using its FQDN</li>
           <li>Can't delete an application deployment on AppHub</li>
           <li>Can't delete a pod after a worker node crashes</li>
-          <li>Can't log into OMT Swagger UI page</li>
           <li>Can't reset Grafana Admin password</li>
           <li>Can't restart the PostgreSQL data pod</li>
           <li>Can't run kubectl or kube-status.sh commands as a non-root user</li>
           <li>Can't run the replaceExternalAccess.sh script</li>
-          <li>CDF-API-server volume verification failed</li>
           <li>Certificates don't show up on AppHub</li>
-          <li>cleanRegistry failed with error "failed to garbage collect: error enumerating blobs..."</li>
-          <li>Cluster node becomes NotReady after a vMotion VM migration</li>
           <li>"curl: (77) Problem with the SSL CA cert (path? access rights?)" error occurs when running gen_secret.sh</li>
-          <li>Domain name can't be resolved or a resolution error occurs in pod</li>
-          <li>"error=\"failed to new session: ssh: rejected: connect failed (open failed)" when adding node</li>
           <li>"Error from server" error when you try to get a secret</li>
-          <li>"error: unknown shorthand flag" when deployment_status.sh checks PVs</li>
-          <li>"ERROR renewCert.Execute() Error: exit status 1" while renewing external certificates</li>
-          <li>"exit status 127" error after running changeRegistry</li>
-          <li>Failed to add a control plane node using HA_VIRTUAL_IP</li>
-          <li>Failed to add a node with "ALREADY DONE" in the log</li>
           <li>"Failed to get IP address of itom-pg-backup pod" when running backup_recover.sh or db_admin.sh</li>
-          <li>Failed to remove bound PVC using volume_admin.sh</li>
-          <li>Fluentd has high CPU usage</li>
           <li>Grafana and Prometheus-operator pods in CrashLoopBackOff state</li>
           <li>itom-prometheus-grafana pod gets stuck in Init:CrashLoopBackOff status</li>
-          <li>Intermittently failed to connect exposed service via external FQDN with HA using Keepalived</li>
           <li>itom-vault pod is running but other pods don't start</li>
-          <li>Kubelet gets stuck with "runtime service failed: rpc error: code = Unknown" error messages</li>
-          <li>Kubernetes gets stuck when rebooting the server</li>
-          <li>Log files under log volume didn't get rotated</li>
           <li>"No valid CRL for current time found" error and the cdfapiserver service doesn't start</li>
-          <li>Pods failed to start up and stuck in init status after upgrading Linux distribution</li>
-          <li>The Prometheus pod crashes repeatedly</li>
-          <li>Prometheus targets down: serviceMonitor/core/itom-prometheus-kube-etcd/0 (1/3 up)</li>
+          <li>Prometheus pod crashes repeatedly</li>
           <li>Red Hat, CentOS, or Oracle Linux restarts unexpectedly</li>
-          <li>replaceExternalAccessHost script fails with "Waiting for idm pod ready..."</li>
           <li>Security products can't scan files before they are deleted</li>
-          <li>Some components can't get the real IP addresses when firewall masquerade setting is enabled</li>
-          <li>Some PostgreSQL pod stuck in 1/2 state</li>
-          <li>The Deployments page keeps loading but not showing the deployments</li>
-          <li>The downloadimages.sh script failed to authenticate the docker account with 2FA enabled</li>
-          <li>The Grafana pod is in CrashLoopBackOff state or server error is returned when opening the Grafana dashboard</li>
-          <li>The Kubelet service doesn't work when installing an application to a pre-occupied port</li>
-          <li>The itom-vault pod doesn't go up after system reboot</li>
-          <li>The itom-vault pod failed to start and is in CrashLoopBackOff state</li>
-          <li>Vault pod crashed with error "FATAL unseal vault failed"</li>
-          <li>Vault pod failed to start when NFS disk usage reaches 100%</li>
           <li>"UnrecognizedClientException" error while creating ECR repository with aws-create-repository</li>
-          <li>Can't delete worker nodes from the OMT Management Portal</li>
         </ul>
       </li>
       <li>Troubleshoot IdM
         <ul>
-          <li>Users can't log in to IdM because authentication is misconfigured</li>
           <li>Admin user can't log in to the Management Portal after resetting an expired password</li>
-          <li>IdM fails to connect to database</li>
-          <li>IdM pods are in "idle in transaction" state in PostgreSQL</li>
           <li>IdM pods don't restart automatically after a broken database recovers</li>
-          <li>"INVALID TOKEN" error happens when login with SAML authentication</li>
           <li>Invalid user name/password or user account is locked or expired</li>
           <li>Login is slow for LDAP users</li>
-          <li>"Unable to upgrade connection" error trying to get IdM secret</li>
           <li>You can't log in and a "The service is unavailable at this time" message is displayed</li>
         </ul>
       </li>
@@ -679,11 +604,11 @@ Can remove TS from OMT, add to CDF (check old UCMDB for clues), fiddle with TOC 
             <ul>
               <li>Configuring an Application
                 <ul>
-                  <li>Configuring General Settings</li>
+                  <li>Configuring General Settings<ul>
+                  <li>Configuring Advanced Settings</li></ul></li>
                   <li>Configuring Services</li>
                   <li>Configuring Security Settings</li>
                   <li>Configuring Integrations</li>
-                  <li>Configuring Advanced Settings</li>
                 </ul>
               </li>
               <li>Deploying an Application</li>
