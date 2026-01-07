@@ -3,3 +3,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    var toggleBtn = document.getElementById('dark-mode-toggle');
+    
+    if (!toggleBtn) {
+        toggleBtn = document.createElement('button');
+        toggleBtn.id = 'dark-mode-toggle';
+        toggleBtn.innerHTML = '🌙';
+        document.body.appendChild(toggleBtn);
+    }
+
+    var htmlTag = document.documentElement;
+
+    toggleBtn.addEventListener('click', function() {
+      var currentTheme = htmlTag.getAttribute('jtd-color-scheme');
+      
+      if (currentTheme === 'dark') {
+        htmlTag.setAttribute('jtd-color-scheme', 'light');
+        localStorage.setItem('jtd-color-scheme', 'light');
+        toggleBtn.innerHTML = '🌙'; 
+      } else {
+        htmlTag.setAttribute('jtd-color-scheme', 'dark');
+        localStorage.setItem('jtd-color-scheme', 'dark');
+        toggleBtn.innerHTML = '☀️'; 
+      }
+    });
+
+    var savedTheme = localStorage.getItem('jtd-color-scheme');
+    if (savedTheme) {
+      htmlTag.setAttribute('jtd-color-scheme', savedTheme);
+      if (savedTheme === 'dark') {
+          toggleBtn.innerHTML = '☀️';
+      }
+    }
+  }); 
+</script>
