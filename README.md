@@ -1,3 +1,9 @@
-I'm a tech writer and editor with 15 years of experience in technical documentation. Formerly at OpenText, I mainly worked on IT Service Management products and a Kubernetes-based container orchestration platform.
+# ReadMe
 
-Also an occassional cycling coach and one-time archaeologist.
+This portfolio is published using [Jekyll] and the [Just the Docs] theme.
+
+The Just the Docs theme is licensed under the [MIT License]. 
+
+[Jekyll]: https://jekyllrb.com
+[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
+[MIT License]: https://en.wikipedia.org/wiki/MIT_License
