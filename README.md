@@ -1,5 +1,3 @@
-# ReadMe
-
 This portfolio is published using [Jekyll] and the [Just the Docs] theme.
 
 The Just the Docs theme is licensed under the [MIT License]. 
