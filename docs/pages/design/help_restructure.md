@@ -52,7 +52,7 @@ The decision to make an internal document publically-visible presented me with a
 |:---|:---|:---|:---|
 | **Total topics** | 491 files | 241 files | Reduced by 50% |
 | **Topic depth** | 6 levels | 3 levels | Flattened by 50% |
-| **Troubleshooting**|142 | 56 | 60% of topics identified as obsolete)|
+| **Troubleshooting**|142 | 56 | 60% of topics identified as obsolete|
 | **Installation** | 4 discrete user journeys | 1 unified journey | Significant simplification |
 
 ## Methodology
