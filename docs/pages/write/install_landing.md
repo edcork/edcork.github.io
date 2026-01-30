@@ -24,7 +24,7 @@ This section describes how to install OMT. The following is a high--level view o
 
 # Step 1: Plan your deployment
 
-Before you install OMT, review
+Before you install OMT, review the following topics:
 - <span style="color: red;"><u>Sizing and directory structure</u></span>
 - <span style="color: red;"><u>System requirements</u></span> 
 
