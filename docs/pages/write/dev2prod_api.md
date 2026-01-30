@@ -1,12 +1,12 @@
 ---
-title: "Sample 3: Dev2Prod REST API"
+title: "Sample 3: API docs"
 layout: default
 parent: Writing
 nav_order: 4
 has_toc: false
 ---
 
-# Sample 3: Dev2Prod REST API
+# Dev2Prod REST API
 {: .no_toc }
 
 <details close markdown="block">

@@ -1,11 +1,11 @@
 ---
-title: "Sample 1: Kubernetes troubleshooting"
+title: "Sample 1: troubleshooting"
 layout: default
 parent: Editing
 nav_order: 1
 ---
 
-# Editing sample 1: Kubernetes troubleshooting
+# Kubernetes troubleshooting
 {: .no_toc }
 
 **On this page**

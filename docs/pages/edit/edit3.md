@@ -5,7 +5,7 @@ parent: Editing
 nav_order: 3
 ---
 
-# Editing sample 3: Integration guide
+# Integration guide
 {: .no_toc }
 
 **On this page**
