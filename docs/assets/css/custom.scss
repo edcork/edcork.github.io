@@ -218,10 +218,111 @@ body .search-label svg path {
     box-shadow: 0 0 0 3px rgba(121, 192, 255, 0.3) !important;
 }
 
+/* --- FIX 4: SEARCH RESULT ICONS --- */
+body .search-result-icon,
+body .search-result-icon use {
+    color: var(--my-brand-color) !important;
+    fill: var(--my-brand-color) !important;
+}
+
+/* --- FIX 5: LINK HOVER UNDERLINE (Was Missing) --- */
+/* Forces the underline that appears on hover to be blue instead of purple */
+a:hover {
+    text-decoration-color: var(--my-brand-color) !important;
+}
+
+/* =========================================
+   6. FINISHING TOUCHES
+   ========================================= */
+
+/* --- FIX 1: ADMONITIONS --- */
+.note, .label-note, blockquote.note {
+    border-color: var(--my-brand-color) !important;
+}
+.note::before, blockquote.note::before {
+    color: var(--my-brand-color) !important;
+    fill: var(--my-brand-color) !important; 
+}
+.note strong, blockquote.note strong {
+    color: inherit !important; 
+}
+
+/* --- FIX 2: SIDEBAR ARROWS --- */
+.nav-list-expander svg,
+.nav-list-expander svg path,
+.nav-list-expander svg polygon {
+    color: var(--my-brand-color) !important;
+    fill: var(--my-brand-color) !important;
+}
+
+/* --- FIX 3: SEARCH BAR STYLING --- */
+/* 3A. The Magnifying Glass Icon */
+body .search-label svg,
+body .search-label svg path {
+    color: var(--my-brand-color) !important;
+    fill: var(--my-brand-color) !important;
+}
+
+/* 3B. The Input Focus */
+.search-input-wrap #search-input:focus {
+    border-color: var(--my-brand-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 60, 108, 0.3) !important; 
+    outline: none !important;
+}
+.search-input-wrap:focus-within {
+    border-color: var(--my-brand-color) !important;
+    box-shadow: none !important;
+}
+
+/* 3C. Dark Mode Focus Glow */
+[jtd-color-scheme="dark"] .search-input-wrap #search-input:focus {
+    border-color: var(--my-brand-color) !important;
+    box-shadow: 0 0 0 3px rgba(121, 192, 255, 0.3) !important;
+}
 
 /* --- FIX 4: SEARCH RESULT ICONS --- */
 body .search-result-icon,
 body .search-result-icon use {
     color: var(--my-brand-color) !important;
     fill: var(--my-brand-color) !important;
+}
+
+/* --- FIX 5: LINK HOVER UNDERLINE --- */
+/* Forces the underline that appears on hover to be blue instead of purple */
+a:hover {
+    text-decoration-color: var(--my-brand-color) !important;
+}
+
+/* --- FIX 6: HEADING ANCHOR (CHAIN ICON) --- */
+/* Targets the link itself */
+.heading-anchor, 
+.anchor-heading,
+a.anchor {
+    color: var(--my-brand-color) !important;
+    border: none !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    opacity: 1 !important; /* Ensures it is visible */
+}
+
+/* Targets the SVG Icon inside */
+.heading-anchor svg, .heading-anchor svg path, .heading-anchor svg use,
+.anchor-heading svg, .anchor-heading svg path, .anchor-heading svg use {
+    fill: var(--my-brand-color) !important;
+    color: var(--my-brand-color) !important;
+    stroke: var(--my-brand-color) !important;
+}
+
+/* Manage Hover State */
+.heading-anchor:hover, .heading-anchor:focus,
+a.anchor:hover, a.anchor:focus {
+    color: var(--my-brand-color) !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Removes the text underline from the icon specifically */
+a.heading-anchor:hover,
+a.anchor-heading:hover {
+    text-decoration-color: transparent !important;
 }
