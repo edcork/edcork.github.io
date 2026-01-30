@@ -5,6 +5,10 @@ parent: Design
 nav_order: 1
 has_toc: false
 ---
+
+# Online help restructure
+
+
 <style>
   /* 1. Layout: Side-by-Side Container */
   .toc-row {
@@ -44,7 +48,7 @@ has_toc: false
   }
 </style>
 
-The decision to make an internal document publically-visible presented me with an opportunity to restructure it for clarity, navigability, and SEO.
+The decision to make an internal document publicly-visible presented me with an opportunity to restructure it for clarity, navigability, and SEO.
 
 ## Impact summary
 
@@ -58,8 +62,9 @@ The decision to make an internal document publically-visible presented me with a
 ## Methodology
 
 * **Content audit:** I cataloged the existing 491 topics to identify structural redundancies, such as empty landing pages, duplicates, and pages that could be combined. I was able to reduce the navigation depth from 6 levels to 3 to improve SEO and discoverability.
-* **SME validation:** I conducted workshops with Subject Matter Experts to review all troubleshooting topics for references to resolved issues or obsolete software versions.
 * **User journey consolidation:** I unified four fragmented installation sections into a single linear narrative that covered all installation scenarios.
+* **SME validation:** I conducted workshops with subject matter experts to review all troubleshooting topics for references to resolved issues or obsolete software versions.
+* **User-centric writing:** I restructured the installation section to address feedback that users had a wide range of levels of experience with Kubernetes. I created a high-level flow for experts that was supported by reference topics with detailed steps for relative beginners. A sample of this is included in the Writing section: see [Install OMT](/pages/write/install_landing.html).  
 
 ## Structural comparison 
 
