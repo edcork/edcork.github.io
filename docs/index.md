@@ -2,7 +2,7 @@
 title: Home
 layout: home
 nav_exclude: true
-<meta name="google-site-verification" content="3gFWB42sfflMQZD0FkgKSN7u4R0dZNpedfz4v6yMNzM" />
+meta name="google-site-verification" content="3gFWB42sfflMQZD0FkgKSN7u4R0dZNpedfz4v6yMNzM" 
 ---
 
 I'm a lead tech writer, formerly at OpenText, with 15 years of experience in technical documentation. I mainly worked on IT Service Management products and a Kubernetes-based container orchestration platform.
