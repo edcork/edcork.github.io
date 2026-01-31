@@ -1,0 +1,35 @@
+---
+layout: null
+---
+# Ed Cork | Technical Writing Portfolio
+> High-level summary of professional experience, projects, and technical documentation samples.
+
+## Professional Profile
+Lead technical writer with over a decade of experience in the software industry. Specializes in information architecture and content strategy for complex enterprise software.
+
+## Core Expertise
+- **Information Architecture:** Restructuring high-volume documentation sets to improve discoverability.
+- **Tools:** Flare, xMetal, MediaWiki, Jekyll, GitHub Pages, Git, Markdown.
+- **Strategy:** Content audits, ToC optimization, and cross-functional documentation leadership.
+
+## Portfolio Highlights
+
+### 1. Help Center Restructuring & Information Architecture
+A large-scale project focused on reducing user friction by streamlining content volume.
+- **Outcome:** Reduced total topic count by over 50% (from 491 to 241).
+- **Optimization:** Collapsed deep hierarchy from 6 levels down to 3 to improve navigation speed.
+- **Focus:** Information design, content consolidation, and user experience.
+
+### 2. Technical Writing Samples
+- **Install OMT:** Comprehensive installation guides for complex software suites.
+
+### 3. Technical Editing Samples
+- **Kubernetes Troubleshooting:** Procedural documentation and error-state resolution guides.
+
+## Contact & Links
+- **Portfolio Home:** https://edcork.github.io/
+- **GitHub Profile:** https://github.com/edcork
+- **LinkedIn:** https://www.linkedin.com/in/edwardcork/
+
+---
+*Note: This file is optimized for LLMs. For the full visual experience and detailed case studies, please visit the homepage.*
