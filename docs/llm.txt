@@ -9,7 +9,7 @@ Lead technical writer with over a decade of experience in the software industry.
 
 ## Core Expertise
 - **Information Architecture:** Restructuring high-volume documentation sets to improve discoverability.
-- **Tools:** Flare, xMetal, MediaWiki, Jekyll, GitHub Pages, Git, Markdown.
+- **Tools:** MediaWiki, Confluence, MadCap Flare, XMetaL, Subversion, and GitHub.
 - **Strategy:** Content audits, ToC optimization, and cross-functional documentation leadership.
 
 ## Portfolio Highlights
