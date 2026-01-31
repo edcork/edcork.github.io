@@ -1,8 +1,8 @@
 ---
 title: Check the firewall settings
 layout: default
-parent: Prepare an environment to install OMT
-nav_order: 3
+parent: "Sample 1: Installation guide"
+nav_order: 4
 has_toc: false
 ---
 

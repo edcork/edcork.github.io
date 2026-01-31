@@ -25,6 +25,8 @@ These samples highlight my ability to adapt content for different users, from sy
 
 *Skills: Multi-level documentation, procedural writing*
 
+* **User-centric writing:** I restructured the installation section to address feedback that users had a wide range of levels of experience with Kubernetes. I created a high-level flow for experts that was supported by reference topics with detailed steps for relative beginners.
+
 ### 2. [Sample 2: Service Management Models](/pages/write/models.html)
 *Templates for enterprise software*  
 - Concept overviews  
