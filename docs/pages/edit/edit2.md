@@ -1,11 +1,11 @@
 ---
-title: "Sample 2: troubleshooting"
+title: "Sample 2: Infrastructure troubleshooting"
 layout: default
 parent: Editing
 nav_order: 2
 ---
 
-# Infrastructure troubleshooting
+# Infrastructure troubleshooting edit
 {: .no_toc }
 
 **On this page**
