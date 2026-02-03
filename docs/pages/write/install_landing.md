@@ -1,12 +1,12 @@
 ---
-title: "Sample 1: Install OMT"
+title: "Sample 1: Installation guide"
 layout: default
 parent: Writing
 nav_order: 1
 has_toc: false
 ---
 
-# Sample 1: Install OMT
+# Install OMT
 {: .no_toc }
 
 <details close markdown="block">
@@ -22,13 +22,13 @@ has_toc: false
 
 This section describes how to install OMT. The following is a high--level view of the process.
 
-# Step 1: Plan your deployment
+## Step 1: Plan your deployment
 
 Before you install OMT, review the following topics:
 - <span style="color: red;"><u>Sizing and directory structure</u></span>
 - <span style="color: red;"><u>System requirements</u></span> 
 
-## Decide which capabilities to enable
+### Decide which capabilities to enable
 {: .no_toc }
 
 OMT includes optional capabilities that can be enabled or disabled during installation. 
@@ -47,28 +47,28 @@ Some capabilities help with the installation process, and others add functionali
 |Kubernetes backup|Uses Velero for backup and restore of Kubernetes deployments.|Enabled|
 		
 
-# Step 2: Prepare a Docker Hub account
+## Step 2: Prepare a Docker Hub account
 
 You need a Docker Hub account authorized by us to download application images from our Docker Hub image registry. 
 
 If you don't already have one, set up an account, and then contact us to authorize it. For more information, see <span style="color: red;"><u>Activate your Docker Hub account</u></span>.
 
-# Step 3: Prepare infrastructure
+## Step 3: Prepare infrastructure
 
 Prepare the required infrastructure for OMT and its embedded Kubernetes cluster. For more information, see <span style="color: red;"><u>Prepare the infrastructure for OMT</u></span>.
 
-# Step 4: Download the OMT installation package
+## Step 4: Download the OMT installation package
 
 Download the installation package from the <span style="color: red;"><u>Software Licenses and Downloads</u></span> portal.
 
-# Step 5: Prepare an environment to install OMT
+## Step 5: Prepare an environment to install OMT
 
 Configure your environment before installation. For more information, see [Prepare an environment to install OMT](/pages/write/install_prereq_tasks.html).
 
-# Step 6: Deploy
+## Step 6: Deploy
 
 Run the installer to deploy OMT and its embedded Kubernetes. For more information, see <span style="color: red;"><u>Deploy OMT</u></span>.
 
-# Step 7: Complete the post installation tasks
+## Step 7: Complete the post installation tasks
 
 Some deployments require additional setup after installation. For more information, see <span style="color: red;"><u>Post installation tasks for OMT</u></span>.

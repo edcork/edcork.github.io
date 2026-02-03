@@ -6,42 +6,31 @@ has_toc: false
 ---
 # Editing
 
-These samples demonstrate improving technical documentation through structural editing, terminology standardization, and user-focused simplification.
+These editing samples highlight my ability to address a range of common issues found in technical documentation.
 
-## Edited documentation samples
+---
 
-### [1. Kubernetes troubleshooting](/pages/edit/edit1.html)
-**Original challenges:**  
-- Non-native English phrasing 
-- Inconsistent technical terminology  
-- Poor symptom/cause separation  
+## [1. Kubernetes troubleshooting edit](/pages/edit/edit1.html)
 
-**Editorial improvements:**  
-✔ Restructured into clear symptom→cause→solution flow  
-✔ Standardized Kubernetes terminology per official glossary  
-✔ Clarified cyclical restart behavior  
+### Skills showcased:
+- Rewriting non-native language for clarity and readability
+- Fixing formatting issues such as not following the product style guide
+- Correcting incorrect use of technical terms
+- Restructuring content for improved logical flow
+- Eliminating redundancies for brevity and clarity
 
-### [2. Infrastructure troubleshooting](/pages/edit/edit2.html)  
-**Original challenges:**  
-- Inconsistent product naming 
-- Outdated Azure Files troubleshooting steps  
-- Redundant environmental references  
+## [2. Infrastructure troubleshooting edit](/pages/edit/edit2.html)  
 
-**Editorial improvements:**  
-✔ Unified product terminology throughout  
-✔ Removed obsolete procedures  
-✔ Streamlined directory path formatting  
+### Skills showcased:
+- Rectifying technically inaccurate statements and obsolete guidance
+- Rewriting content to ensure logical flow of information through the document
+- Standardizing inconsistent use of product names and other technical terms
 
-### [3. Cloud integration guide](/pages/edit/edit3.html)
-**Original challenges:**  
-- Overly complex list-based structure  
-- Unclear differentiation between data types  
-- Non-native phrasing 
+## [3. Cloud integration guide edit](/pages/edit/edit3.html)
 
-**Editorial improvements:**  
-✔ Reorganized into clear data-type sections  
-✔ Added conceptual overview paragraph  
-✔ Standardized integration methodology  
+### Skills showcased:
+- Restructuring content for clarity of message
+- Rewriting non-native language for an international audience
 
 
 

@@ -1,8 +1,8 @@
 ---
 title: Update the system configuration
 layout: default
-parent: Prepare an environment to install OMT
-nav_order: 2
+parent: "Sample 1: Installation guide"
+nav_order: 3
 has_toc: false
 ---
 

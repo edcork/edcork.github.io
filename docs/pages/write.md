@@ -6,37 +6,31 @@ has_toc: false
 ---
 # Writing
 
-These samples highlight my ability to adapt content for different users, from system administrators to developers. 
-
-### Key skills showcased:
-- **Audience analysis** – Adjusting depth for beginners vs. experts  
-- **Information architecture** – Structuring complex workflows  
-- **Tool proficiency** – Markdown, HTML, Git-based workflows  
+These writing samples highlight my ability to adapt content to the needs of users with different levels of expertise, from system administrators to developers. 
 
 ---
 
-## Featured Samples
+## 1. [Installation guide](/pages/write/install_landing.html)
 
-### 1. [Sample 1: OMT Installation](/pages/write/install_landing.html)
-*Kubernetes platform documentation*  
-- Reference manual (end-to-end installation)  
-- Quick-start guide for experienced users  
-- Task-based subguides for junior admins  
+An end-to-end installation guide that showcases writing for multiple audiences. The section's [landing page](/pages/write/install_landing.html) and [main flow of topics](/pages/write/install_prereq_tasks.html) contain sufficient information for expert Kubernetes admins to install the product. Each task in these pages links to [a detailed "how-to" topic](/pages/write/create_sudouser.html) that walks admins new to Kubernetes through the steps to configure their environment. 
 
-*Skills: Multi-level documentation, procedural writing*
+### Skills showcased:
+- Multi-level documentation
+- Procedural writing
 
-### 2. [Sample 2: Service Management Models](/pages/write/models.html)
-*Templates for enterprise software*  
-- Concept overviews  
-- Module-specific configuration guides  
+## 2. [Product how-to's](/pages/write/models.html)
 
-*Skills: Conceptual writing, UI-agnostic instructions*
+This excerpt from a section about using templates to manage service management records includes an explanatory landing page and a selection of associated how-to guides.
 
-### 3. [Sample 3: Dev2Prod REST API](/pages/write/dev2prod_api.html)  
-*Environment synchronization tool*  
-- Endpoint documentation  
-- Authentication workflows  
-- Error handling references  
+### Skills showcased:
+- Conceptual writing
+- Procedural writing
 
-*Skills: API documentation, code sample integration*
+## 3. [API docs](/pages/write/dev2prod_api.html)  
+
+Reference information for an API that synchronizes development and production environments. Includes endpoint descriptions, example calls and responses, and error codes. 
+
+### Skills showcased:
+ - Reference documentation
+ - Code sample integration
 

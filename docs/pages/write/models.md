@@ -1,17 +1,15 @@
 ---
-title: "Sample 2: Service Management record models"
+title: "Sample 2: Product how-to's"
 layout: default
 parent: Writing
 nav_order: 3
 has_toc: false
 ---
 
-# Sample 2: Service Management record models
+# Service Management record models
 {: .no_toc }
 
-A model simplifies the creation of records in Service Management. A model is a template that end users can select when creating a new record. Service Management automatically populates fields in the new record using information in the model. For certain record types, a model can even create the tasks necessary to complete a process. Models also help to standardize the process of record creation.
-
-This is useful if you frequently create records with similar information. For example, if you have many similar incidents, an incident model reduces the amount of effort required to create the numerous similar incident records. 
+A model is a template that end users can select when creating a new record in Service Management. Service Management automatically populates fields in the new record using information in the model. For certain record types, a model can even create the tasks necessary to complete a process. Models also help to standardize the process of record creation and reduce the amount of effort required to create numerous similar records.
 
 Service Management provides a set of default models. You can also add models as required. If you no longer require a model, you can retire that model.
 

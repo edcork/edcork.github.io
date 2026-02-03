@@ -1,8 +1,8 @@
 ---
 title: Enable a regular user to install OMT
 layout: default
-parent: Prepare an environment to install OMT
-nav_order: 1
+parent: "Sample 1: Installation guide"
+nav_order: 2
 has_toc: false
 ---
 
