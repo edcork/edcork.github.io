@@ -67,7 +67,7 @@ How to manually restart RabbitMQ:
 	/var/vols/itom/itsma/rabbitmq-infra-rabbitmq-2/data/xservices/rabbitmq/x.x.x.xx/mnesia
 	```
 
-	**Note** If you use Azure Files as the storage service and fail to remove these folders, follow the instructions at <a class="external text" href="https://docs.microsoft.com/en-us/azure/storage/files/storage-troubleshoot-cannot-delete-files-azure-file-share" rel="nofollow" target="1" title="Fail to delete files">Fail to delete files</a> except that you don't need to install Azure Powershell Module. Instead, you can run all the commands with <a class="external text" href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview" rel="nofollow" target="1" title="Azure Cloud Shell">Azure Cloud Shell</a> from the Azure portal.
+	**Note** If you use Azure Files as the storage service and fail to remove these folders, follow the instructions at <a class="external text" href="https://docs.microsoft.com/en-us/azure/storage/files/storage-troubleshoot-cannot-delete-files-azure-file-share" target="1" title="Fail to delete files">Fail to delete files</a> except that you don't need to install Azure Powershell Module. Instead, you can run all the commands with <a class="external text" href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview" target="1" title="Azure Cloud Shell">Azure Cloud Shell</a> from the Azure portal.
 
 4. Run the following command on a master node (embedded Kubernetes) or the bastion node (managed Kubernetes) to restart RabbitMQ:
    
