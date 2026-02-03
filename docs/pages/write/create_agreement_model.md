@@ -24,7 +24,7 @@ There are two methods to create an agreement model.
 
 ## Method 1: Create an agreement model from an existing record
 
-When you create an agreement model created this way, all field values from the existing record (including user options, but excluding service offerings and workflow status) are copied to the draft model. You can then edit the values as required.
+When you create an agreement model this way, all field values from the existing record (including user options, but excluding service offerings and workflow status) are copied to the draft model. You can then edit the values as required.
 
 1.  From the main menu, select **Plan** > **Service Level**, and then select **Service Agreements**, **Support Agreements**, or **Human Resources Agreements** from the drop-down menu. 
 
