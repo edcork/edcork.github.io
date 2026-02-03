@@ -7,7 +7,7 @@ has_toc: false
 
 # Design
 
-This sample demonstrates my experience with information architecture practises
+This sample demonstrates my experience with information architecture practises.
 
 ### Key skills showcased:
 - **Content audits** – Identifying topics for editing, relocation, or removal, as well as gaps in content. 
